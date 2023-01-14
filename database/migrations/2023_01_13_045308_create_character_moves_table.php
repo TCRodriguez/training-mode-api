@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('inputs', function (Blueprint $table) {
+        Schema::create('character_moves', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inputs');
+        Schema::dropIfExists('character_moves');
     }
 };

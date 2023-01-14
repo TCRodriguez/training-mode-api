@@ -11,8 +11,28 @@ class Game extends Model
 
     protected $guarded = [];
 
-    public function user()
+    // public function user()
+    // {
+    //     return $this->belongsToMany(User::class);
+    // }
+
+    public function characters()
     {
-        return $this->hasMany(User::class, 'user_id');
+        return $this->hasMany(Character::class);
+    }
+
+    public function directionalInputs()
+    {
+        return $this->belongsToMany(DirectionalInput::class);
+    }
+
+    public function buttons()
+    {
+        return $this->hasMany(AttackButton::class);
+    }
+
+    public function notations()
+    {
+        return $this->hasMany(Notation::class);
     }
 }
