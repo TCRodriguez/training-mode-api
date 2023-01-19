@@ -22,10 +22,16 @@ class GameSeeder extends Seeder
         DB::table('games')->delete();
         $json = File::get("storage/Games.json");
         $games = json_decode($json);
+        // foreach($data as $obj) {
+        //     DB::table('games')->insert([
+        //         'title' => $obj.title
+        //     ]);
+        // // }
         foreach($games as $key => $value) {
             Game::create([
                 "title" => $value->title
             ]);
         }
+
     }
 }
