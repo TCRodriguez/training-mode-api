@@ -15,7 +15,24 @@ return new class extends Migration
     {
         Schema::create('character_moves', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('character_id')->index();
+            $table->string('category');
+            $table->string('type');
+            $table->integer('damage');
+            $table->string('zone');
+            $table->integer('startup_frames')->nullable();
+            $table->integer('active_frames')->nullable();
+            $table->integer('recovery_frames')->nullable();
+            $table->integer('frames_on_hit')->nullable();
+            $table->integer('frames_on_block')->nullable();
+            $table->integer('frames_on_counter_hit')->nullable();
             $table->timestamps();
+
+            $table->foreign('character_id')
+                ->references('id')
+                ->on('characters')
+                ->onDelete('cascade');
         });
     }
 

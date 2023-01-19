@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AttackButton extends Model
+class GameNotation extends Model
 {
     use HasFactory;
 
@@ -14,10 +14,5 @@ class AttackButton extends Model
     public function game()
     {
         return $this->belongsTo(Game::class, 'game_id');
-    }
-
-    public function notation()
-    {
-        return $this->hasOne(GameNotation::class, 'attack_button_id');
     }
 }

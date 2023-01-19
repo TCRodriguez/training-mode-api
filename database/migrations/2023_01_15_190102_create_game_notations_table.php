@@ -13,15 +13,27 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('attack_buttons', function (Blueprint $table) {
+        Schema::create('game_notations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('text');
             $table->unsignedBigInteger('game_id')->index();
+            $table->unsignedBigInteger('directional_input_id')->nullable()->index();
+            $table->unsignedBigInteger('attack_button_id')->nullable()->index();
             $table->timestamps();
 
             $table->foreign('game_id')
                 ->references('id')
                 ->on('games')
+                ->onDelete('cascade');
+
+            $table->foreign('directional_input_id')
+                ->references('id')
+                ->on('directional_inputs')
+                ->onDelete('cascade');
+
+            $table->foreign('attack_button_id')
+                ->references('id')
+                ->on('attack_buttons')
                 ->onDelete('cascade');
         });
     }
@@ -33,6 +45,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attack_buttons');
+        Schema::dropIfExists('game_notations');
     }
 };

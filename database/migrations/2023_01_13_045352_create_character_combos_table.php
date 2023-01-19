@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('character_combos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('character_id');
+            $table->unsignedBigInteger('user_id');
+            $table->integer('damage');
+            $table->integer('hits');
             $table->timestamps();
         });
     }
