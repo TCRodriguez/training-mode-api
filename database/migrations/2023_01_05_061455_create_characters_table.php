@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('archetype');
+            $table->string('archetype')->nullable();
             $table->unsignedBigInteger('game_id')->index();
             $table->timestamps();
 
