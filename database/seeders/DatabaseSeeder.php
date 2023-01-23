@@ -22,7 +22,10 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             GameSeeder::class,
-            CharacterSeeder::class
+            DirectionalInputSeeder::class,
+            Tekken7AttackButtonSeeder::class,
+            Tekken7CharacterSeeder::class,
+            Tekken7GameNotationSeeder::class,
         ]);
     }
 }

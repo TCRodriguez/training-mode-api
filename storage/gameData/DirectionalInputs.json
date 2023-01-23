@@ -1,0 +1,11 @@
+[
+    {"direction": "Up"},
+    {"direction": "Up Forward"},
+    {"direction": "Forward"},
+    {"direction": "Down Forward"},
+    {"direction": "Down"},
+    {"direction": "Down Back"},
+    {"direction": "Back"},
+    {"direction": "Up Back"},
+    {"direction": "Neutral"}
+]

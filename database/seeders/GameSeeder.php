@@ -20,7 +20,7 @@ class GameSeeder extends Seeder
     public function run()
     {
         DB::table('games')->delete();
-        $json = File::get("storage/Games.json");
+        $json = File::get("storage/gameData/Games.json");
         $games = json_decode($json);
         foreach($games as $game) {
             Game::create([

@@ -1,0 +1,8 @@
+[
+    {"name": "Armor King", "archetype": "", "game": "Tekken 7", "notations": {}},
+    {"name": "Jin Kazama", "archetype": "", "game": "Tekken 7", "notations": {"ZEN": "Zenshin", "CDS": "Crouching Demon Stance"}, "moves": {
+        "Rage Art": ["Back", "1", "2"],
+        "Rage Drive": ["Forward", "Neutral", "Down", "Down Forward", "1", "2", "3", "1"]
+    }},
+    {"name": "Lars Alexandersson", "archetype": "", "game": "Tekken 7", "notations": {"SEN": "Silent Entry", "DEN": "Dynamic Entry"}}
+]

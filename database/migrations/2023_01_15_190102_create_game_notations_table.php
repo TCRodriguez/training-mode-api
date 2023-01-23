@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('game_notations', function (Blueprint $table) {
             $table->id();
-            $table->string('text');
+            $table->string('notation');
+            $table->string('description')->nullable();
             $table->unsignedBigInteger('game_id')->index();
-            $table->unsignedBigInteger('directional_input_id')->nullable()->index();
-            $table->unsignedBigInteger('attack_button_id')->nullable()->index();
+            $table->unsignedBigInteger('character_id')->index()->nullable();
+            $table->unsignedBigInteger('character_move_id')->index()->nullable();
             $table->timestamps();
 
             $table->foreign('game_id')
@@ -26,14 +27,9 @@ return new class extends Migration
                 ->on('games')
                 ->onDelete('cascade');
 
-            $table->foreign('directional_input_id')
+            $table->foreign('character_id')
                 ->references('id')
-                ->on('directional_inputs')
-                ->onDelete('cascade');
-
-            $table->foreign('attack_button_id')
-                ->references('id')
-                ->on('attack_buttons')
+                ->on('characters')
                 ->onDelete('cascade');
         });
     }
