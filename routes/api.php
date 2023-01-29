@@ -1,5 +1,14 @@
 <?php
 
+
+use App\Http\Controllers\api\v1\CharacterController;
+use App\Http\Controllers\api\v1\GameController;
+use App\Http\Controllers\api\v1\GameNotationController;
+use App\Http\Controllers\api\v1\DirectionalInputController;
+use App\Http\Controllers\api\v1\AttackButtonController;
+use App\Http\Controllers\api\v1\CharacterComboController;
+use App\Http\Controllers\api\v1\UserController;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +25,35 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+Route::prefix('v1')->group(function () {
+
+    Route::get('/users', [UserController::class, 'index']);
+    Route::get('/users/{user}', [UserController::class, 'show']);
+    Route::post('/users', [UserController::class, 'store']);
+    Route::put('/users/{user}', [UserController::class, 'update']);
+    Route::delete('/users/{user}', [UserController::class, 'delete']);
+
+    Route::get('/games/{game}/characters/{character}/character-combos', [CharacterComboController::class, 'index']);
+    Route::get('/games/{game}/characters/{character}/character-combos/{character_combo}', [CharacterComboController::class, 'show']);
+    Route::post('/games/{game}/characters/{character}/character-combos', [CharacterComboController::class, 'store']);
+    Route::put('/games/{game}/characters/{character}/character-combos/{character_combo}', [CharacterComboController::class, 'update']);
+    Route::delete('/games/{game}/characters/{character}/character-combos/{character_combo}', [CharacterComboController::class, 'delete']);
+
+    Route::get('/directional-inputs', [DirectionalInputController::class, 'index']);
+    Route::get('/games/{game}/attack-buttons', [AttackButtonController::class, 'index']);
+
+
+
+    Route::get('/games/{game}/game-notations', [GameNotationController::class, 'index']);
+
+    Route::get('/games', [GameController::class, 'index']);
+    Route::get('/games/{game}', [GameController::class, 'show']);
+
+    Route::get('/games/{game}/characters', [CharacterController::class, 'index']);
+    Route::get('/games/{game}/characters/{character}', [CharacterController::class, 'show']);
+
+
 });
