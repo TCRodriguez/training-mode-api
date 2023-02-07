@@ -1,11 +1,11 @@
 [
-    {"direction": "Up"},
-    {"direction": "Up Forward"},
-    {"direction": "Forward"},
-    {"direction": "Down Forward"},
-    {"direction": "Down"},
-    {"direction": "Down Back"},
-    {"direction": "Back"},
-    {"direction": "Up Back"},
-    {"direction": "Neutral"}
+    {"direction": "Up Back", "numpad_notation": "7"},
+    {"direction": "Up", "numpad_notation": "8"},
+    {"direction": "Up Forward", "numpad_notation": "9"},
+    {"direction": "Back", "numpad_notation": "4"},
+    {"direction": "Neutral", "numpad_notation": "5"},
+    {"direction": "Forward", "numpad_notation": "6"},
+    {"direction": "Down Back", "numpad_notation": "1"},
+    {"direction": "Down", "numpad_notation": "2"},
+    {"direction": "Down Forward", "numpad_notation": "3"}
 ]

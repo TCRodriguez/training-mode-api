@@ -25,6 +25,7 @@ class DirectionalInputSeeder extends Seeder
 
             DirectionalInput::create([
                 "direction" => $directionalInput->direction,
+                "numpad_notation" => $directionalInput->numpad_notation
             ]);
         }
     }

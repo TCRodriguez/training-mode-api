@@ -13,11 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('directional_inputs', function (Blueprint $table) {
+        Schema::create('game_mechanics', function (Blueprint $table) {
             $table->id();
-            $table->string('direction');
-            $table->string('numpad_notation');
+            $table->string('name');
+            $table->string('description');
+            $table->unsignedBigInteger('game_id')->index();
             $table->timestamps();
+
+            $table->foreign('game_id')
+                ->references('id')
+                ->on('games')
+                ->onDelete('cascade');
         });
     }
 
@@ -28,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('directional_inputs');
+        Schema::dropIfExists('game_mechanics');
     }
 };

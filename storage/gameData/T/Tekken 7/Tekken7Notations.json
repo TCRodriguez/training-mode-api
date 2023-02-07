@@ -41,7 +41,16 @@
     {"text": "FD/FT", "description": "Face Down / Feet Toward Opponent", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
     {"text": "FD/FA", "description": "Face Down / Feet Away from Opponent", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
     {"text": "FU/FT", "description": "Face Up / Feet Toward Opponent", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
-    {"text": "FU/FA", "description": "Face Up / Feet Away from Opponent", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
-    {"text": "cc", "description": "Crouch Cancel", "game": "Tekken 7", "directional_inputs": ["Up", "Neutral"], "attack_buttons": [""]}
-
+    {"text": "FU/FA", "description": "Grounded opponent ('on the ground')", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
+    {"text": "OTG", "description": "Face Up / Feet Away from Opponent", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
+    {"text": "cc", "description": "Crouch Cancel", "game": "Tekken 7", "directional_inputs": ["Up", "Neutral"], "attack_buttons": [""]},
+    {"text": "S!", "description": "Screw (Corkscrew, Tailspin)", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
+    {"text": "W!", "description": "Wall Splat / Wall Bounce", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
+    {"text": "WB!", "description": "Wall Break", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
+    {"text": "F!", "description": "Floor Break", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
+    {"text": "FB!", "description": "Floor Break", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
+    {"text": "BB!", "description": "Balcony Break", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
+    {"text": "RD", "description": "Rage Drive", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
+    {"text": "RA", "description": "Rage Art", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]},
+    {"text": "R", "description": "Rage (in Rage Mode)", "game": "Tekken 7", "directional_inputs": [""], "attack_buttons": [""]}
 ]
