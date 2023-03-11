@@ -15,4 +15,8 @@ class GameNotation extends Model
     {
         return $this->belongsTo(Game::class, 'game_id');
     }
+
+    public function directionalInputs() {
+        return $this->belongsToMany(DirectionalInput::class, 'directional_input_game_notation', 'game_notation_id', 'directional_input_id');
+    }
 }

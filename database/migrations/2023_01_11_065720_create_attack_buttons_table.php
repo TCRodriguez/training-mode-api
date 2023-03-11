@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('game_id')->index();
+            $table->string('icon_file_name')->index();
             $table->timestamps();
 
             $table->foreign('game_id')

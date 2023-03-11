@@ -28,7 +28,8 @@ class Tekken7AttackButtonSeeder extends Seeder
             AttackButton::create([
                 "name" => $attackButton->name,
                 // ? How can we dynamically grab the relevant game_id here?
-                "game_id" => Arr::get($gameId, 0)
+                "game_id" => Arr::get($gameId, 0),
+                "icon_file_name" => $attackButton->icon,
             ]);
         }
     }

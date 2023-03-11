@@ -1,12 +1,12 @@
 <?php
 
-
 use App\Http\Controllers\api\v1\CharacterController;
 use App\Http\Controllers\api\v1\GameController;
 use App\Http\Controllers\api\v1\GameNotationController;
 use App\Http\Controllers\api\v1\DirectionalInputController;
 use App\Http\Controllers\api\v1\AttackButtonController;
 use App\Http\Controllers\api\v1\CharacterComboController;
+use App\Http\Controllers\api\v1\CharacterMoveController;
 use App\Http\Controllers\api\v1\UserController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -42,12 +42,7 @@ Route::prefix('v1')->group(function () {
     Route::put('/games/{game}/characters/{character}/character-combos/{character_combo}', [CharacterComboController::class, 'update']);
     Route::delete('/games/{game}/characters/{character}/character-combos/{character_combo}', [CharacterComboController::class, 'delete']);
 
-    Route::get('/directional-inputs', [DirectionalInputController::class, 'index']);
-    Route::get('/games/{game}/attack-buttons', [AttackButtonController::class, 'index']);
-
-
-
-    Route::get('/games/{game}/game-notations', [GameNotationController::class, 'index']);
+    Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index']);
 
     Route::get('/games', [GameController::class, 'index']);
     Route::get('/games/{game}', [GameController::class, 'show']);
@@ -55,5 +50,8 @@ Route::prefix('v1')->group(function () {
     Route::get('/games/{game}/characters', [CharacterController::class, 'index']);
     Route::get('/games/{game}/characters/{character}', [CharacterController::class, 'show']);
 
+    Route::get('/games/{game}/game-notations', [GameNotationController::class, 'index']);
 
+    Route::get('/directional-inputs', [DirectionalInputController::class, 'index']);
+    Route::get('/games/{game}/attack-buttons', [AttackButtonController::class, 'index']);
 });

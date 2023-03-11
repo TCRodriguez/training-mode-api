@@ -20,6 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger('game_id')->index();
             $table->unsignedBigInteger('character_id')->index()->nullable();
             $table->unsignedBigInteger('character_move_id')->index()->nullable();
+            $table->string('notations_group')->nullable();
+            $table->string('icon_file_name')->nullable();
             $table->timestamps();
 
             $table->foreign('game_id')

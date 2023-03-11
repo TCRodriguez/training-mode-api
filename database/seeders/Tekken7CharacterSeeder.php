@@ -34,13 +34,16 @@ class Tekken7CharacterSeeder extends Seeder
                 "game_id" => $gameId
             ]);
 
+            // DB::insert('insert into game_notations (group) values (?)', [$character->group]);
+
 
 
             $characterNotations = $character->notations;
            
             foreach($characterNotations as $notation => $description) {
 
-                DB::insert('insert into game_notations (notation, description, game_id, character_id, created_at, updated_at) values (?, ?, ?, ?, ?, ?)', [$notation, $description, $gameId, $characterModel->id, $now, $now]);
+                // DB::insert('insert into game_notations (notation, description, game_id, character_id, created_at, updated_at) values (?, ?, ?, ?, ?, ?)', [$notation, $description, $gameId, $characterModel->id, $now, $now]);
+                DB::insert('insert into game_notations (notation, description, game_id, character_id, notations_group, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?)', [$notation, $description, $gameId, $characterModel->id, $character->notations_group, $now, $now]);
  
             }
             // GameNotation::where('')

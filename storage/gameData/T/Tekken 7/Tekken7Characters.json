@@ -1,8 +1,48 @@
 [
-    {"name": "Armor King", "archetype": "", "game": "Tekken 7", "notations": {}},
-    {"name": "Jin Kazama", "archetype": "", "game": "Tekken 7", "notations": {"ZEN": "Zenshin", "CDS": "Crouching Demon Stance"}, "moves": {
-        "Rage Art": ["Back", "1", "2"],
-        "Rage Drive": ["Forward", "Neutral", "Down", "Down Forward", "1", "2", "3", "1"]
-    }},
-    {"name": "Lars Alexandersson", "archetype": "", "game": "Tekken 7", "notations": {"SEN": "Silent Entry", "DEN": "Dynamic Entry"}}
+    {
+        "name": "Armor King", 
+        "archetype": "", 
+        "game": "Tekken 7", 
+        "notations": {}, 
+        "notations_group": "character"
+    },
+    {
+        "name": "Jin Kazama", 
+        "archetype": "", 
+        "game": "Tekken 7", 
+        "notations": {
+            "ZEN": "Zenshin", 
+            "CDS": "Crouching Demon Stance"
+        }, 
+        "notations_group": "character", 
+        "moves": {
+            "Rage Art": ["Back", "1", "2"],
+            "Rage Drive": ["Forward", "Neutral", "Down", "Down Forward", "1", "2", "3", "1"]
+        }
+    },
+    {
+        "name": "Lars Alexandersson", 
+        "archetype": "", 
+        "game": "Tekken 7", 
+        "notations": {
+            "SEN": "Silent Entry", 
+            "DEN": "Dynamic Entry"
+        }, 
+        "notations_group": "character"
+    },
+    {
+        "name": "Master Raven", 
+        "archetype": "", 
+        "game": "Tekken 7", 
+        "notations": {}, 
+        "notations_group": "character",
+        "moves": {
+            "Buzzsaw": {
+                "zones": ["Low"],
+                "inputs": ["Down", "Down Forward", "Forward", "2"]
+            } 
+        }
+    }
+
+
 ]

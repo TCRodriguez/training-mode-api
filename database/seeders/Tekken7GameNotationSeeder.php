@@ -34,6 +34,8 @@ class Tekken7GameNotationSeeder extends Seeder
                 "notation" => $gameNotation->text,
                 "description" => $gameNotation->description,
                 "game_id" => Arr::get($gameId, 0),
+                "notations_group" => $gameNotation->group,
+                "icon_file_name" => $gameNotation->icon
                 // "directional_input_id" => Arr::get($directionalInputId, 0),
                 // "attack_button_id" => Arr::get($attackButtonId, 0)
             ]);
@@ -53,15 +55,25 @@ class Tekken7GameNotationSeeder extends Seeder
                 }
             }
 
-            foreach($gameNotation->attack_buttons as $attackButton) {
-                $attackButtonModel = AttackButton::where('name', $attackButton)->first();
-                $attackButtonId = $attackButtonModel !== null ? $attackButtonModel->id : null;
+            // foreach($gameNotation->attack_buttons as $attackButton) {
+            //     $attackButtonModel = AttackButton::where('name', $attackButton)->first();
+            //     $attackButtonId = $attackButtonModel !== null ? $attackButtonModel->id : null;
 
-                if($attackButtonId !== null) {
-                    $now = now();
-                    DB::insert('insert into attack_button_game_notation (attack_button_id, game_notation_id, created_at, updated_at) values (?, ?, ?, ?)', [$attackButtonId, $gameNotationModel->id, $now, $now]);
-                }
+            //     if($attackButtonId !== null) {
+            //         $now = now();
+            //         DB::insert('insert into attack_button_game_notation (attack_button_id, game_notation_id, created_at, updated_at) values (?, ?, ?, ?)', [$attackButtonId, $gameNotationModel->id, $now, $now]);
+            //     }
+            // }
+
+            $attackButtonName = implode(" + ", $gameNotation->attack_buttons);
+            $attackButtonModel = AttackButton::where('name', $attackButtonName)->first();
+            $attackButtonId = $attackButtonModel !== null ? $attackButtonModel->id : null;
+        // var_dump($attackButton);
+            if($attackButtonId !== null) {
+                $now = now();
+                DB::insert('insert into attack_button_game_notation (attack_button_id, game_notation_id, created_at, updated_at) values (?, ?, ?, ?)', [$attackButtonId, $gameNotationModel->id, $now, $now]);
             }
+            
         }
     }
 }
