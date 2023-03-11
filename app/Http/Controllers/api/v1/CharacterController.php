@@ -10,10 +10,18 @@ class CharacterController extends Controller
 {
     public function index(Request $request, $gameId)
     {
-        $characters = Character::where('game_id', $gameId)->get();
-
-        
+        $characters = Character::where('game_id', $gameId)->with('notations')->get();
 
         return $characters;
+    }
+    
+    public function show(Request $request, $gameId, $characterId)
+    {
+        $character = Character::where('game_id', $gameId)
+            ->where('id', $characterId)
+            ->with('notations')
+            ->get();
+
+        return $character;
     }
 }

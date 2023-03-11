@@ -10,7 +10,9 @@ class DirectionalInputController extends Controller
 {
     public function index()
     {
-        $directionalInputs = DirectionalInput::all();
+        $directionalInputs = DirectionalInput::with('icons')
+            ->with('notations')
+            ->get();
 
         return $directionalInputs;
     }

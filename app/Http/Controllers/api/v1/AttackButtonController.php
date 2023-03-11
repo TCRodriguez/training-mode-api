@@ -10,7 +10,7 @@ class AttackButtonController extends Controller
 {
     public function index(Request $request, $gameId)
     {
-        $attackButtons = AttackButton::where('game_id', $gameId)->get();
+        $attackButtons = AttackButton::where('game_id', $gameId)->with('notations')->get();
 
         return $attackButtons;
     }

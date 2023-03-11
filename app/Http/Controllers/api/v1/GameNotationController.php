@@ -10,7 +10,7 @@ class GameNotationController extends Controller
 {
     public function index(Request $request, $gameId)
     {
-        $gameNotations = GameNotation::where('game_id', $gameId)->get();
+        $gameNotations = GameNotation::where('game_id', $gameId)->with('directionalInputs')->get();
 
         return $gameNotations;
     }

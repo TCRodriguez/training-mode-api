@@ -15,4 +15,11 @@ class GameController extends Controller
 
         return $games;
     }
+
+    public function show(Request $request, $gameId)
+    {
+        $game = Game::where('id', $gameId)->firstOrFail();
+
+        return $game;
+    }
 }
