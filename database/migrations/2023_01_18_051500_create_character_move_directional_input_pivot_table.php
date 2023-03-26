@@ -18,6 +18,7 @@ class CreateCharacterMoveDirectionalInputPivotTable extends Migration
             $table->foreign('character_move_id')->references('id')->on('character_moves')->onDelete('cascade');
             $table->unsignedBigInteger('directional_input_id')->index();
             $table->foreign('directional_input_id')->references('id')->on('directional_inputs')->onDelete('cascade');
+            $table->string('order_in_move');
             // $table->primary(['character_move_id', 'directional_input_id']);
             $table->timestamps();
         });

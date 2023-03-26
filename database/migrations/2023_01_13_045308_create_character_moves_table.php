@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('character_id')->index();
-            $table->string('category');
-            $table->string('type');
-            $table->integer('damage');
-            $table->string('zone');
+            $table->string('zone')->nullable();
+            $table->integer('damage')->nullable();
+            $table->string('category')->nullable();
+            $table->string('type')->nullable();
             $table->integer('startup_frames')->nullable();
             $table->integer('active_frames')->nullable();
             $table->integer('recovery_frames')->nullable();

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreign('character_move_id')->references('id')->on('character_moves')->onDelete('cascade');
             $table->unsignedBigInteger('game_notation_id')->index();
             $table->foreign('game_notation_id')->references('id')->on('game_notations')->onDelete('cascade');
+            $table->string('order_in_move');
             $table->timestamps();
         });
     }
