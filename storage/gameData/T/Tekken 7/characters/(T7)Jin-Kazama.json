@@ -23,7 +23,7 @@
                         "notation": "1 + 2"
                     }
                 ],
-                "zones": [""],
+                "zones": ["High"],
                 "damage": null,
                 "category": "",
                 "type": "",
@@ -73,7 +73,7 @@
                         "notation": "1"
                     }
                 ],
-                "zones": [""],
+                "zones": ["High", "Mid", "High", "Mid"],
                 "damage": null,
                 "category": "",
                 "type": "",

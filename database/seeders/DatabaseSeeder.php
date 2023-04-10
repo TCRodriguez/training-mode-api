@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             GameSeeder::class,
+            HitZoneSeeder::class,
             DirectionalInputSeeder::class,
             Tekken7AttackButtonSeeder::class,
             Tekken7GameNotationSeeder::class,

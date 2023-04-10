@@ -33,6 +33,6 @@ class Game extends Model
 
     public function notations()
     {
-        return $this->hasMany(Notation::class);
+        return $this->hasMany(GameNotation::class);
     }
 }

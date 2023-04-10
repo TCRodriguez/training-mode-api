@@ -41,6 +41,11 @@ class CharacterMove extends Model
     {
         return $this->belongsToMany(GameNotation::class, 'character_move_game_notation', 'character_move_id', 'game_notation_id')->withPivot('order_in_move');
     }
+    
+    public function zones()
+    {
+        return $this->belongsToMany(HitZone::class, 'character_move_hit_zone', 'character_move_id', 'hit_zone_id')->withPivot('order_in_zone_list');
+    }
 
     // protected function inputs(): Attribute
     // {

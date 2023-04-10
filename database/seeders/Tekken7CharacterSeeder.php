@@ -95,7 +95,7 @@ class Tekken7CharacterSeeder extends Seeder
 
                         $notationString = [];
                         isset($move->notation_string) ? array_push($notationString, $move->notation_string) : null;
-                        foreach($move->inputs as $input) {
+                        foreach($move->inputs as $index => $input) {
                             // array_push($notationString, $input->notation_string);
                             // $directionalInputModel = null;
                             // dd($input->group);
@@ -107,7 +107,7 @@ class Tekken7CharacterSeeder extends Seeder
                             // echo "\n";
 
 
-                            $orderInMove = array_search($input, $move->inputs) + 1;
+                            $orderInMove = $index + 1;
                             if($input->group === 'directions') {
                                 $directionalInputModel = DirectionalInput::where('direction', $input->input)->pluck('id');
                                 $directionalInputId = Arr::get($directionalInputModel, 0);
@@ -159,8 +159,29 @@ class Tekken7CharacterSeeder extends Seeder
                             }
                         }
                         // var_dump($notationString);
+                        foreach($move->zones as $index => $zone) {
+                            // $gameId = Arr::get($gameModel, 0);
+                            $zoneData = DB::table('hit_zones')
+                                    ->where('zone', $zone)
+                                    ->get()
+                                    ->pluck('id');
 
-                    }
+                            $zoneId = Arr::get($zoneData, 0);
+                            $orderInZoneList = $index + 1;
+                            DB::insert(
+                                'insert into character_move_hit_zone (character_move_id, hit_zone_id, order_in_zone_list, created_at, updated_at) values (?, ?, ?, ?, ?)',
+                            
+                                [
+                                    $characterMoveId,
+                                    $zoneId,
+                                    $orderInZoneList,
+                                    $now,
+                                    $now
+                                ]
+                                );
+                        }
+
+                    }   
                 }
             }
         }

@@ -28,7 +28,7 @@
                         "notation": "1"
                     }
                 ],
-                "zones": [""],
+                "zones": ["Low", "High", "High"],
                 "damage": null,
                 "category": "",
                 "type": "",
@@ -63,7 +63,47 @@
                         "notation": "F"
                     }
                 ],
-                "zones": [""],
+                "zones": ["Mid"],
+                "damage": null,
+                "category": "",
+                "type": "",
+                "startup_frames": null,
+                "active_frames": null,
+                "recovery_frames": null,
+                "frames_on_hit": null,
+                "frames_on_block": null,
+                "frames_on_counter_hit": null
+            },
+            {
+                "name": "Red Sprite",
+                "inputs": [
+                    {
+                        "group": "directions",
+                        "input": "Forward",
+                        "notation": "f"
+                    },
+                    {
+                        "group": "directions",
+                        "input": "Forward",
+                        "notation": "f"
+                    },
+                    {
+                        "group": "directions",
+                        "input": "Forward",
+                        "notation": "f"
+                    },
+                    {
+                        "group": "notations",
+                        "input": "Press Simultaneously",
+                        "notation": "+"
+                    },
+                    {
+                        "group": "attacks",
+                        "input": "Left Kick",
+                        "notation": "3"
+                    }
+                ],
+                "zones": ["Mid"],
                 "damage": null,
                 "category": "",
                 "type": "",

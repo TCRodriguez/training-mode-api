@@ -19,7 +19,8 @@ class CreateAttackButtonCharacterMovePivotTable extends Migration
             $table->unsignedBigInteger('character_move_id')->index();
             $table->foreign('character_move_id')->references('id')->on('character_moves')->onDelete('cascade');
             $table->string('order_in_move');
-            // $table->primary(['attack_button_id', 'character_move_id']);
+            $table->primary(['attack_button_id', 'character_move_id', 'order_in_move'], 'attack_in_move');
+            // $table->unique(['attack_button_id', 'character_move_id', 'order_in_move'], "test");
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('character_id')->index();
-            $table->string('zone')->nullable();
+            // $table->string('zone')->nullable();
             $table->integer('damage')->nullable();
             $table->string('category')->nullable();
             $table->string('type')->nullable();

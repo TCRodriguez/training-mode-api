@@ -19,7 +19,7 @@ class CreateCharacterMoveDirectionalInputPivotTable extends Migration
             $table->unsignedBigInteger('directional_input_id')->index();
             $table->foreign('directional_input_id')->references('id')->on('directional_inputs')->onDelete('cascade');
             $table->string('order_in_move');
-            // $table->primary(['character_move_id', 'directional_input_id']);
+            $table->primary(['character_move_id', 'directional_input_id', 'order_in_move'], 'direction_in_move');
             $table->timestamps();
         });
     }
