@@ -19,7 +19,8 @@ class CharacterMoveController extends Controller
         $characterMoves = CharacterMove::with([
             'directionalInputs',
             'attackButtons',
-            'notations'
+            'notations',
+            'zones'
         ])->where('character_id', $characterId)->get();
 
         return $characterMoves;

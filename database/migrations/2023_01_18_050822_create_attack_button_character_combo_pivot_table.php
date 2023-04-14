@@ -15,10 +15,17 @@ class CreateAttackButtonCharacterComboPivotTable extends Migration
     {
         Schema::create('attack_button_character_combo', function (Blueprint $table) {
             $table->unsignedBigInteger('attack_button_id')->index();
-            $table->foreign('attack_button_id')->references('id')->on('attack_buttons')->onDelete('cascade');
+            $table->foreign('attack_button_id')
+                ->references('id')
+                ->on('attack_buttons')
+                ->onDelete('cascade');
             $table->unsignedBigInteger('character_combo_id')->index();
-            $table->foreign('character_combo_id')->references('id')->on('character_combos')->onDelete('cascade');
+            $table->foreign('character_combo_id')
+                ->references('id')
+                ->on('character_combos')
+                ->onDelete('cascade');
             // $table->primary(['attack_button_id', 'character_combo_id']);
+            $table->string('order_in_combo');
             $table->timestamps();
         });
     }

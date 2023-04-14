@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCharacterComboDirectionalInputPivotTable extends Migration
+class CreateCharacterComboGameNotationPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreateCharacterComboDirectionalInputPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('character_combo_directional_input', function (Blueprint $table) {
+        Schema::create('character_combo_game_notation', function (Blueprint $table) {
             $table->unsignedBigInteger('character_combo_id')->index();
             $table->foreign('character_combo_id')
                 ->references('id')
                 ->on('character_combos')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger('directional_input_id')->index();
-            $table->foreign('directional_input_id')
+            $table->unsignedBigInteger('game_notation_id')->index();
+            $table->foreign('game_notation_id')
                 ->references('id')
-                ->on('directional_inputs')
+                ->on('game_notations')
                 ->onDelete('cascade');
-            // $table->primary(['character_combo_id', 'directional_input_id']);
+            // $table->primary(['character_combo_id', 'game_notation_id']);
             $table->string('order_in_combo');
             $table->timestamps();
         });
@@ -37,6 +37,6 @@ class CreateCharacterComboDirectionalInputPivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('character_combo_directional_input');
+        Schema::dropIfExists('character_combo_game_notation');
     }
 }

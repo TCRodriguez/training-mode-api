@@ -28,11 +28,23 @@ class CharacterCombo extends Model
 
     public function directionalInputs()
     {
-        return $this->belongsToMany(DirectionalInput::class);
+        return $this->belongsToMany(
+            DirectionalInput::class, 
+            'character_combo_directional_input', 
+            'character_combo_id', 
+            'directional_input_id'
+            )
+            ->withPivot('order_in_combo');
     }
     
     public function attackButtons()
     {
-        return $this->belongsToMany(AttackButton::class);
+        return $this->belongsToMany(
+            AttackButton::class, 
+            'attack_button_character_combo',
+            'character_combo_id',
+            'attack_button_id'
+        )
+        ->withPivot('order_in_combo');
     }
 }
