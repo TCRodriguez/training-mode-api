@@ -115,8 +115,13 @@ class CharacterComboController extends Controller
     }
 
 
-    public function delete(Request $request, $gameId, $characterId)
+    public function delete(Request $request, $gameId, $characterId, $comboId)
     {
-        return 'DELETE Character Combo HIT';
+        // return 'DELETE Character Combo HIT';
+        $characterCombo = CharacterCombo::findOrFail($comboId);
+
+        $characterCombo->delete();
+        
+        return $characterCombo;
     }
 }

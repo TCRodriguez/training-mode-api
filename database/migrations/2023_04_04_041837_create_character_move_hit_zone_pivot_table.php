@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('character_move_hit_zone', function (Blueprint $table) {
             $table->unsignedBigInteger('character_move_id')->index();
-            $table->foreign('character_move_id')->references('id')->on('character_moves')->onDelete('cascade');
+            $table->foreign('character_move_id')
+                ->references('id')
+                ->on('character_moves')
+                ->onDelete('cascade');
             $table->unsignedBigInteger('hit_zone_id')->index();
             $table->foreign('hit_zone_id')->references('id')->on('hit_zones')->onDelete('cascade');
             $table->string('order_in_zone_list');

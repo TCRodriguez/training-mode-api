@@ -64,6 +64,7 @@ class Tekken7CharacterSeeder extends Seeder
 
                 $characterModel = Character::where('name', $character->name)->firstOrFail();
                 foreach($character->moves as $move) {
+                    // var_dump($character);
                     if($move->name !== '') {
                         // * Add game_id to this table
                         DB::insert(
@@ -89,7 +90,9 @@ class Tekken7CharacterSeeder extends Seeder
                          * * Get DirectionalInput model to access data
                          */
 
-                        $characterMoveModel = CharacterMove::where('name', $move->name)->firstOrFail();
+                        $characterMoveModel = CharacterMove::where('name', $move->name)
+                                                            ->where('character_id', $characterModel->id)
+                                                            ->firstOrFail();
                         // dd($characterMoveModel->id);
                         $characterMoveId = $characterMoveModel->id;
 
@@ -111,6 +114,7 @@ class Tekken7CharacterSeeder extends Seeder
                             if($input->group === 'directions') {
                                 $directionalInputModel = DirectionalInput::where('direction', $input->input)->pluck('id');
                                 $directionalInputId = Arr::get($directionalInputModel, 0);
+                                var_dump($input);
                                 DB::insert(
                                     'insert into character_move_directional_input (character_move_id, directional_input_id, order_in_move, created_at, updated_at) values (?, ?, ?, ?, ?)',
                                     [
@@ -126,6 +130,7 @@ class Tekken7CharacterSeeder extends Seeder
                             if($input->group === 'attacks') {
                                 $attackButtonModel = AttackButton::where('name', $input->input)->pluck('id');
                                 $attackButtonId = Arr::get($attackButtonModel, 0);
+                                // dd($input);
                                 DB::insert(
                                     'insert into attack_button_character_move (attack_button_id, character_move_id, order_in_move, created_at, updated_at) values (?, ?, ?, ?, ?)',
                                     [
@@ -160,7 +165,9 @@ class Tekken7CharacterSeeder extends Seeder
                         }
                         // var_dump($notationString);
                         foreach($move->zones as $index => $zone) {
+                            echo $zone;
                             // $gameId = Arr::get($gameModel, 0);
+
                             $zoneData = DB::table('hit_zones')
                                     ->where('zone', $zone)
                                     ->get()
