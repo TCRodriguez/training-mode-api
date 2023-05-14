@@ -39,6 +39,37 @@
                 "frames_on_hit": null,
                 "frames_on_block": null,
                 "frames_on_counter_hit": null
+            },
+            {
+                "name": "Toe Kick",
+                "inputs": [
+                    {
+                        "group": "directions",
+                        "input": "Back",
+                        "notation": "b"
+                    },
+                    {
+                        "group": "notations",
+                        "input": "Press Simultaneously",
+                        "notation": "+"
+                    },
+                    {
+                        "group": "attacks",
+                        "input": "Right Kick",
+                        "notation": "4"
+                    }
+                ],
+                "notation_string": "",
+                "zones": ["Mid"],
+                "damage": null,
+                "category": "",
+                "type": "",
+                "startup_frames": null,
+                "active_frames": null,
+                "recovery_frames": null,
+                "frames_on_hit": null,
+                "frames_on_block": null,
+                "frames_on_counter_hit": null
             }
         ]
     }

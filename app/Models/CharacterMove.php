@@ -60,4 +60,9 @@ class CharacterMove extends Model
     //         $this->attackButtons()
     //     };
     // }
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
 }

@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             Tekken7AttackButtonSeeder::class,
             Tekken7GameNotationSeeder::class,
             Tekken7CharacterSeeder::class,
+            TagSeeder::class
         ]);
     }
 }

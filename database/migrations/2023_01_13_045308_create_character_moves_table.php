@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('character_id')->index();
+            $table->unsignedBigInteger('game_id')->index();
             // $table->string('zone')->nullable();
             $table->integer('damage')->nullable();
             $table->string('category')->nullable();
@@ -32,6 +33,11 @@ return new class extends Migration
             $table->foreign('character_id')
                 ->references('id')
                 ->on('characters')
+                ->onDelete('cascade');
+
+            $table->foreign('game_id')
+                ->references('id')
+                ->on('games')
                 ->onDelete('cascade');
         });
     }

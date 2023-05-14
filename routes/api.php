@@ -9,6 +9,7 @@ use App\Http\Controllers\api\v1\CharacterComboController;
 use App\Http\Controllers\api\v1\CharacterMoveController;
 use App\Http\Controllers\api\v1\UserController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\TagController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -46,12 +47,21 @@ Route::prefix('v1')->group(function () {
 
     Route::get('/games', [GameController::class, 'index']);
     Route::get('/games/{game}', [GameController::class, 'show']);
+    // Route::get('/games/{game}/tags', )
 
     Route::get('/games/{game}/characters', [CharacterController::class, 'index']);
     Route::get('/games/{game}/characters/{character}', [CharacterController::class, 'show']);
 
     Route::get('/games/{game}/game-notations', [GameNotationController::class, 'index']);
 
+    Route::get('/games/{game}/tags', [TagController::class, 'index']);
+    Route::post('/games/{game}/characters/{character}/moves/{move}/tags', [CharacterMoveController::class, 'addCharacterMoveTag']);
+    Route::delete('/games/{game}/characters/{character}/moves/{move}/tags/{tag}', [CharacterMoveController::class, 'removeCharacterMoveTag']);
+    Route::post('/games/{game}/characters/{character}/combos/{combo}/tags', [CharacterComboController::class, 'addCharacterComboTag']);
+    Route::delete('/games/{game}/characters/{character}/combos/{combo}/tags/{tag}', [CharacterComboController::class, 'removeCharacterComboTag']);
+
     Route::get('/directional-inputs', [DirectionalInputController::class, 'index']);
     Route::get('/games/{game}/attack-buttons', [AttackButtonController::class, 'index']);
+
+
 });

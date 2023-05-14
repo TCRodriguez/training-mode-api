@@ -7,6 +7,8 @@ use App\Models\AttackButton;
 use App\Models\CharacterCombo;
 use App\Models\DirectionalInput;
 use App\Models\GameNotation;
+use App\Models\Tag;
+use App\Utilities\Tagger;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
@@ -18,6 +20,7 @@ class CharacterComboController extends Controller
         $characterCombos = CharacterCombo::where('character_id', $characterId)
             ->with('directionalInputs')
             ->with('attackButtons')
+            ->with('tags')
             ->get();
         
         return $characterCombos;
@@ -118,10 +121,64 @@ class CharacterComboController extends Controller
     public function delete(Request $request, $gameId, $characterId, $comboId)
     {
         // return 'DELETE Character Combo HIT';
-        $characterCombo = CharacterCombo::findOrFail($comboId);
+        /**
+         * ? Perhaps we `detach()` all of the tags first before deleting the combo?
+         * ? This would then handle removing the relevant records from the `taggables
+         * ? table.
+         */
+        // $characterCombo = CharacterCombo::findOrFail($comboId);
+        // $tag = Tag::where('id', $tagId)->firstOrFail();
+
+        // * Get tag IDs of the combo we're about to delete
+        // * Detach these tags
+        // * Delete the combo
+
+
+        $characterCombo = CharacterCombo::where('id', $comboId)->firstOrFail();
+        $tags = $characterCombo->tags;
+        foreach($tags as $tag) {
+            Tagger::untagCharacterMove($gameId, $characterCombo, array($tag->name));
+        };
+
+        // $characterCombo = CharacterCombo::where('id', $comboId)
+        //     ->with('tags')
+        //     ->firstOrFail();
 
         $characterCombo->delete();
         
         return $characterCombo;
+    }
+
+    public function addCharacterComboTag(Request $request, $gameId, $characterId, $characterComboId)
+    {
+        // return $request;
+        $characterComboTags = $request->tags;
+
+        $characterCombo = CharacterCombo::where('id', $characterComboId)->firstOrFail();
+
+        Tagger::tagCharacterCombo($gameId, $characterCombo, $characterComboTags);
+
+        $characterCombo = CharacterCombo::where('id', $characterComboId)
+                        ->with('tags')
+                        ->firstOrFail();
+
+        return $characterCombo;
+
+    }
+    
+    public function removeCharacterComboTag(Request $request, $gameId, $characterId, $characterComboId, $tagId)
+    {
+        $tag = Tag::where('id', $tagId)->firstOrFail();
+
+        // dd($tag);
+        $characterCombo = CharacterCombo::where('id', $characterComboId)->firstOrFail();
+        Tagger::untagCharacterMove($gameId, $characterCombo, array($tag->name));
+
+        $characterCombo = CharacterCombo::where('id', $characterComboId)
+            ->with('tags')
+            ->firstOrFail();
+
+        return $characterCombo;
+
     }
 }

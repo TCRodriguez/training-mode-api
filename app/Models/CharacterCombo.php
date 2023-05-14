@@ -47,4 +47,9 @@ class CharacterCombo extends Model
         )
         ->withPivot('order_in_combo');
     }
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
 }

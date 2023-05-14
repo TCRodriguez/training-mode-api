@@ -68,10 +68,11 @@ class Tekken7CharacterSeeder extends Seeder
                     if($move->name !== '') {
                         // * Add game_id to this table
                         DB::insert(
-                            'insert into character_moves (name, character_id, damage, category, type, startup_frames, active_frames, recovery_frames, frames_on_hit, frames_on_block, frames_on_counter_hit, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                            'insert into character_moves (name, character_id, game_id, damage, category, type, startup_frames, active_frames, recovery_frames, frames_on_hit, frames_on_block, frames_on_counter_hit, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                             [
                                 $move->name,
                                 $characterModel->id,
+                                $gameId,
                                 $move->damage,
                                 $move->category,
                                 $move->type,
