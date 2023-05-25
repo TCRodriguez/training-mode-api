@@ -1,20 +1,207 @@
 [
-    {"direction": "Up Back", "numpad_notation": "7", "icon": ["t7-ub.svg"]},
-    {"direction": "Up Back (hold)", "numpad_notation": "7", "icon": ["t7-ubp.svg"]},
-    {"direction": "Up", "numpad_notation": "8", "icon": ["t7-u.svg"]},
-    {"direction": "Up (hold)", "numpad_notation": "8", "icon": ["t7-up.svg"]},
-    {"direction": "Up Forward", "numpad_notation": "9", "icon": ["t7-uf.svg"]},
-    {"direction": "Up Forward (hold)", "numpad_notation": "9", "icon": ["t7-ufp.svg"]},
-    {"direction": "Back", "numpad_notation": "4", "icon": ["t7-b.svg"]},
-    {"direction": "Back (hold)", "numpad_notation": "4", "icon": ["t7-bp.svg"]},
-    {"direction": "Neutral", "numpad_notation": "5", "icon": ["t7-n.svg"]},
-    {"direction": "Neutral (hold)", "numpad_notation": "5", "icon": ["t7-np.svg"]},
-    {"direction": "Forward", "numpad_notation": "6", "icon": ["t7-f.svg"]},
-    {"direction": "Forward (hold)", "numpad_notation": "6", "icon": ["t7-fp.svg"]},
-    {"direction": "Down Back", "numpad_notation": "1", "icon": ["t7-db.svg"]},
-    {"direction": "Down Back (hold)", "numpad_notation": "1", "icon": ["t7-dbp.svg"]},
-    {"direction": "Down", "numpad_notation": "2", "icon": ["t7-d.svg"]},
-    {"direction": "Down (hold)", "numpad_notation": "2", "icon": ["t7-dp.svg"]},
-    {"direction": "Down Forward", "numpad_notation": "3", "icon": ["t7-df.svg"]},
-    {"direction": "Down Forward (hold)", "numpad_notation": "3", "icon": ["t7-dfp.svg"]}
+    {"direction": "Up Back", "numpad_notation": "7", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-ub.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-ub.svg"
+            }
+
+        ]
+    },
+    {"direction": "Up Back (hold)", "numpad_notation": "7", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-ubp.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-ubp.svg"
+            }
+        ]
+    },
+    {"direction": "Up", "numpad_notation": "8", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-u.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-u.svg"
+            }
+        ]
+    },
+    {"direction": "Up (hold)", "numpad_notation": "8", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-up.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-up.svg"
+            }
+        ]
+    },
+    {"direction": "Up Forward", "numpad_notation": "9", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-uf.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-uf.svg"
+            }
+        ]
+    },
+    {"direction": "Up Forward (hold)", "numpad_notation": "9", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-ufp.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-ufp.svg"
+            }
+        ]
+    },
+    {"direction": "Back", "numpad_notation": "4", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-b.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-b.svg"
+            }
+        ]
+    },
+    {"direction": "Back (hold)", "numpad_notation": "4", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-bp.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-bp.svg"
+            }
+        ]
+    },
+    {"direction": "Neutral", "numpad_notation": "5", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-n.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-n.svg"
+            }
+        ]
+    },
+    {"direction": "Forward", "numpad_notation": "6", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-f.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-f.svg"
+            }
+        ]
+    },
+    {"direction": "Forward (hold)", "numpad_notation": "6", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-fp.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-fp.svg"
+            }
+        ]
+    },
+    {"direction": "Down Back", "numpad_notation": "1", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-db.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-db.svg"
+            }
+        ]
+    },
+    {"direction": "Down Back (hold)", "numpad_notation": "1", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-dbp.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-dbp.svg"
+            }
+        ]
+    },
+    {"direction": "Down", "numpad_notation": "2", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-d.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-d.svg"
+            }
+        ]
+    },
+    {"direction": "Down (hold)", "numpad_notation": "2", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-dp.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-dp.svg"
+            }
+        ]
+    },
+    {"direction": "Down Forward", "numpad_notation": "3", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-df.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-df.svg"
+            }
+        ]
+    },
+    {"direction": "Down Forward (hold)", "numpad_notation": "3", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-dfp.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-dfp.svg"
+            }
+        ]
+    }
 ]

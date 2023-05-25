@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('attack_buttons', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('button_count');
             $table->unsignedBigInteger('game_id')->index();
             $table->string('icon_file_name')->index();
             $table->timestamps();

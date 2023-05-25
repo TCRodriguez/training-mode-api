@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('directional_input_icons', function (Blueprint $table) {
+        Schema::create('attack_button_icons', function (Blueprint $table) {
             $table->id();
             $table->string('icon_file_name');
-            $table->unsignedBigInteger('directional_input_id')->index()->nullable();
+            $table->unsignedBigInteger('attack_button_id')->index()->nullable();
             $table->unsignedBigInteger('game_id')->index();
             $table->timestamps();
 
-            $table->foreign('directional_input_id')
+            $table->foreign('attack_button_id')
                 ->references('id')
                 ->on('directional_inputs')
                 ->onDelete('cascade');
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('directional_input_icons');
+        Schema::dropIfExists('attack_button_icons');
     }
 };

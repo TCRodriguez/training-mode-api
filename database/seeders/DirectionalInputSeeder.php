@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\DirectionalInput;
+use App\Models\Game;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Arr;
@@ -30,10 +31,16 @@ class DirectionalInputSeeder extends Seeder
             $directionalInputModel = DirectionalInput::where('direction', $directionalInput->direction)->first();
             $directionalInputId = $directionalInputModel !== null ? $directionalInputModel->id : null;
 
+            $now = now();
             foreach($directionalInput->icon as $icon) {
-                $now = now();
+                $gameModel = Game::where('title', $icon->game)->firstOrFail();
+                $gameId = $gameModel->id;
+
+
+
                 if($directionalInputId !== null) {
-                    DB::insert('insert into directional_input_icons (icon_file_name, directional_input_id, created_at, updated_at) values (?, ?, ?, ?)', [$icon, $directionalInputId, $now, $now]);
+                    DB::insert('insert into directional_input_icons (icon_file_name, directional_input_id, game_id, created_at, updated_at) values (?, ?, ?, ?, ?)',
+                     [$icon->icon_file_name, $directionalInputId, $gameId, $now, $now]);
                 }
             }
             // for ($i=0; $i < count($directionalInputs); $i++) { 

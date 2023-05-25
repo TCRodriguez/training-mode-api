@@ -48,6 +48,17 @@ class CharacterCombo extends Model
         ->withPivot('order_in_combo');
     }
 
+    public function notations()
+    {
+        return $this->belongsToMany(
+            GameNotation::class,
+            'character_combo_game_notation',
+            'character_combo_id',
+            'game_notation_id'
+        )
+        ->withPivot('order_in_combo');
+    }
+
     public function tags()
     {
         return $this->morphToMany(Tag::class, 'taggable');
