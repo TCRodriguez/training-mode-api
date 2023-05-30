@@ -29,4 +29,9 @@ class Character extends Model
     {
         return $this->hasMany(GameNotation::class);
     }
+
+    public function notes()
+    {
+        return $this->morphMany(Note::class, 'notable');
+    }
 }
