@@ -11,13 +11,21 @@ use App\Models\Tag;
 use App\Utilities\Tagger;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class CharacterComboController extends Controller
 {
     public function index(Request $request, $gameId, $characterId)
     {
-        $characterCombos = CharacterCombo::where('character_id', $characterId)
+        // return $request->user();
+        // $clients = Client::where('trainer_id', $request->user()->id)->paginate(60);
+        // $characterCombos = CharacterCombo::where('character_id', $characterId)
+        //     ->with('directionalInputs')
+        //     ->with('attackButtons')
+        //     ->with('tags')
+        //     ->get();
+        $characterCombos = CharacterCombo::where('user_id', $request->user()->id)->where('character_id', $characterId)
             ->with('directionalInputs')
             ->with('attackButtons')
             ->with('tags')
@@ -36,7 +44,7 @@ class CharacterComboController extends Controller
         $characterCombo = CharacterCombo::create([
             // 'user_id' => $request->user()->id,
             'game_id' => $gameId,
-            'user_id' => '1',
+            'user_id' => Auth::id(),
             // 'trainer_id' => $request->input('id'),
             'character_id' => $request->input('character_id'),
             'damage' => $request->input('damage'),

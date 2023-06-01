@@ -20,11 +20,17 @@ return new class extends Migration
             $table->foreignId('notable_id');
             $table->string('notable_type');
             $table->unsignedBigInteger('user_id')->index();
+            $table->unsignedBigInteger('game_id')->index();
             $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('game_id')
+                ->references('id')
+                ->on('games')
                 ->onDelete('cascade');
         });
     }

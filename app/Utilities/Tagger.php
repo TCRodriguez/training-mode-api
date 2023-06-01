@@ -3,6 +3,7 @@
 namespace App\Utilities;
 
 use App\Models\Tag;
+use Illuminate\Support\Facades\Auth;
 
 class Tagger {
 
@@ -31,7 +32,7 @@ class Tagger {
 
             $tagName = self::composeTagName($tag);
 
-            $newCharacterMoveTag = Tag::firstOrNew( array('name' => $tagName, 'user_id' => 1, 'game_id' => $gameId) );
+            $newCharacterMoveTag = Tag::firstOrNew( array('name' => $tagName, 'user_id' => Auth::id(), 'game_id' => $gameId) );
 
             $newCharacterMoveTag->name = $tagName;
 
@@ -59,7 +60,7 @@ class Tagger {
         foreach($tags as $tag) {
             // echo $tag;
             $characterMoveTag = Tag::where('name', $tag)
-                ->where('user_id', 1)
+                ->where('user_id', Auth::id())
                 ->firstOrFail();
             // var_dump($characterMoveTag);
 
@@ -74,7 +75,7 @@ class Tagger {
 
             $tagName = self::composeTagName($tag);
 
-            $newCharacterComboTag = Tag::firstOrNew( array('name' => $tagName, 'user_id' => 1, 'game_id' => $gameId) );
+            $newCharacterComboTag = Tag::firstOrNew( array('name' => $tagName, 'user_id' => Auth::id(), 'game_id' => $gameId) );
 
             $newCharacterComboTag->name = $tagName;
 
@@ -102,7 +103,7 @@ class Tagger {
         foreach($tags as $tag) {
             // echo $tag;
             $characterComboTag = Tag::where('name', $tag)
-                ->where('user_id', 1)
+                ->where('user_id', Auth::id())
                 ->firstOrFail();
             // var_dump($characterMoveTag);
 

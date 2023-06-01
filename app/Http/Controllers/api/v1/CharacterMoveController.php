@@ -7,6 +7,7 @@ use App\Models\CharacterMove;
 use App\Models\Tag;
 use App\Utilities\Tagger;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CharacterMoveController extends Controller
 {
@@ -23,8 +24,11 @@ class CharacterMoveController extends Controller
             'attackButtons',
             'notations',
             'zones',
-            'tags'
-        ])->where('character_id', $characterId)->get();
+        ])
+        ->with(['tags' => function ($query) {
+            $query->where('user_id', Auth::id());
+        }])
+        ->where('character_id', $characterId)->get();
 
         return $characterMoves;
     }
@@ -39,7 +43,9 @@ class CharacterMoveController extends Controller
         Tagger::tagCharacterMove($gameId, $characterMove, $characterMoveTags);
 
         $characterMove = CharacterMove::where('id', $characterMoveId)
-                        ->with('tags')
+                        ->with(['tags' => function ($query) {
+                            $query->where('user_id', Auth::id());
+                        }])
                         ->firstOrFail();
 
         return $characterMove;

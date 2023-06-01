@@ -4,14 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NoteController extends Controller
 {
     //
 
-    public function index(Request $request, $gameId)
+    public function index(Request $request, $gameId, $characterId)
     {
-        return 'GET Notes';
+        // return 'GET Notes';
+        //     $tags = Tag::where('game_id', $gameId)
+        //     ->where('user_id', Auth::id())
+        //     ->get();
+
+        // return $tags;
+
+        // ! May need to use whereHasMorph here to flip between characterId or whatever or "notable" id we establish....
+        // https://laravel.com/docs/10.x/eloquent-relationships#querying-morph-to-relationships
+        $notes = Note::where('game_id', $gameId)
+            ->where('notable_id', $characterId)
+            ->where('user_id', Auth::id())
+            ->get();
+        return $notes;
     }
 
     // public function store(Request $request, $gameId)
