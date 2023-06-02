@@ -28,7 +28,9 @@ class CharacterMoveController extends Controller
         ->with(['tags' => function ($query) {
             $query->where('user_id', Auth::id());
         }])
-        ->where('character_id', $characterId)->get();
+        ->where('character_id', $characterId)
+        ->where('game_id', $gameId)
+        ->get();
 
         return $characterMoves;
     }

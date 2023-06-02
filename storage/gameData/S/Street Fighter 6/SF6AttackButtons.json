@@ -1,7 +1,11 @@
 [
+    {"name": "Any Punch", "button_count": "1", "game": "Street Fighter 6", "icon": "sf6-AP.svg"},
+    {"name": "Any Two Punches", "button_count": "1", "game": "Street Fighter 6", "icon": "sf6-AP.svg"},
     {"name": "Light Punch", "button_count": "1", "game": "Street Fighter 6", "icon": "sf6-LP.svg"},
     {"name": "Medium Punch", "button_count": "1", "game": "Street Fighter 6", "icon": "sf6-MP.svg"},
     {"name": "Heavy Punch", "button_count": "1", "game": "Street Fighter 6", "icon": "sf6-HP.svg"},
+    {"name": "Any Kick", "button_count": "1", "game": "Street Fighter 6", "icon": "sf6-AK.svg"},
+    {"name": "Any Two Kicks", "button_count": "1", "game": "Street Fighter 6", "icon": "sf6-AK.svg"},
     {"name": "Light Kick", "button_count": "1", "game": "Street Fighter 6", "icon": "sf6-LK.svg"},
     {"name": "Medium Kick", "button_count": "1", "game": "Street Fighter 6", "icon": "sf6-MK.svg"},
     {"name": "Heavy Kick", "button_count": "1", "game": "Street Fighter 6", "icon": "sf6-HK.svg"}

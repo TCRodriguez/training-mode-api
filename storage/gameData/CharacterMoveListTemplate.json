@@ -12,11 +12,15 @@
                     {
                         "group": "",
                         "input": "",
-                        "notation": "",
-                        "order": ""
+                        "notation": ""
                     }
                 ],
-                "notation_string": "",
+                "conditions": [""],
+                "properties": [""],
+                "follow_up_to": [""],
+                "augmented_by": [""],
+                "meter_cost": null,
+                "meter_gain": null,
                 "zones": [""],
                 "damage": null,
                 "category": "",
