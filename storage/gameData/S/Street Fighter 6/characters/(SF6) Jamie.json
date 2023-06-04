@@ -36,6 +36,8 @@
                 "augmented_by": [""],
                 "meter_cost": null,
                 "meter_gain": null,
+                "hit_count": null,
+                "ex_hit_count": null,
                 "zones": [""],
                 "damage": null,
                 "category": "",
@@ -86,7 +88,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     },
@@ -189,7 +191,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     },
@@ -277,7 +279,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     }
@@ -325,7 +327,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Kick",
                         "notation": "K"
                     }
@@ -373,7 +375,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Kick",
                         "notation": "K"
                     }
@@ -422,7 +424,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Kick",
                         "notation": "K"
                     }
@@ -481,7 +483,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Kick",
                         "notation": "K"
                     }
@@ -530,7 +532,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     },
@@ -614,7 +616,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Kick",
                         "notation": "K"
                     }
@@ -678,7 +680,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     }
@@ -742,7 +744,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     }

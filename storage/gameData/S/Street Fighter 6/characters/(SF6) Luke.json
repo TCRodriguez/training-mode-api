@@ -43,7 +43,7 @@
                 "conditions": [""],
                 "properties": [""],
                 "follow_up_to": [""],
-                "augmented_by": [""],
+                "augmented_by_move": [""],
                 "meter_cost": 2,
                 "meter_gain": null,
                 "hit_count": 1,
@@ -71,7 +71,7 @@
                 "conditions": ["After an OD Sand Blast"],
                 "properties": [""],
                 "follow_up_to": ["Sand Blast"],
-                "augmented_by": [""],
+                "augmented_by_move": [""],
                 "meter_cost": 1,
                 "meter_gain": null,
                 "hit_count": 1,
@@ -111,7 +111,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     }
@@ -119,7 +119,7 @@
                 "conditions": ["Hold the button to change effect"],
                 "properties": [""],
                 "follow_up_to": [""],
-                "augmented_by": [""],
+                "augmented_by_move": [""],
                 "meter_cost": 2,
                 "meter_gain": null,
                 "hit_count": 1,
@@ -187,7 +187,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     }
@@ -235,7 +235,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Kick",
                         "notation": "K"
                     }
@@ -339,7 +339,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     }
@@ -402,7 +402,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     }
@@ -465,7 +465,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     }
@@ -528,7 +528,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Kick",
                         "notation": "K"
                     }

@@ -18,7 +18,21 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedBigInteger('character_id')->index();
             $table->unsignedBigInteger('game_id')->index();
+
+
+
+
             // $table->string('zone')->nullable();
+            // $table->string('follow_up_to');
+
+            $table->integer('meter_cost')->nullable();
+            $table->integer('meter_gain')->nullable();
+            $table->integer('hit_count')->nullable();
+            $table->integer('ex_hit_count')->nullable();
+
+
+            
+
             $table->integer('damage')->nullable();
             $table->string('category')->nullable();
             $table->string('type')->nullable();

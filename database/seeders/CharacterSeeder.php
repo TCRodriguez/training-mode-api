@@ -120,7 +120,7 @@ class CharacterSeeder extends Seeder
                                     'insert into character_move_directional_input (character_move_id, directional_input_id, order_in_move, created_at, updated_at) values (?, ?, ?, ?, ?)',
                                     [
                                         $characterMoveId, 
-                                        $directionalInputId,
+                                        $directionalInputId === null ? 9 : $directionalInputId,
                                         $orderInMove,
                                         $now,
                                         $now

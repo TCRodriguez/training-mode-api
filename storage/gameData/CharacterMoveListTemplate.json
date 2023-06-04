@@ -18,7 +18,7 @@
                 "conditions": [""],
                 "properties": [""],
                 "follow_up_to": [""],
-                "augmented_by": [""],
+                "augmented_by_move": [""],
                 "meter_cost": null,
                 "meter_gain": null,
                 "zones": [""],
