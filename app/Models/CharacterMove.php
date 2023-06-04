@@ -61,6 +61,11 @@ class CharacterMove extends Model
     //     };
     // }
 
+    public function conditions()
+    {
+        return $this->belongsToMany(CharacterMoveCondition::class, 'character_move_character_move_condition', 'character_move_id', 'character_move_condition');
+    }
+
     public function tags()
     {
         return $this->morphToMany(Tag::class, 'taggable');

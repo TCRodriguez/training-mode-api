@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\AttackButton;
 use App\Models\Character;
 use App\Models\CharacterMove;
+use App\Models\CharacterMoveCondition;
 use App\Models\DirectionalInput;
 use App\Models\Game;
 use App\Models\GameNotation;
@@ -70,11 +71,15 @@ class CharacterSeeder extends Seeder
                     if($move->name !== '') {
                         // * Add game_id to this table
                         DB::insert(
-                            'insert into character_moves (name, character_id, game_id, damage, category, type, startup_frames, active_frames, recovery_frames, frames_on_hit, frames_on_block, frames_on_counter_hit, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                            'insert into character_moves (name, character_id, game_id, meter_cost, meter_gain, hit_count, ex_hit_count, damage, category, type, startup_frames, active_frames, recovery_frames, frames_on_hit, frames_on_block, frames_on_counter_hit, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                             [
                                 $move->name,
                                 $characterModel->id,
                                 $gameId,
+                                isset($move->meter_cost) ? $move->meter_cost : null,
+                                isset($move->meter_gain) ? $move->meter_gain : null,
+                                isset($move->hit_count) ? $move->hit_count : null,
+                                isset($move->ex_hit_count) ? $move->ex_hit_count : null,
                                 $move->damage,
                                 $move->category,
                                 $move->type,
@@ -100,17 +105,6 @@ class CharacterSeeder extends Seeder
                         $characterMoveId = $characterMoveModel->id;
 
                         foreach($move->inputs as $index => $input) {
-                            // array_push($notationString, $input->notation_string);
-                            // $directionalInputModel = null;
-                            // dd($input->group);
-                            // $group = $input->group;
-                            // var_dump($group);
-                            // echo $input->input;
-                            // echo "\n";
-                            // echo array_search($input, $move->inputs) + 1;
-                            // echo "\n";
-
-
                             $orderInMove = $index + 1;
                             if($input->group === 'directions') {
                                 $directionalInputModel = DirectionalInput::where('direction', $input->input)->pluck('id');
@@ -191,9 +185,36 @@ class CharacterSeeder extends Seeder
                                 ]
                                 );
                         }
+                        
+                        if(isset($move->conditions)) {
+                            foreach($move->conditions as $condition) {
+                                if($condition !== '') {
+                                    $characterMoveCondition = CharacterMoveCondition::firstOrNew([
+                                        'condition' => $condition,
+                                        'character_move_id' => $characterMoveId,
+                                        'game_id' => $gameId
 
+                                    ]);
+                                    
+                                    if($characterMoveCondition->id !== null) {
+                                        
+                                    }
+                                    DB::insert(
+                                        'insert into character_move_character_move_condition (character_move_id, character_move_condition_id, created_at, updated_at) values (?, ?, ?, ?)', 
+                                        [
+                                            $characterMoveId,
+                                            $characterMoveCondition->id,
+                                            $now,
+                                            $now
+                                        ]
+                                    );
+                                }
+                            }
+                        }
                     }   
                 }
+
+
             }
         }
     }
