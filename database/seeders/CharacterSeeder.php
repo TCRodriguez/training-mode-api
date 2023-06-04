@@ -126,8 +126,8 @@ class CharacterSeeder extends Seeder
                                 $attackButtonModel = AttackButton::where('name', $input->input)->pluck('id');
                                 $attackButtonId = Arr::get($attackButtonModel, 0);
                                 // dd($input);
-                                var_dump($move->name);
-                                var_dump($input);
+                                // var_dump($move->name);
+                                // var_dump($input);
                                 DB::insert(
                                     'insert into attack_button_character_move (attack_button_id, character_move_id, order_in_move, created_at, updated_at) values (?, ?, ?, ?, ?)',
                                     [
@@ -163,7 +163,7 @@ class CharacterSeeder extends Seeder
                         }
                         // var_dump($notationString);
                         foreach($move->zones as $index => $zone) {
-                            echo $zone;
+                            // echo $zone;
                             // $gameId = Arr::get($gameModel, 0);
 
                             $zoneData = DB::table('hit_zones')
@@ -189,16 +189,17 @@ class CharacterSeeder extends Seeder
                         if(isset($move->conditions)) {
                             foreach($move->conditions as $condition) {
                                 if($condition !== '') {
-                                    $characterMoveCondition = CharacterMoveCondition::firstOrNew([
+                                    $characterMoveCondition = CharacterMoveCondition::firstOrCreate([
                                         'condition' => $condition,
-                                        'character_move_id' => $characterMoveId,
+                                        // 'character_move_id' => $characterMoveId,
                                         'game_id' => $gameId
 
                                     ]);
                                     
-                                    if($characterMoveCondition->id !== null) {
+                                    // if($characterMoveCondition->id !== null) {
                                         
-                                    }
+                                    // }
+                                    // dd($characterMoveCondition);
                                     DB::insert(
                                         'insert into character_move_character_move_condition (character_move_id, character_move_condition_id, created_at, updated_at) values (?, ?, ?, ?)', 
                                         [

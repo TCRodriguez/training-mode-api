@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('character_move_conditions', function (Blueprint $table) {
             $table->id();
-            $table->string('condition')->nullable();
-            $table->unsignedBigInteger('character_move_id')->index();
+            $table->string('condition')->unique();
+            // $table->unsignedBigInteger('character_move_id')->index();
             $table->unsignedBigInteger('game_id')->index();
             $table->timestamps();
 
-            $table->foreign('character_move_id')
-                ->references('id')
-                ->on('character_moves')
-                ->onDelete('cascade');
+            // $table->foreign('character_move_id')
+            //     ->references('id')
+            //     ->on('character_moves')
+            //     ->onDelete('cascade');
 
             $table->foreign('game_id')
                 ->references('id')

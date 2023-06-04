@@ -115,7 +115,7 @@ class Tekken7CharacterSeeder extends Seeder
                             if($input->group === 'directions') {
                                 $directionalInputModel = DirectionalInput::where('direction', $input->input)->pluck('id');
                                 $directionalInputId = Arr::get($directionalInputModel, 0);
-                                var_dump($input);
+                                // var_dump($input);
                                 DB::insert(
                                     'insert into character_move_directional_input (character_move_id, directional_input_id, order_in_move, created_at, updated_at) values (?, ?, ?, ?, ?)',
                                     [
