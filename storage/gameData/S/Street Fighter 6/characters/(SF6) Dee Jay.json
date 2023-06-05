@@ -1625,57 +1625,6 @@
                 "frames_on_hit": null,
                 "frames_on_block": null,
                 "frames_on_counter_hit": null
-            },
-            {
-                "name": "Flip Throw",
-                "inputs": [
-                    {
-                        "group": "directions",
-                        "input": "Back",
-                        "notation": "B"
-                    },
-                    {
-                        "group": "notations",
-                        "input": "Press Simultaneously",
-                        "notation": "+"
-                    },
-                    {
-                        "group": "attacks",
-                        "input": "Light Punch",
-                        "notation": "LP"
-                    },
-                    {
-                        "group": "notations",
-                        "input": "Press Simultaneously",
-                        "notation": "+"
-                    },
-                    {
-                        "group": "attacks",
-                        "input": "Light Kick",
-                        "notation": "LK"
-                    }
-                ],
-                "conditions": ["When near opponent"],
-                "properties": [""],
-                "minimum_required_resource": null,
-                "resource_gain": null,
-                "resource_cost": null,
-                "follow_up_to": [""],
-                "augmented_by_move": [""],
-                "meter_cost": null,
-                "meter_gain": null,
-                "hit_count": 1,
-                "ex_hit_count": null,
-                "zones": [""],
-                "damage": null,
-                "category": "",
-                "type": "Throws",
-                "startup_frames": null,
-                "active_frames": null,
-                "recovery_frames": null,
-                "frames_on_hit": null,
-                "frames_on_block": null,
-                "frames_on_counter_hit": null
             }
         ] 
     }

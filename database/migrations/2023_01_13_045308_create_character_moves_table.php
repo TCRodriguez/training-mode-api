@@ -25,6 +25,10 @@ return new class extends Migration
             // $table->string('zone')->nullable();
             // $table->string('follow_up_to');
 
+            $table->integer('resource_gain')->nullable();
+            $table->integer('resource_cost')->nullable();
+            
+
             $table->integer('meter_cost')->nullable();
             $table->integer('meter_gain')->nullable();
             $table->integer('hit_count')->nullable();

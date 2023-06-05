@@ -71,7 +71,7 @@ class CharacterSeeder extends Seeder
                     if($move->name !== '') {
                         // * Add game_id to this table
                         DB::insert(
-                            'insert into character_moves (name, character_id, game_id, meter_cost, meter_gain, hit_count, ex_hit_count, damage, category, type, startup_frames, active_frames, recovery_frames, frames_on_hit, frames_on_block, frames_on_counter_hit, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                            'insert into character_moves (name, character_id, game_id, resource_gain, resource_cost, meter_cost, meter_gain, hit_count, ex_hit_count, damage, category, type, startup_frames, active_frames, recovery_frames, frames_on_hit, frames_on_block, frames_on_counter_hit, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                             [
                                 $move->name,
                                 $characterModel->id,
@@ -175,17 +175,20 @@ class CharacterSeeder extends Seeder
 
                             $zoneId = Arr::get($zoneData, 0);
                             $orderInZoneList = $index + 1;
-                            DB::insert(
-                                'insert into character_move_hit_zone (character_move_id, hit_zone_id, order_in_zone_list, created_at, updated_at) values (?, ?, ?, ?, ?)',
-                            
-                                [
-                                    $characterMoveId,
-                                    $zoneId === null ? 4 : $zoneId,
-                                    $orderInZoneList,
-                                    $now,
-                                    $now
-                                ]
+                            // dd($move->name);
+                            if($zone !== '') {
+                                DB::insert(
+                                    'insert into character_move_hit_zone (character_move_id, hit_zone_id, order_in_zone_list, created_at, updated_at) values (?, ?, ?, ?, ?)',
+                                
+                                    [
+                                        $characterMoveId,
+                                        $zoneId === null ? 4 : $zoneId,
+                                        $orderInZoneList,
+                                        $now,
+                                        $now
+                                    ]
                                 );
+                            }
                         }
                         
                         if(isset($move->conditions)) {
