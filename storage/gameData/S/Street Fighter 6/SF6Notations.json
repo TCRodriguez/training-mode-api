@@ -15,9 +15,11 @@
     {"text": "P", "description": "Any Punch", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["Any Punch"], "group": "other", "icon": ""},
     {"text": "PP", "description": "Press Two Punches Together", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["Any Two Punches"], "group": "other", "icon": ""},
     {"text": "2P", "description": "Press Two Punches Together", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["Any Two Punches"], "group": "other", "icon": ""},
+    {"text": "PPP", "description": "Press All Punches Together", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["All Punches"], "group": "other", "icon": ""},
     {"text": "K", "description": "Any Kick", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["Any Kick"], "group": "attacks", "icon": ""},
     {"text": "KK", "description": "Press Two Kicks Together", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["Any Two Kicks"], "group": "other", "icon": ""},
     {"text": "2K", "description": "Press Two Kicks Together", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["Any Two Kicks"], "group": "other", "icon": ""},
+    {"text": "3K", "description": "Press All Kicks Together", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["All Kicks"], "group": "other", "icon": ""},
     {"text": "No Input", "description": "No Input", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["Any Two Kicks"], "group": "other", "icon": ""},
 
     {"text": "U", "description": "Up", "game": "Street Fighter 6", "directional_inputs": ["Up"], "attack_buttons": [""], "group": "directions", "icon": ""},
