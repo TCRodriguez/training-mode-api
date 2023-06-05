@@ -18,6 +18,7 @@
     {"text": "K", "description": "Any Kick", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["Any Kick"], "group": "attacks", "icon": ""},
     {"text": "KK", "description": "Press Two Kicks Together", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["Any Two Kicks"], "group": "other", "icon": ""},
     {"text": "2K", "description": "Press Two Kicks Together", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["Any Two Kicks"], "group": "other", "icon": ""},
+    {"text": "No Input", "description": "No Input", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": ["Any Two Kicks"], "group": "other", "icon": ""},
 
     {"text": "U", "description": "Up", "game": "Street Fighter 6", "directional_inputs": ["Up"], "attack_buttons": [""], "group": "directions", "icon": ""},
     {"text": "[U]", "description": "Up (hold)", "game": "Street Fighter 6", "directional_inputs": ["Up"], "attack_buttons": [""], "group": "directions", "icon": ""},
