@@ -76,6 +76,8 @@ class CharacterSeeder extends Seeder
                                 $move->name,
                                 $characterModel->id,
                                 $gameId,
+                                isset($move->resource_gain) ? $move->resource_gain : null,
+                                isset($move->resource_cost) ? $move->resource_cost : null,
                                 isset($move->meter_cost) ? $move->meter_cost : null,
                                 isset($move->meter_gain) ? $move->meter_gain : null,
                                 isset($move->hit_count) ? $move->hit_count : null,

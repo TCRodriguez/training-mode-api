@@ -30,7 +30,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Kick",
                         "notation": "K"
                     }
@@ -81,7 +81,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Light Punch",
                         "notation": "LP"
                     }
@@ -132,7 +132,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Medium Kick",
                         "notation": "MK"
                     }
@@ -183,7 +183,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Heavy Kick",
                         "notation": "HK"
                     }
@@ -234,7 +234,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     }
@@ -285,7 +285,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Kick",
                         "notation": "K"
                     }
@@ -382,7 +382,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Kick",
                         "notation": "K"
                     }
@@ -448,7 +448,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     }
@@ -514,7 +514,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Punch",
                         "notation": "P"
                     }
@@ -580,7 +580,7 @@
                         "notation": "+"
                     },
                     {
-                        "group": "attack",
+                        "group": "attacks",
                         "input": "Any Kick",
                         "notation": "K"
                     }
