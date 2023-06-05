@@ -24,6 +24,8 @@
                 "augmented_by_move": [""],
                 "meter_cost": null,
                 "meter_gain": null,
+                "hit_count": null,
+                "ex_hit_count": null,
                 "zones": [""],
                 "damage": null,
                 "category": "",
