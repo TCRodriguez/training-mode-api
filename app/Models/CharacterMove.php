@@ -66,6 +66,16 @@ class CharacterMove extends Model
         return $this->belongsToMany(CharacterMoveCondition::class, 'character_move_character_move_condition', 'character_move_id', 'character_move_condition');
     }
 
+    public function followsUp()
+    {
+        return $this->belongsToMany(CharacterMove::class, 'follow_up_id');
+    }
+
+    public function followUps()
+    {
+        return $this->hasMany(CharacterMove::class, 'follow_up_id');
+    }
+
     public function tags()
     {
         return $this->morphToMany(Tag::class, 'taggable');

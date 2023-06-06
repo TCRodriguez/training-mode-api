@@ -24,6 +24,7 @@ return new class extends Migration
 
             // $table->string('zone')->nullable();
             // $table->string('follow_up_to');
+            $table->unsignedBigInteger('follow_up_id')->nullable();
 
             $table->integer('resource_gain')->nullable();
             $table->integer('resource_cost')->nullable();
@@ -57,6 +58,10 @@ return new class extends Migration
                 ->references('id')
                 ->on('games')
                 ->onDelete('cascade');
+
+            $table->foreign('follow_up_id')
+                ->references('id')
+                ->on('character_moves');
         });
     }
 

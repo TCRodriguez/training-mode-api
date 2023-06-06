@@ -217,6 +217,22 @@ class CharacterSeeder extends Seeder
                                 }
                             }
                         }
+
+                        // Seeds the "self-referential" id for a character move that has a follow up character move
+                        // if(isset($move->follow_up_to)) {
+                        //     foreach($move->follow_up_to as $parent) {
+
+                        //         if($parent !== '') {
+                        //             var_dump($parent);
+                        //             $parentCharacterMove = CharacterMove::where('name', $parent)->firstOrFail();
+                        //             $childCharacterMove = CharacterMove::where('name', $move->name)->firstOrFail();
+
+                        //             $childCharacterMove->followsUp()->associate($parentCharacterMove);
+                        //             $childCharacterMove->save();
+                                    
+                        //         }
+                        //     }
+                        // }
                     }   
                 }
 
