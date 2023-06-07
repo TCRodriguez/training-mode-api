@@ -200,11 +200,7 @@ class CharacterSeeder extends Seeder
                                         'game_id' => $gameId
 
                                     ]);
-                                    
-                                    // if($characterMoveCondition->id !== null) {
-                                        
-                                    // }
-                                    // dd($characterMoveCondition);
+
                                     DB::insert(
                                         'insert into character_move_character_move_condition (character_move_id, character_move_condition_id, created_at, updated_at) values (?, ?, ?, ?)', 
                                         [
@@ -217,23 +213,28 @@ class CharacterSeeder extends Seeder
                                 }
                             }
                         }
-
-                        // Seeds the "self-referential" id for a character move that has a follow up character move
-                        // if(isset($move->follow_up_to)) {
-                        //     foreach($move->follow_up_to as $parent) {
-
-                        //         if($parent !== '') {
-                        //             var_dump($parent);
-                        //             $parentCharacterMove = CharacterMove::where('name', $parent)->firstOrFail();
-                        //             $childCharacterMove = CharacterMove::where('name', $move->name)->firstOrFail();
-
-                        //             $childCharacterMove->followsUp()->associate($parentCharacterMove);
-                        //             $childCharacterMove->save();
-                                    
-                        //         }
-                        //     }
-                        // }
                     }   
+                }
+
+                // Doing this as it's own loop since follow ups depend on all moves existing before creating the associations
+                foreach($character->moves as $move) {
+                    if(isset($move->follow_up_to)) {
+                        foreach($move->follow_up_to as $parentName) {
+
+                            if($parentName !== '') {
+                                var_dump($parentName);
+                                $parentCharacterMove = CharacterMove::where('name', $parentName)->firstOrFail();
+                                // var_dump($parentCharacterMove->name);
+                                $childCharacterMove = CharacterMove::where('name', $move->name)->firstOrFail();
+
+                                // $childCharacterMove->followUps()->associate($parentCharacterMove);
+                                // $childCharacterMove->save();
+                                $parentCharacterMove->followUps()->attach($childCharacterMove->id);
+                                $parentCharacterMove->save();
+                                
+                            }
+                        }
+                    }
                 }
 
 

@@ -73,7 +73,7 @@ class CharacterMove extends Model
 
     public function followUps()
     {
-        return $this->hasMany(CharacterMove::class, 'follow_up_id');
+        return $this->belongsToMany(CharacterMove::class, 'character_move_follow_ups', 'character_move_id', 'follow_up_move_id');
     }
 
     public function tags()

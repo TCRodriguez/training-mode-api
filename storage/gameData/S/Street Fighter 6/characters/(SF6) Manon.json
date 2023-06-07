@@ -224,7 +224,7 @@
                 "conditions": ["During Reversé"],
                 "properties": [""],
                 "minimum_required_resource": null,
-                "follow_up_to": ["Reversé"],
+                "follow_up_to": ["Renversé"],
                 "augmented_by_move": [""],
                 "meter_cost": null,
                 "meter_gain": null,
