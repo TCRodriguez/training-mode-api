@@ -77,8 +77,8 @@
                     },
                     {
                         "group": "attacks",
-                        "input": "",
-                        "notation": ""
+                        "input": "Any Kick",
+                        "notation": "K"
                     }
                 ],
                 "conditions": [""],
