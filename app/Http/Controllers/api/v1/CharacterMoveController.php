@@ -24,6 +24,8 @@ class CharacterMoveController extends Controller
             'attackButtons',
             'notations',
             'zones',
+            'followUps',
+            'followsUp'
         ])
         ->with(['tags' => function ($query) {
             $query->where('user_id', Auth::id());

@@ -20,7 +20,7 @@
             },
             {
                 "game": "Street Fighter 6",
-                "icon_file_name": "sf6-ubp.svg"
+                "icon_file_name": "sf6-ubh.svg"
             }
         ]
     },
@@ -44,7 +44,7 @@
             },
             {
                 "game": "Street Fighter 6",
-                "icon_file_name": "sf6-up.svg"
+                "icon_file_name": "sf6-uh.svg"
             }
         ]
     },
@@ -68,7 +68,7 @@
             },
             {
                 "game": "Street Fighter 6",
-                "icon_file_name": "sf6-ufp.svg"
+                "icon_file_name": "sf6-ufh.svg"
             }
         ]
     },
@@ -92,7 +92,7 @@
             },
             {
                 "game": "Street Fighter 6",
-                "icon_file_name": "sf6-bp.svg"
+                "icon_file_name": "sf6-bh.svg"
             }
         ]
     },
@@ -128,7 +128,7 @@
             },
             {
                 "game": "Street Fighter 6",
-                "icon_file_name": "sf6-fp.svg"
+                "icon_file_name": "sf6-fh.svg"
             }
         ]
     },
@@ -152,7 +152,7 @@
             },
             {
                 "game": "Street Fighter 6",
-                "icon_file_name": "sf6-dbp.svg"
+                "icon_file_name": "sf6-dbh.svg"
             }
         ]
     },
@@ -176,7 +176,7 @@
             },
             {
                 "game": "Street Fighter 6",
-                "icon_file_name": "sf6-dp.svg"
+                "icon_file_name": "sf6-dh.svg"
             }
         ]
     },
@@ -200,7 +200,7 @@
             },
             {
                 "game": "Street Fighter 6",
-                "icon_file_name": "sf6-dfp.svg"
+                "icon_file_name": "sf6-dfh.svg"
             }
         ]
     }
