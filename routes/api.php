@@ -92,11 +92,18 @@ Route::middleware('auth:sanctum')->group(function (){
         // Route::get('/directional-inputs', [DirectionalInputController::class, 'index']);
         // Route::get('/games/{game}/attack-buttons', [AttackButtonController::class, 'index']);
 
-        // Notes
-        Route::get('/games/{game}/notes', [NoteController::class, 'index']);
+        // Game Notes
+        Route::get('/games/{game}/notes', [NoteController::class, 'gameNoteIndex']);
+        Route::post('/games/{game}/notes', [GameController::class, 'addNote']);
+        Route::put('/games/{game}/notes/{note}', [NoteController::class, 'updateGameNote']);
+        Route::delete('/games/{game}/notes/{note}', [NoteController::class, 'deleteGameNote']);
+
+
+
+        // Character Notes
         Route::post('/games/{game}/characters/{character}/notes', [CharacterController::class, 'addNote']);
-        Route::get('/games/{game}/characters/{character}/notes', [NoteController::class, 'index']);
-        Route::put('/games/{game}/characters/{character}/notes/{note}', [NoteController::class, 'update']);
-        Route::delete('/games/{game}/characters/{character}/notes/{note}', [NoteController::class, 'delete']);
+        Route::get('/games/{game}/characters/{character}/notes', [NoteController::class, 'characterNoteIndex']);
+        Route::put('/games/{game}/characters/{character}/notes/{note}', [NoteController::class, 'updateCharacterNote']);
+        Route::delete('/games/{game}/characters/{character}/notes/{note}', [NoteController::class, 'deleteCharacterNote']);
     });
 });

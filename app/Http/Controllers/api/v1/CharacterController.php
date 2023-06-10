@@ -48,6 +48,7 @@ class CharacterController extends Controller
     public function addNote(Request $request, $gameId, $characterId)
     {
         // return $request;
+
         // return $characterId;
         // $note = new Note(['body' => $request->body]);
 

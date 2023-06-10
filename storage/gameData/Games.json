@@ -1,6 +1,4 @@
 [
-    {"title": "Tekken 7", "abbreviation": "t7"},
     {"title": "Street Fighter 6", "abbreviation": "sf6"},
-    {"title": "King of Fighters XV", "abbreviation": "kof15"},
-    {"title": "Guilty Gear Strive", "abbreviation": "ggst"}
+    {"title": "Tekken 7", "abbreviation": "t7"}
 ]
