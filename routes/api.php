@@ -56,6 +56,13 @@ Route::prefix('v1')->group(function () {
     Route::get('/directional-inputs', [DirectionalInputController::class, 'index']);
     Route::get('/games/{game}/attack-buttons', [AttackButtonController::class, 'index']);
 
+    // Moves
+    Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index']);
+    // Route::get('/games/{game}/tags', )
+
+    // Characters
+    Route::get('/games/{game}/characters', [CharacterController::class, 'index']);
+    Route::get('/games/{game}/characters/{character}', [CharacterController::class, 'show']);
 
 
 });
@@ -64,13 +71,13 @@ Route::prefix('v1')->group(function () {
 Route::middleware('auth:sanctum')->group(function (){
     Route::prefix('v1')->group(function () {
 
-        // Moves
-        Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index']);
-        // Route::get('/games/{game}/tags', )
+        // // Moves
+        // Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index']);
+        // // Route::get('/games/{game}/tags', )
 
-        // Characters
-        Route::get('/games/{game}/characters', [CharacterController::class, 'index']);
-        Route::get('/games/{game}/characters/{character}', [CharacterController::class, 'show']);
+        // // Characters
+        // Route::get('/games/{game}/characters', [CharacterController::class, 'index']);
+        // Route::get('/games/{game}/characters/{character}', [CharacterController::class, 'show']);
 
         //Combos
         Route::get('/games/{game}/characters/{character}/character-combos', [CharacterComboController::class, 'index']);

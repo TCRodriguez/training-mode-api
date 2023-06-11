@@ -12,7 +12,9 @@ class GameController extends Controller
 {
     public function index(Request $request)
     {
-        $games = Game::with('notes')->get();
+        $games = Game::with(['notes' => function ($query) {
+            $query->where('user_id', Auth::id());
+        }])->get();
 
         return $games;
     }
