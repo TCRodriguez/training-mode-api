@@ -23,18 +23,6 @@ class CharacterController extends Controller
     
     public function show(Request $request, $gameId, $characterId)
     {
-        // return Auth::user();
-        // $character = Character::where('game_id', $gameId)
-        //     ->where('id', $characterId)
-        //     ->with('notations')
-        //     // ? How to include only the notes that the authenticated user is allowed to see?
-        //     ->with('notes')
-        //     ->get();
-        // return $request;
-        // return $user;
-        // $user = $request->user();
-        // return $user;
-        // return Auth::id();
         $character = Character::where('game_id', $gameId)
             ->where('id', $characterId)
             ->with('notations')
@@ -47,18 +35,9 @@ class CharacterController extends Controller
 
     public function addNote(Request $request, $gameId, $characterId)
     {
-        // return $request;
-
-        // return $characterId;
-        // $note = new Note(['body' => $request->body]);
-
-        // $character = Character::where('id', $characterId)->firstOrFail();
         $character = Character::find($characterId);
-        // dd($character);
-        // return $character;
 
         $note = $character->notes()->create([
-            // 'title' => $request->title,
             'title' => isset($request->title) ? $request->title : 'Untitled Note',
             'body' => $request->body,
             'user_id' => Auth::id(),
@@ -67,8 +46,6 @@ class CharacterController extends Controller
 
         $character = Character::with('notes')->find($characterId);
 
-        // $character->notes()->save($note);
-        // $
         return $character;
     }
 }
