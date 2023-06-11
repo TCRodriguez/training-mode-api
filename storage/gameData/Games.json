@@ -1,4 +1,4 @@
 [
-    {"title": "Street Fighter 6", "abbreviation": "sf6"},
-    {"title": "Tekken 7", "abbreviation": "t7"}
+    {"title": "Street Fighter 6", "abbreviation": "sf6", "buttons": "6"},
+    {"title": "Tekken 7", "abbreviation": "t7", "buttons": "4"}
 ]

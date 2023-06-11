@@ -28,6 +28,7 @@ class CharacterComboController extends Controller
         $characterCombos = CharacterCombo::where('user_id', $request->user()->id)->where('character_id', $characterId)
             ->with('directionalInputs')
             ->with('attackButtons')
+            ->with('notations')
             ->with('tags')
             ->get();
         
@@ -122,6 +123,13 @@ class CharacterComboController extends Controller
 
     public function update(Request $request, $gameId, $characterId, $comboId)
     {
+        // $testArray = [];
+        // foreach($request->inputs as $index => $input) {
+        //     if($input['category'] === 'directional-inputs') {
+        //         array_push($testArray, $input['category']);
+        //     }
+        // }
+        // return $testArray;
         // return 'PUT Character Combo HIT';
         $characterCombo = CharacterCombo::with('directionalInputs')
             ->with('attackButtons')

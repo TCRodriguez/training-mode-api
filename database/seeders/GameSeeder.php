@@ -25,7 +25,8 @@ class GameSeeder extends Seeder
         foreach($games as $game) {
             Game::create([
                 "title" => $game->title,
-                "abbreviation" => $game->abbreviation
+                "abbreviation" => $game->abbreviation,
+                "buttons" => $game->buttons
             ]);
         }
     }
