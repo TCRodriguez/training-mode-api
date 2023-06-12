@@ -36,18 +36,11 @@ class DirectionalInputSeeder extends Seeder
                 $gameModel = Game::where('title', $icon->game)->firstOrFail();
                 $gameId = $gameModel->id;
 
-
-
                 if($directionalInputId !== null) {
                     DB::insert('insert into directional_input_icons (icon_file_name, directional_input_id, game_id, created_at, updated_at) values (?, ?, ?, ?, ?)',
                      [$icon->icon_file_name, $directionalInputId, $gameId, $now, $now]);
                 }
             }
-            // for ($i=0; $i < count($directionalInputs); $i++) { 
-            //     var_dump($directionalInputs[$i]->direction);
-            // }
         }
-
-
     }
 }

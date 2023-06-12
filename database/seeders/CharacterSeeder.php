@@ -25,9 +25,6 @@ class CharacterSeeder extends Seeder
     public function run()
     {
         DB::table('characters')->delete();
-        // $json = File::get("storage/gameData/T/Tekken 7/Tekken7Characters.json");
-        // $characterDataFilesPath = 'storage/gameData/T/Tekken 7/characters';
-        // $characterDataFiles = array_diff(scandir($characterDataFilesPath), array('..', '.'));
         $characterDataFiles = glob('storage/gameData/*/*/characters/*');
         foreach($characterDataFiles as $file) {
             $json = File::get($file);
@@ -48,8 +45,6 @@ class CharacterSeeder extends Seeder
                 
                 $characterNotations = $character->notations;
                 foreach($characterNotations as $notation => $description) {
-
-                    // DB::insert('insert into game_notations (notation, description, game_id, character_id, created_at, updated_at) values (?, ?, ?, ?, ?, ?)', [$notation, $description, $gameId, $characterModel->id, $now, $now]);
                     DB::insert(
                         'insert into game_notations (notation, description, game_id, character_id, notations_group, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?)', 
                         [
@@ -62,12 +57,10 @@ class CharacterSeeder extends Seeder
                             $now
                         ]
                     );
-    
                 }
 
                 $characterModel = Character::where('name', $character->name)->firstOrFail();
                 foreach($character->moves as $move) {
-                    // var_dump($character);
                     if($move->name !== '') {
                         // * Add game_id to this table
                         DB::insert(
@@ -103,7 +96,6 @@ class CharacterSeeder extends Seeder
                         $characterMoveModel = CharacterMove::where('name', $move->name)
                                                             ->where('character_id', $characterModel->id)
                                                             ->firstOrFail();
-                        // dd($characterMoveModel->id);
                         $characterMoveId = $characterMoveModel->id;
 
                         foreach($move->inputs as $index => $input) {
@@ -111,7 +103,6 @@ class CharacterSeeder extends Seeder
                             if($input->group === 'directions') {
                                 $directionalInputModel = DirectionalInput::where('direction', $input->input)->pluck('id');
                                 $directionalInputId = Arr::get($directionalInputModel, 0);
-                                // var_dump($input);
                                 DB::insert(
                                     'insert into character_move_directional_input (character_move_id, directional_input_id, order_in_move, created_at, updated_at) values (?, ?, ?, ?, ?)',
                                     [
@@ -127,9 +118,6 @@ class CharacterSeeder extends Seeder
                             if($input->group === 'attacks') {
                                 $attackButtonModel = AttackButton::where('name', $input->input)->pluck('id');
                                 $attackButtonId = Arr::get($attackButtonModel, 0);
-                                // dd($input);
-                                // var_dump($move->name);
-                                // var_dump($input);
                                 DB::insert(
                                     'insert into attack_button_character_move (attack_button_id, character_move_id, order_in_move, created_at, updated_at) values (?, ?, ?, ?, ?)',
                                     [
@@ -143,14 +131,10 @@ class CharacterSeeder extends Seeder
                             };
                             
                             if($input->group === 'notations') {
-                                // dd($input);
                                 $gameNotationModel = GameNotation::where('game_id', $gameId)
                                     ->where('description', $input->input)
                                     ->pluck('id');
-                                // dd($gameNotationModel);
                                 $gameNotationId = Arr::get($gameNotationModel, 0);
-                                // dd($gameNotationId);
-                                // var_dump($input);
                                 DB::insert(
                                     'insert into character_move_game_notation (character_move_id, game_notation_id, order_in_move, created_at, updated_at) values (?, ?, ?, ?, ?)',
                                     [
@@ -163,11 +147,7 @@ class CharacterSeeder extends Seeder
                                 );
                             }
                         }
-                        // var_dump($notationString);
                         foreach($move->zones as $index => $zone) {
-                            // echo $zone;
-                            // $gameId = Arr::get($gameModel, 0);
-
                             $zoneData = DB::table('hit_zones')
                                     ->where('zone', $zone)
                                     ->get()
@@ -175,11 +155,9 @@ class CharacterSeeder extends Seeder
 
                             $zoneId = Arr::get($zoneData, 0);
                             $orderInZoneList = $index + 1;
-                            // dd($move->name);
                             if($zone !== '') {
                                 DB::insert(
                                     'insert into character_move_hit_zone (character_move_id, hit_zone_id, order_in_zone_list, created_at, updated_at) values (?, ?, ?, ?, ?)',
-                                
                                     [
                                         $characterMoveId,
                                         $zoneId === null ? 4 : $zoneId,
@@ -196,9 +174,7 @@ class CharacterSeeder extends Seeder
                                 if($condition !== '') {
                                     $characterMoveCondition = CharacterMoveCondition::firstOrCreate([
                                         'condition' => $condition,
-                                        // 'character_move_id' => $characterMoveId,
                                         'game_id' => $gameId
-
                                     ]);
 
                                     DB::insert(
@@ -224,20 +200,14 @@ class CharacterSeeder extends Seeder
                             if($parentName !== '') {
                                 var_dump($parentName);
                                 $parentCharacterMove = CharacterMove::where('name', $parentName)->firstOrFail();
-                                // var_dump($parentCharacterMove->name);
                                 $childCharacterMove = CharacterMove::where('name', $move->name)->firstOrFail();
 
-                                // $childCharacterMove->followUps()->associate($parentCharacterMove);
-                                // $childCharacterMove->save();
                                 $parentCharacterMove->followUps()->attach($childCharacterMove->id);
                                 $parentCharacterMove->save();
-                                
                             }
                         }
                     }
                 }
-
-
             }
         }
     }

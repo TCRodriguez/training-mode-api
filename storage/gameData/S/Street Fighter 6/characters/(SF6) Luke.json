@@ -30,11 +30,6 @@
                         "notation": "+"
                     },
                     {
-                        "group": "notations",
-                        "input": "Press Simultaneously",
-                        "notation": "+"
-                    },
-                    {
                         "group": "attacks",
                         "input": "Any Punch",
                         "notation": "AP"

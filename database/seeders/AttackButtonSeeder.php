@@ -23,7 +23,6 @@ class AttackButtonSeeder extends Seeder
 
         $attackButtonFiles = glob('storage/gameData/*/*/*AttackButtons*');
 
-        // $attackButtons = json_decode($);
         foreach($attackButtonFiles as $file) {
             $json = File::get($file);
             $attackButtons = json_decode($json);
