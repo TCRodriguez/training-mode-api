@@ -20,13 +20,6 @@ class TagSeeder extends Seeder
     public function run()
     {
         DB::table('tags')->delete();
-        // $tags = ["tag1", "tag2", "tag3"];
-        // foreach($tags as $tag) {
-        //     Tag::create([
-        //         "name" => $tag
-        //     ]);
-        // }
-        // * add json stuff here
         $json = File::get("storage/gameData/Tags.json");
         $tags = json_decode($json);
         foreach($tags as $tag) {

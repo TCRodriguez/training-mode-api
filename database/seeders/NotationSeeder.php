@@ -21,11 +21,7 @@ class NotationSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('game_notations')->delete();
-        // $json = File::get("storage/gameData/T/Tekken 7/Tekken7Notations.json");
         $notationFiles = glob('storage/gameData/*/*/*Notations*');
-        // $gameNotations = json_decode($json);
-
         foreach($notationFiles as $file) {
             $json = File::get($file);
             $gameNotations = json_decode($json);
@@ -43,10 +39,8 @@ class NotationSeeder extends Seeder
                 ]);
 
                 foreach($notation->directional_inputs as $directionalInput) {
-                    // echo $directionalInput;
                     $directionalInputModel = DirectionalInput::where('direction', $directionalInput)->first();
                     $directionalInputId = $directionalInputModel !== null ? $directionalInputModel->id : null;
-                    // echo $directionalInputModel;
                     
                     if($directionalInputId !== null) {
                         $now = now();
@@ -64,22 +58,6 @@ class NotationSeeder extends Seeder
                     }
                 }
             }
-
-                // DB::table('directional_input_game_notation')->insert([
-                //     'directional_input_id' => $gameNotation->directional_inputs
-                // ])
-
-
-            //     $attackButtonName = implode(" + ", $notation->attack_buttons);
-            //     $attackButtonModel = AttackButton::where('name', $attackButtonName)->first();
-            //     $attackButtonId = $attackButtonModel !== null ? $attackButtonModel->id : null;
-            // // var_dump($attackButton);
-            //     if($attackButtonId !== null) {
-            //         $now = now();
-            //         DB::insert('insert into attack_button_game_notation (attack_button_id, game_notation_id, created_at, updated_at) values (?, ?, ?, ?)', [$attackButtonId, $gameNotationModel->id, $now, $now]);
-            //     }
-                
         }
-
     }
 }
