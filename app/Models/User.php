@@ -46,7 +46,13 @@ class User extends Authenticatable
     //     return $this->belongsToMany(Game::class);
     // }
 
-    public function combos() {
+    public function combos()
+    {
         return $this->hasMany(Combo::class);
+    }
+
+    public function tags()
+    {
+        return $this->hasMany(Tag::class);
     }
 }

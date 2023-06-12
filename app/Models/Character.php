@@ -21,10 +21,6 @@ class Character extends Model
         return $this->hasMany(Move::class);
     }
 
-    /**
-     * ? Is this possible to implement even when not all characters have their own specific notations?
-     * ? Does including this Eloqent relationship break if some characters don't have them?
-     */
     public function notations()
     {
         return $this->hasMany(GameNotation::class);
