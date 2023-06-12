@@ -108,6 +108,18 @@
             }
         ]
     },
+    {"direction": "Neutral (hold)", "numpad_notation": "5", 
+        "icon": [
+            {
+                "game": "Tekken 7",
+                "icon_file_name": "t7-n.svg"
+            },
+            {
+                "game": "Street Fighter 6",
+                "icon_file_name": "sf6-n.svg"
+            }
+        ]
+    },
     {"direction": "Forward", "numpad_notation": "6", 
         "icon": [
             {

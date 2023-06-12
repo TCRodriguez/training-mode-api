@@ -16,16 +16,11 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-      //  return 'POST Users endpoint HIT';
-      // return $request;
       $user = User::create([
-         // 'username' => $request->input('username'),
          'username' => $request->username,
-         // 'email' => $request->input('email'),
          'email' => $request->email,
          'password' => Hash::make($request->password),
       ]);
-   //   return new TrainerResource($trainer);
       return $user;
     }
 

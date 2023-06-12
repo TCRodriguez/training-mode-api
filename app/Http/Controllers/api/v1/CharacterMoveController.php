@@ -13,33 +13,39 @@ class CharacterMoveController extends Controller
 {
     public function index(Request $request, $gameId, $characterId)
     {
-        // return 'Move index';
-        // $characterMoves = CharacterMove::where('character_id', $characterId)
-        // ->with('directionalInputs')
-        // ->with('notations')
-        // ->with('attackButtons')
-        // ->get();
         $characterMoves = CharacterMove::with([
             'directionalInputs',
             'attackButtons',
             'notations',
-            'zones',
             'followUps',
-            'followsUp'
+            'followsUp',
         ])
-        ->with(['tags' => function ($query) {
-            $query->where('user_id', Auth::id());
-        }])
-        ->where('character_id', $characterId)
-        ->where('game_id', $gameId)
-        ->get();
+            ->with(['tags' => function ($query) use ($request) {
+                $query->where('user_id', $request->user()->id);
+            }])
+            ->where('character_id', $characterId)
+            ->get();
+
+        return $characterMoves;
+    }
+
+    public function guestCharacterMoveIndex(Request $request, $gameId, $characterId)
+    {
+        $characterMoves = CharacterMove::with([
+            'directionalInputs',
+            'attackButtons',
+            'notations',
+            'followUps',
+            'followsUp',
+        ])
+            ->where('character_id', $characterId)
+            ->get();
 
         return $characterMoves;
     }
 
     public function addCharacterMoveTag(Request $request, $gameId, $characterId, $characterMoveId)
     {
-        // return $request;
         $characterMoveTags = $request->tags;
 
         $characterMove = CharacterMove::where('id', $characterMoveId)->firstOrFail();
@@ -53,26 +59,12 @@ class CharacterMoveController extends Controller
                         ->firstOrFail();
 
         return $characterMove;
-
     }
     
     public function removeCharacterMoveTag(Request $request, $gameId, $characterId, $characterMoveId, $tagId)
     {
-        // return $request;
-        // $characterMoveTags = $request->tags;
-
-        // $characterMove = CharacterMove::where('id', $characterMoveId)->firstOrFail();
-
-        // Tagger::untagCharacterMove($gameId, $characterMove, $characterMoveTags);
-
-        // $characterMove = CharacterMove::where('id', $characterMoveId)
-        //                 ->with('tags')
-        //                 ->firstOrFail();
-
-        // return $characterMove;
         $tag = Tag::where('id', $tagId)->firstOrFail();
 
-        // dd($tag);
         $characterMove = CharacterMove::where('id', $characterMoveId)->firstOrFail();
         Tagger::untagCharacterMove($gameId, $characterMove, array($tag->name));
 
@@ -81,6 +73,5 @@ class CharacterMoveController extends Controller
             ->firstOrFail();
 
         return $characterMove;
-
     }
 }

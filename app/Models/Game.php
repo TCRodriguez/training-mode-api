@@ -11,11 +11,6 @@ class Game extends Model
 
     protected $guarded = [];
 
-    // public function user()
-    // {
-    //     return $this->belongsToMany(User::class);
-    // }
-
     public function characters()
     {
         return $this->hasMany(Character::class);
@@ -34,5 +29,10 @@ class Game extends Model
     public function notations()
     {
         return $this->hasMany(GameNotation::class);
+    }
+
+    public function notes()
+    {
+        return $this->morphMany(Note::class, 'notable');
     }
 }
