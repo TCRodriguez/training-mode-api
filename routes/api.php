@@ -13,6 +13,7 @@ use App\Http\Controllers\api\v1\LoginController;
 use App\Http\Controllers\api\v1\NoteController;
 use App\Http\Controllers\api\v1\TagController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,19 +48,34 @@ Route::prefix('v1')->group(function () {
     Route::get('/directional-inputs', [DirectionalInputController::class, 'index']);
     Route::get('/games/{game}/attack-buttons', [AttackButtonController::class, 'index']);
 
-    // Moves
-    Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index']);
-
     // Characters
     Route::get('/games/{game}/characters', [CharacterController::class, 'index']);
     Route::get('/games/{game}/characters/{character}', [CharacterController::class, 'show']);
 
+    // Moves
+    Route::get('/games/{game}/characters/{character}/moves/guest', [CharacterMoveController::class, 'guestCharacterMoveIndex']);
+
 
 });
+
+// Route::prefix('v1')->group(function () {
+//     // Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index'])->name('character_moves')->middleware(['guest.access', 'auth:sanctum']);
+//     Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index'])->name('character_moves')->middleware(['guest.access']);
+// });
 
 
 Route::middleware('auth:sanctum')->group(function (){
     Route::prefix('v1')->group(function () {
+
+        // Moves
+        Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index']);
+
+
+        // Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index'])->middleware(['guest-access', 'auth:sanctum']);
+
+        // Route::get('/games/{game}/characters/{character}/moves', function() {
+        //     Auth::check();
+        // });
 
         //Combos
         Route::get('/games/{game}/characters/{character}/character-combos', [CharacterComboController::class, 'index']);
@@ -70,8 +86,11 @@ Route::middleware('auth:sanctum')->group(function (){
 
         // Tags
         Route::get('/games/{game}/tags', [TagController::class, 'index']);
+
+        Route::get('/games/{game}/characters/{character}/tags', [TagController::class, 'characterMoveTagIndex']);
         Route::post('/games/{game}/characters/{character}/moves/{move}/tags', [CharacterMoveController::class, 'addCharacterMoveTag']);
         Route::delete('/games/{game}/characters/{character}/moves/{move}/tags/{tag}', [CharacterMoveController::class, 'removeCharacterMoveTag']);
+
         Route::post('/games/{game}/characters/{character}/combos/{combo}/tags', [CharacterComboController::class, 'addCharacterComboTag']);
         Route::delete('/games/{game}/characters/{character}/combos/{combo}/tags/{tag}', [CharacterComboController::class, 'removeCharacterComboTag']);
 

@@ -30,29 +30,17 @@ class GameController extends Controller
 
     public function addNote(Request $request, $gameId)
     {
-        // return $request;
-        // return $characterId;
-        // $note = new Note(['body' => $request->body]);
-
-        // $character = Character::where('id', $characterId)->firstOrFail();
-        // $character = Character::find($characterId);
         $game = Game::find($gameId);
-        // dd($character);
-        // return $character;
 
         $note = $game->notes()->create([
-            // 'title' => $request->title,
             'title' => isset($request->title) ? $request->title : 'Untitled Note',
             'body' => $request->body,
             'user_id' => Auth::id(),
             'game_id' => $gameId
         ]);
 
-        // $character = Character::with('notes')->find($characterId);
         $game = Game::with('notes')->find($gameId);
 
-        // $character->notes()->save($note);
-        // $
         return $game;
     }
 }

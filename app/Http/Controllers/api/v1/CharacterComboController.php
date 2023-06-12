@@ -18,11 +18,14 @@ class CharacterComboController extends Controller
 {
     public function index(Request $request, $gameId, $characterId)
     {
-        $characterCombos = CharacterCombo::where('user_id', $request->user()->id)->where('character_id', $characterId)
+        $characterCombos = CharacterCombo::where('user_id', $request->user()->id)
+            ->where('character_id', $characterId)
             ->with('directionalInputs')
             ->with('attackButtons')
             ->with('notations')
-            ->with('tags')
+            ->with(['tags' => function ($query) {
+                $query->where('user_id', Auth::id());
+            }])
             ->get();
         
         return $characterCombos;
@@ -200,7 +203,9 @@ class CharacterComboController extends Controller
         Tagger::tagCharacterCombo($gameId, $characterCombo, $characterComboTags);
 
         $characterCombo = CharacterCombo::where('id', $characterComboId)
-                        ->with('tags')
+                        ->with(['tags' => function ($query) {
+                            $query->where('user_id', Auth::id());
+                        }])
                         ->firstOrFail();
 
         return $characterCombo;
