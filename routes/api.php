@@ -58,24 +58,11 @@ Route::prefix('v1')->group(function () {
 
 });
 
-// Route::prefix('v1')->group(function () {
-//     // Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index'])->name('character_moves')->middleware(['guest.access', 'auth:sanctum']);
-//     Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index'])->name('character_moves')->middleware(['guest.access']);
-// });
-
-
 Route::middleware('auth:sanctum')->group(function (){
     Route::prefix('v1')->group(function () {
 
         // Moves
         Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index']);
-
-
-        // Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index'])->middleware(['guest-access', 'auth:sanctum']);
-
-        // Route::get('/games/{game}/characters/{character}/moves', function() {
-        //     Auth::check();
-        // });
 
         //Combos
         Route::get('/games/{game}/characters/{character}/character-combos', [CharacterComboController::class, 'index']);
