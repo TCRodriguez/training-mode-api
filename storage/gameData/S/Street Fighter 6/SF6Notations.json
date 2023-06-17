@@ -54,5 +54,7 @@
     {"text": "xx", "description": "Cancel", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": [""], "group": "other", "icon": ""},
     {"text": "charge", "description": "Hold specified input for two seconds before proceeding to the next command", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": [""], "group": "other", "icon": ""},
     {"text": "hold", "description": "Hold attack button to change effect of move", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": [""], "group": "other", "icon": ""},
-    {"text": "or", "description": "Either or", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": [""], "group": "other", "icon": ""}
+    {"text": "or", "description": "Either or", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": [""], "group": "other", "icon": ""},
+    {"text": "DRC", "description": "Drive Rush Cancel", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": [""], "group": "other", "icon": ""},
+    {"text": "j.", "description": "Jumping", "game": "Street Fighter 6", "directional_inputs": [""], "attack_buttons": [""], "group": "other", "icon": ""}
 ]

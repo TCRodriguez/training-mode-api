@@ -25,6 +25,7 @@ class NoteController extends Controller
         // https://laravel.com/docs/10.x/eloquent-relationships#querying-morph-to-relationships
         $notes = Note::where('game_id', $gameId)
             ->where('notable_type', 'App\Models\Game')
+            ->where('notable_id', $gameId)
             ->where('user_id', Auth::id())
             ->get();
 
@@ -54,6 +55,7 @@ class NoteController extends Controller
         // https://laravel.com/docs/10.x/eloquent-relationships#querying-morph-to-relationships
         $notes = Note::where('game_id', $gameId)
             ->where('notable_type', 'App\Models\Character')
+            ->where('notable_id', $characterId)
             ->where('user_id', Auth::id())
             ->get();
 
