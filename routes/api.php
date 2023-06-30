@@ -97,6 +97,3 @@ Route::middleware('auth:sanctum')->group(function (){
         Route::delete('/games/{game}/characters/{character}/notes/{note}', [NoteController::class, 'deleteCharacterNote']);
     });
 });
-
-// Route::group()
-
