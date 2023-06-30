@@ -35,7 +35,6 @@ class CharacterSeeder extends Seeder
             foreach($characters as $character) {
 
                 $gameModel = Game::where('title', $character->game)->firstOrFail();
-                // $gameId = Arr::get($gameModel, 0);
                 $gameId = $gameModel->id;
                 $characterModel = Character::create([
                     "name" => $character->name,
@@ -198,7 +197,6 @@ class CharacterSeeder extends Seeder
                         foreach($move->follow_up_to as $parentName) {
 
                             if($parentName !== '') {
-                                var_dump($parentName);
                                 $parentCharacterMove = CharacterMove::where('name', $parentName)->firstOrFail();
                                 $childCharacterMove = CharacterMove::where('name', $move->name)->firstOrFail();
 
