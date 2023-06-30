@@ -30,7 +30,6 @@ class AdminLoginController extends Controller
         // if(! $user || $user->roles)
         if(! $user->roles->contains('name', 'admin')) {
             abort(401);
-            
         }
     
     
