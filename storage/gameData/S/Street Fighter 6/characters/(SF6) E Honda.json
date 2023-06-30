@@ -309,6 +309,16 @@
                         "group": "directions",
                         "input": "Down",
                         "notation": "D"
+                    },
+                    {
+                        "group": "notations",
+                        "input": "Press Simultaneously",
+                        "notation": "+"
+                    },
+                    {
+                        "group": "attacks",
+                        "input": "Any Punch",
+                        "notation": "P"
                     }
                 ],
                 "conditions": ["During Sumo Dash"],

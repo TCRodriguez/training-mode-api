@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\api\v1\CharacterController;
 use App\Http\Controllers\api\v1\GameController;
 use App\Http\Controllers\api\v1\GameNotationController;
@@ -29,6 +30,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
     Route::post('/login', [LoginController::class, 'store']);
+
+    Route::post('/admin/login', [AdminLoginController::class, 'store']);
 
     // Users
     Route::get('/users', [UserController::class, 'index']);
