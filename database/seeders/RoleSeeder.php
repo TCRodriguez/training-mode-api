@@ -15,13 +15,8 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        // ? Should role names be snake-case or camelCase? Does it matter?
-        // Role::create([
-        //     'name' => 'super-admin'
-        // ]);
-
         Role::create([
-            'name' => 'admin'
+            'name' => 'admin',
         ]);
     }
 }

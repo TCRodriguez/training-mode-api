@@ -6,6 +6,7 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
@@ -26,6 +27,8 @@ class UserSeeder extends Seeder
         $role = Role::where('name', 'admin')->firstOrFail();
 
         $user->roles()->attach($role->id);
+        $user->roles()->updateExistingPivot($role->id, ['created_at' => now()]);
+        $user->roles()->updateExistingPivot($role->id, ['updated_at' => now()]);
 
         User::create([
             'username' => 'Moorethought',

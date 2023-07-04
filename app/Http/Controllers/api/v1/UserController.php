@@ -11,7 +11,10 @@ class UserController extends Controller
 {
     public function index()
     {
-        return 'GET Users endpoint HIT';
+      //   return 'GET Users endpoint HIT';
+      $users = User::all();
+
+      return $users;
     }
 
     public function store(Request $request)
