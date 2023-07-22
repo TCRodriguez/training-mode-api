@@ -23,6 +23,9 @@ class CharacterMoveController extends Controller
             ->with(['tags' => function ($query) use ($request) {
                 $query->where('user_id', $request->user()->id);
             }])
+            ->with(['notes' => function ($query) use ($request) {
+                $query->where('user_id', $request->user()->id);
+            }])
             ->where('character_id', $characterId)
             ->get();
 
@@ -71,6 +74,22 @@ class CharacterMoveController extends Controller
         $characterMove = CharacterMove::where('id', $characterMoveId)
             ->with('tags')
             ->firstOrFail();
+
+        return $characterMove;
+    }
+
+    public function addCharacterMoveNote(Request $request, $gameId, $characterId, $characterMoveId)
+    {
+        $characterMove = CharacterMove::find($characterMoveId);
+
+        $note = $characterMove->notes()->create([
+            'title' => isset($request->title) ? $request->title : 'Untitled Note',
+            'body' => $request->body,
+            'user_id' => Auth::id(),
+            'game_id' => $gameId
+        ]);
+
+        $characterMove = CharacterMove::with('notes')->find($characterMoveId);
 
         return $characterMove;
     }
