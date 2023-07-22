@@ -62,6 +62,17 @@ class NoteController extends Controller
         return $notes;
     }
 
+    public function characterMoveNoteIndex(Request $request, $gameId, $characterId, $characterMoveId)
+    {
+        $notes = Note::where('game_id', $gameId)
+            ->where('notable_type', 'App\Models\CharacterMove')
+            ->where('notable_id', $characterMoveId)
+            ->where('user_id', Auth::id())
+            ->get();
+
+        return $notes;
+    }
+
     public function characterComboNoteIndex(Request $request, $gameId, $characterId, $characterComboId)
     {
         // return 'GET Notes';
@@ -116,6 +127,17 @@ class NoteController extends Controller
         return $note;
     }
 
+    public function updateCharacterMoveNote(Request $request, $gameId, $characterId, $characterMoveId, $noteId)
+    {
+        $note = Note::find($noteId);
+        $note->title = $request->title;
+        $note->body = $request->body;
+
+        $note->save();
+
+        return $note;
+    }
+
 
     public function deleteGameNote(Request $request, $gameId, $noteId)
     {
@@ -136,6 +158,15 @@ class NoteController extends Controller
     }
 
     public function deleteCharacterComboNote(Request $request, $gameId, $characterId, $characterComboId, $noteId)
+    {
+        $characterNote = Note::find($noteId);
+
+        $characterNote->delete();
+
+        return $characterNote;
+    }
+
+    public function deleteCharacterMoveNote(Request $request, $gameId, $characterId, $characterMoveId, $noteId)
     {
         $characterNote = Note::find($noteId);
 
