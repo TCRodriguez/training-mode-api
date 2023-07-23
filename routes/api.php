@@ -95,5 +95,17 @@ Route::middleware('auth:sanctum')->group(function (){
         Route::get('/games/{game}/characters/{character}/notes', [NoteController::class, 'characterNoteIndex']);
         Route::put('/games/{game}/characters/{character}/notes/{note}', [NoteController::class, 'updateCharacterNote']);
         Route::delete('/games/{game}/characters/{character}/notes/{note}', [NoteController::class, 'deleteCharacterNote']);
+
+        // Character Move Notes
+        Route::post('/games/{game}/characters/{character}/moves/{move}/notes', [CharacterMoveController::class, 'addCharacterMoveNote']);
+        Route::get('/games/{game}/characters/{character}/moves/{move}/notes', [NoteController::class, 'characterMoveNoteIndex']);
+        Route::put('/games/{game}/characters/{character}/moves/{move}/notes/{note}', [NoteController::class, 'updateCharacterMoveNote']);
+        Route::delete('/games/{game}/characters/{character}/moves/{move}/notes/{note}', [NoteController::class, 'deleteCharacterMoveNote']);
+
+        // Character Combo Notes
+        Route::post('/games/{game}/characters/{character}/combos/{combo}/notes', [CharacterComboController::class, 'addCharacterComboNote']);
+        Route::get('/games/{game}/characters/{character}/combos/{combo}/notes', [NoteController::class, 'characterComboNoteIndex']);
+        Route::put('/games/{game}/characters/{character}/combos/{combo}/notes/{note}', [NoteController::class, 'updateCharacterComboNote']);
+        Route::delete('/games/{game}/characters/{character}/combos/{combo}/notes/{note}', [NoteController::class, 'deleteCharacterComboNote']);
     });
 });
