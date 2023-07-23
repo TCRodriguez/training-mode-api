@@ -26,6 +26,9 @@ class CharacterComboController extends Controller
             ->with(['tags' => function ($query) {
                 $query->where('user_id', Auth::id());
             }])
+            ->with(['notes' => function ($query) {
+                $query->where('user_id', Auth::id());
+            }])
             ->get();
         
         return $characterCombos;
@@ -221,6 +224,22 @@ class CharacterComboController extends Controller
         $characterCombo = CharacterCombo::where('id', $characterComboId)
             ->with('tags')
             ->firstOrFail();
+
+        return $characterCombo;
+    }
+
+    public function addCharacterComboNote(Request $request, $gameId, $characterId, $characterComboId)
+    {
+        $characterCombo = CharacterCombo::find($characterComboId);
+
+        $note = $characterCombo->notes()->create([
+            'title' => isset($request->title) ? $request->title : 'Untitled Note',
+            'body' => $request->body,
+            'user_id' => Auth::id(),
+            'game_id' => $gameId
+        ]);
+
+        $characterCombo = CharacterCombo::with('notes')->find($characterId);
 
         return $characterCombo;
     }

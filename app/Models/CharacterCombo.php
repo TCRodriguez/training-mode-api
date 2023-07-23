@@ -63,4 +63,9 @@ class CharacterCombo extends Model
     {
         return $this->morphToMany(Tag::class, 'taggable');
     }
+
+    public function notes()
+    {
+        return $this->morphMany(Note::class, 'notable');
+    }
 }
