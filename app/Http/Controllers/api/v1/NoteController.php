@@ -4,6 +4,8 @@ namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Models\Note;
+use App\Models\Tag;
+use App\Utilities\Tagger;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -173,5 +175,36 @@ class NoteController extends Controller
         $characterNote->delete();
 
         return $characterNote;
+    }
+
+    public function addNoteTag(Request $request, $gameId, $noteId)
+    {
+        $noteTags = $request->tags;
+
+        $note = note::where('id', $noteId)->firstOrFail();
+
+        Tagger::tagNote($gameId, $note, $noteTags);
+
+        $note = note::where('id', $noteId)
+                        ->with(['tags' => function ($query) {
+                            $query->where('user_id', Auth::id());
+                        }])
+                        ->firstOrFail();
+
+        return $note;
+    }
+
+    public function removeNoteTag(Request $request, $gameId, $noteId, $tagId)
+    {
+        $tag = Tag::where('id', $tagId)->firstOrFail();
+
+        $note = Note::where('id', $noteId)->firstOrFail();
+        Tagger::untagNote($gameId, $note, array($tag->name));
+
+        $note = Note::where('id', $noteId)
+            ->with('tags')
+            ->firstOrFail();
+
+        return $note;
     }
 }
