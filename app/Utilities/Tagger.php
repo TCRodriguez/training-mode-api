@@ -110,4 +110,40 @@ class Tagger {
             $characterCombo->tags()->detach($characterComboTag->id);
         }
     }
+
+    public static function tagNote($gameId, $note, $tags)
+    {
+        $now = now();
+        foreach($tags as $tag){
+
+            $tagName = self::composeTagName($tag);
+
+            $newNoteTag = Tag::firstOrNew( array('name' => $tagName, 'user_id' => Auth::id(), 'game_id' => $gameId) );
+
+            $newNoteTag->name = $tagName;
+
+            $newNoteTag->save();
+
+            $note->tags()->attach(
+                $newNoteTag->id, 
+                [
+                    'taggable_type' => 'App\Models\Note',
+                    'created_at' => $now,
+                    'updated_at' => $now
+                ]
+            );
+        } 
+    }
+
+    public static function untagNote($gameId, $note, $tags)
+    {
+        foreach($tags as $tag) {
+            // echo $tag;
+            $noteTag = Tag::where('name', $tag)
+                ->where('user_id', Auth::id())
+                ->firstOrFail();
+
+            $note->tags()->detach($noteTag->id);
+        }
+    }
 }
