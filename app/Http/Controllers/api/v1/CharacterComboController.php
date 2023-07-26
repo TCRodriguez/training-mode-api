@@ -26,7 +26,7 @@ class CharacterComboController extends Controller
             ->with(['tags' => function ($query) {
                 $query->where('user_id', Auth::id());
             }])
-            ->with(['notes' => function ($query) {
+            ->with(['notes.tags' => function ($query) {
                 $query->where('user_id', Auth::id());
             }])
             ->get();
