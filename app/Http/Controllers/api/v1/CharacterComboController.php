@@ -23,11 +23,11 @@ class CharacterComboController extends Controller
             ->with('directionalInputs')
             ->with('attackButtons')
             ->with('notations')
-            ->with(['tags' => function ($query) {
-                $query->where('user_id', Auth::id());
+            ->with(['tags' => function ($query) use ($request) {
+                $query->where('user_id', $request->user()->id);
             }])
-            ->with(['notes.tags' => function ($query) {
-                $query->where('user_id', Auth::id());
+            ->with(['notes.tags' => function ($query) use ($request) {
+                $query->where('user_id', $request->user()->id);
             }])
             ->get();
         
