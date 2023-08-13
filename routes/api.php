@@ -41,8 +41,8 @@ Route::prefix('v1')->group(function () {
     Route::delete('/users/{user}', [UserController::class, 'delete']);
 
     // Games
-    Route::get('/games', [GameController::class, 'index']);
-    Route::get('/games/{game}', [GameController::class, 'show']);
+    Route::get('/games/guest', [GameController::class, 'guestGameIndex']);
+    // Route::get('/games/{game}', [GameController::class, 'show']);
 
     // Notations
     Route::get('/games/{game}/game-notations', [GameNotationController::class, 'index']);
@@ -52,17 +52,23 @@ Route::prefix('v1')->group(function () {
     Route::get('/games/{game}/attack-buttons', [AttackButtonController::class, 'index']);
 
     // Characters
-    Route::get('/games/{game}/characters', [CharacterController::class, 'index']);
+    Route::get('/games/{game}/characters/guest', [CharacterController::class, 'characterIndexGuest']);
     Route::get('/games/{game}/characters/{character}', [CharacterController::class, 'show']);
-
+    
     // Moves
     Route::get('/games/{game}/characters/{character}/moves/guest', [CharacterMoveController::class, 'guestCharacterMoveIndex']);
-
-
+    
+    
 });
 
 Route::middleware('auth:sanctum')->group(function (){
     Route::prefix('v1')->group(function () {
+        
+        // Games
+        Route::get('/games', [GameController::class, 'index']);
+        
+        // Characters
+        Route::get('/games/{game}/characters', [CharacterController::class, 'index']);
 
         // Moves
         Route::get('/games/{game}/characters/{character}/moves', [CharacterMoveController::class, 'index']);
@@ -78,11 +84,29 @@ Route::middleware('auth:sanctum')->group(function (){
         Route::get('/games/{game}/tags', [TagController::class, 'index']);
 
         Route::get('/games/{game}/characters/{character}/tags', [TagController::class, 'characterMoveTagIndex']);
+
+        // Move Tags
         Route::post('/games/{game}/characters/{character}/moves/{move}/tags', [CharacterMoveController::class, 'addCharacterMoveTag']);
         Route::delete('/games/{game}/characters/{character}/moves/{move}/tags/{tag}', [CharacterMoveController::class, 'removeCharacterMoveTag']);
 
+        // Combo tags
         Route::post('/games/{game}/characters/{character}/combos/{combo}/tags', [CharacterComboController::class, 'addCharacterComboTag']);
         Route::delete('/games/{game}/characters/{character}/combos/{combo}/tags/{tag}', [CharacterComboController::class, 'removeCharacterComboTag']);
+
+
+
+
+
+        // Note tags
+        Route::post('/games/{game}/notes/{note}/tags', [NoteController::class, 'addNoteTag']);
+        Route::delete('/games/{game}/notes/{note}/tags/{tag}', [NoteController::class, 'removeNoteTag']);
+        // Route::post('/games/{game}/characters/{character}/notes/{note}/tags', [NoteController::class, 'addNoteTag']);
+        // Route::post('/games/{game}/characters/{character}/moves/{move}/notes/{note}/tags', [NoteController::class, 'addNoteTag']);
+        // Route::post('/games/{game}/characters/{character}/combos/{combo}/notes/{note}/tags', [NoteController::class, 'addNoteTag']);
+        // Route::delete('/games/{game}/characters/{character}/combos/{combo}/notes/{note}/tags/{tag}', [NoteController::class, 'removeCharacterComboTag']);
+
+
+
 
         // Game Notes
         Route::get('/games/{game}/notes', [NoteController::class, 'gameNoteIndex']);

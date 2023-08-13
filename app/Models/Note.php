@@ -15,4 +15,11 @@ class Note extends Model
     {
         return $this->morphTo();
     }
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
+
 }

@@ -23,7 +23,7 @@ class CharacterMoveController extends Controller
             ->with(['tags' => function ($query) use ($request) {
                 $query->where('user_id', $request->user()->id);
             }])
-            ->with(['notes' => function ($query) use ($request) {
+            ->with(['notes.tags' => function ($query) use ($request) {
                 $query->where('user_id', $request->user()->id);
             }])
             ->where('character_id', $characterId)
