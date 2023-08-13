@@ -12,8 +12,8 @@ class GameController extends Controller
 {
     public function index(Request $request)
     {
-        $games = Game::with(['notes.tags' => function ($query) {
-            $query->where('user_id', Auth::id());
+        $games = Game::with(['notes.tags' => function ($query) use ($request) {
+            $query->where('user_id', $request->user()->id);
         }])->get();
 
         return $games;

@@ -29,6 +29,9 @@ class NoteController extends Controller
             ->where('notable_type', 'App\Models\Game')
             ->where('notable_id', $gameId)
             ->where('user_id', Auth::id())
+            ->with(['tags' => function ($query) use ($request) {
+                $query->where('user_id', $request->user()->id);
+            }])
             ->get();
 
         // $notes = Note::whereHasMorph(
@@ -59,6 +62,9 @@ class NoteController extends Controller
             ->where('notable_type', 'App\Models\Character')
             ->where('notable_id', $characterId)
             ->where('user_id', Auth::id())
+            ->with(['tags' => function ($query) use ($request) {
+                $query->where('user_id', $request->user()->id);
+            }])
             ->get();
 
         return $notes;
@@ -70,6 +76,9 @@ class NoteController extends Controller
             ->where('notable_type', 'App\Models\CharacterMove')
             ->where('notable_id', $characterMoveId)
             ->where('user_id', Auth::id())
+            ->with(['tags' => function ($query) use ($request) {
+                $query->where('user_id', $request->user()->id);
+            }])
             ->get();
 
         return $notes;
@@ -90,6 +99,9 @@ class NoteController extends Controller
             ->where('notable_type', 'App\Models\CharacterCombo')
             ->where('notable_id', $characterComboId)
             ->where('user_id', Auth::id())
+            ->with(['tags' => function ($query) use ($request) {
+                $query->where('user_id', $request->user()->id);
+            }])
             ->get();
 
         return $notes;
