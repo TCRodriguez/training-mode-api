@@ -14,9 +14,18 @@ class CharacterController extends Controller
     {
         $characters = Character::where('game_id', $gameId)
             ->with('notations')
-            ->with(['notes' => function ($query) {
-                $query->where('user_id', Auth::id());
+            ->with(['notes.tags' => function ($query) use ($request) {
+                $query->where('user_id', $request->user()->id);
             }])->get();
+
+        return $characters;
+    }
+
+    public function characterIndexGuest(Request $request, $gameId)
+    {
+        $characters = Character::where('game_id', $gameId)
+            ->with('notations')
+            ->get();
 
         return $characters;
     }

@@ -20,4 +20,9 @@ class Tag extends Model
     {
         return $this->morphedByMany(CharacterCombo::class, 'taggable');
     }
+
+    public function notes()
+    {
+        return $this->morphedByMany(Note::class, 'taggable');
+    }
 }
