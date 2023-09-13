@@ -1,4 +1,6 @@
 [
+    {"title": "Mortal Kombat 1", "abbreviation": "mk1", "buttons": "6"},
     {"title": "Street Fighter 6", "abbreviation": "sf6", "buttons": "6"},
-    {"title": "Tekken 7", "abbreviation": "t7", "buttons": "4"}
+    {"title": "Tekken 7", "abbreviation": "t7", "buttons": "4"},
+    {"title": "Tekken 8", "abbreviation": "t8", "buttons": "4"}
 ]
