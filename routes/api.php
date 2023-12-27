@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\api\v1\LoginController;
 use App\Http\Controllers\api\v1\NoteController;
 use App\Http\Controllers\api\v1\TagController;
+use App\Http\Controllers\DeviceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -49,7 +50,9 @@ Route::prefix('v1')->group(function () {
 
     // Inputs
     Route::get('/directional-inputs', [DirectionalInputController::class, 'index']);
+    Route::get('/directional-inputs/mappings/{device}', [DirectionalInputController::class, 'indexWithMappings']);
     Route::get('/games/{game}/attack-buttons', [AttackButtonController::class, 'index']);
+    Route::get('games/{game}/device-input-mappings/{device}', [DeviceController::class, 'getGameDeviceInputMappings']);
 
     // Characters
     Route::get('/games/{game}/characters/guest', [CharacterController::class, 'characterIndexGuest']);
@@ -57,7 +60,11 @@ Route::prefix('v1')->group(function () {
     
     // Moves
     Route::get('/games/{game}/characters/{character}/moves/guest', [CharacterMoveController::class, 'guestCharacterMoveIndex']);
-    
+
+    // Devices and mappings
+    Route::get('/devices', [DeviceController::class, 'index']);
+    Route::get('/devices/{device}', [DeviceController::class, 'show']);
+    Route::get('/devices/{device}/mappings/{game}/attack-buttons', [DeviceController::class, 'showWithAttackButtonMappings']);
     
 });
 
