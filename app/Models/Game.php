@@ -35,4 +35,9 @@ class Game extends Model
     {
         return $this->morphMany(Note::class, 'notable');
     }
+
+    public function gameDeviceAttackButtonMappings()
+    {
+        return $this->hasMany(GameDeviceAttackButtonMapping::class);
+    }
 }

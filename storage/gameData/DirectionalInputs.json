@@ -1,5 +1,8 @@
 [
-    {"direction": "Up Back", "numpad_notation": "7", 
+    {"direction": "Up Back", "numpad_notation": "7", "game_shorthand": "ub",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 12", "Button 14"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -12,7 +15,10 @@
 
         ]
     },
-    {"direction": "Up Back (hold)", "numpad_notation": "7", 
+    {"direction": "Up Back (hold)", "numpad_notation": "7", "game_shorthand": "ubh",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 12", "Button 14"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -24,7 +30,10 @@
             }
         ]
     },
-    {"direction": "Up", "numpad_notation": "8", 
+    {"direction": "Up", "numpad_notation": "8", "game_shorthand": "u",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 12"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -36,7 +45,10 @@
             }
         ]
     },
-    {"direction": "Up (hold)", "numpad_notation": "8", 
+    {"direction": "Up (hold)", "numpad_notation": "8", "game_shorthand": "uh",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 12"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -48,7 +60,10 @@
             }
         ]
     },
-    {"direction": "Up Forward", "numpad_notation": "9", 
+    {"direction": "Up Forward", "numpad_notation": "9", "game_shorthand": "uf",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 12", "Button 15"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -60,7 +75,10 @@
             }
         ]
     },
-    {"direction": "Up Forward (hold)", "numpad_notation": "9", 
+    {"direction": "Up Forward (hold)", "numpad_notation": "9", "game_shorthand": "ufh",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 12", "Button 15"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -72,7 +90,10 @@
             }
         ]
     },
-    {"direction": "Back", "numpad_notation": "4", 
+    {"direction": "Back", "numpad_notation": "4", "game_shorthand": "b",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 14"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -84,7 +105,10 @@
             }
         ]
     },
-    {"direction": "Back (hold)", "numpad_notation": "4", 
+    {"direction": "Back (hold)", "numpad_notation": "4", "game_shorthand": "bh",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 14"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -96,7 +120,7 @@
             }
         ]
     },
-    {"direction": "Neutral", "numpad_notation": "5", 
+    {"direction": "Neutral", "numpad_notation": "5", "game_shorthand": "n",
         "icon": [
             {
                 "game": "Tekken 7",
@@ -108,7 +132,7 @@
             }
         ]
     },
-    {"direction": "Neutral (hold)", "numpad_notation": "5", 
+    {"direction": "Neutral (hold)", "numpad_notation": "5", "game_shorthand": "nh",
         "icon": [
             {
                 "game": "Tekken 7",
@@ -120,7 +144,10 @@
             }
         ]
     },
-    {"direction": "Forward", "numpad_notation": "6", 
+    {"direction": "Forward", "numpad_notation": "6", "game_shorthand": "f",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 15"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -132,7 +159,10 @@
             }
         ]
     },
-    {"direction": "Forward (hold)", "numpad_notation": "6", 
+    {"direction": "Forward (hold)", "numpad_notation": "6", "game_shorthand": "fh",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 15"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -144,7 +174,10 @@
             }
         ]
     },
-    {"direction": "Down Back", "numpad_notation": "1", 
+    {"direction": "Down Back", "numpad_notation": "1", "game_shorthand": "db",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 13", "Button 14"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -156,7 +189,10 @@
             }
         ]
     },
-    {"direction": "Down Back (hold)", "numpad_notation": "1", 
+    {"direction": "Down Back (hold)", "numpad_notation": "1", "game_shorthand": "dbh",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 13", "Button 14"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -168,7 +204,10 @@
             }
         ]
     },
-    {"direction": "Down", "numpad_notation": "2", 
+    {"direction": "Down", "numpad_notation": "2", "game_shorthand": "d",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 13"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -180,7 +219,10 @@
             }
         ]
     },
-    {"direction": "Down (hold)", "numpad_notation": "2", 
+    {"direction": "Down (hold)", "numpad_notation": "2", "game_shorthand": "dh",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 13"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -192,7 +234,10 @@
             }
         ]
     },
-    {"direction": "Down Forward", "numpad_notation": "3", 
+    {"direction": "Down Forward", "numpad_notation": "3", "game_shorthand": "df",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 13", "Button 15"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",
@@ -204,7 +249,10 @@
             }
         ]
     },
-    {"direction": "Down Forward (hold)", "numpad_notation": "3", 
+    {"direction": "Down Forward (hold)", "numpad_notation": "3", "game_shorthand": "dfh",
+        "device_mappings": [
+            { "device_name": "DualShock 4", "button_mapping": ["Button 13", "Button 15"] }
+        ],
         "icon": [
             {
                 "game": "Tekken 7",

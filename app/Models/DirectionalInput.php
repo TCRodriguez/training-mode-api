@@ -20,4 +20,9 @@ class DirectionalInput extends Model
     {
         return $this->belongsToMany(GameNotation::class, 'directional_input_game_notation', 'directional_input_id', 'game_notation_id');
     }
+
+    public function deviceButtonMappings()
+    {
+        return $this->belongsToMany(DeviceButton::class, 'device_button_directional_input', 'directional_input_id', 'device_button_id');
+    }
 }

@@ -26,6 +26,7 @@ class DirectionalInputSeeder extends Seeder
             DirectionalInput::create([
                 "direction" => $directionalInput->direction,
                 "numpad_notation" => $directionalInput->numpad_notation,
+                "game_shorthand" => $directionalInput->game_shorthand,
             ]);
 
             $directionalInputModel = DirectionalInput::where('direction', $directionalInput->direction)->first();
@@ -38,7 +39,13 @@ class DirectionalInputSeeder extends Seeder
 
                 if($directionalInputId !== null) {
                     DB::insert('insert into directional_input_icons (icon_file_name, directional_input_id, game_id, created_at, updated_at) values (?, ?, ?, ?, ?)',
-                     [$icon->icon_file_name, $directionalInputId, $gameId, $now, $now]);
+                    [
+                        $icon->icon_file_name, 
+                        $directionalInputId, 
+                        $gameId, 
+                        $now, 
+                        $now
+                    ]);
                 }
             }
         }

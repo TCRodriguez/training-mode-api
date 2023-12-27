@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             AttackButtonSeeder::class,
             NotationSeeder::class,
             CharacterSeeder::class,
+            DeviceSeeder::class,
         ]);
     }
 }
