@@ -29,7 +29,7 @@ class AttackButtonSeeder extends Seeder
 
             foreach($attackButtons as $attackButton) {
                 // dd($attackButton);
-
+                var_dump($attackButton->game);
                 $gameModel = Game::where('title', $attackButton->game)->firstOrFail();
                 $gameId = $gameModel->id;
                 AttackButton::create([
