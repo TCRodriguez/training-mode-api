@@ -14,8 +14,10 @@ use App\Http\Controllers\api\v1\LoginController;
 use App\Http\Controllers\api\v1\NoteController;
 use App\Http\Controllers\api\v1\TagController;
 use App\Http\Controllers\DeviceController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,12 +36,26 @@ Route::prefix('v1')->group(function () {
 
     Route::post('/admin/login', [AdminLoginController::class, 'store']);
 
+    // Route::get('/email/verify', function () {
+    //     return 'verification email sent';
+    // })->middleware('auth')->name('verification.notice');
+
+    // Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    //     $request->fulfill();
+     
+    //     return 'email verified';
+    // })->middleware(['auth', 'signed'])->name('verification.verify');
+    
     // Users
     Route::get('/users', [UserController::class, 'index']);
     Route::get('/users/{user}', [UserController::class, 'show']);
     Route::post('/users', [UserController::class, 'store']);
     Route::put('/users/{user}', [UserController::class, 'update']);
     Route::delete('/users/{user}', [UserController::class, 'delete']);
+
+    Route::post('/users/register', [UserController::class, 'registerUser']);
+    Route::get('/email/verify/{id}/{hash}', [UserController::class, 'verifyEmail'])->name('verification.verify');
+    Route::post('/email/resend-verification-email', [UserController::class, 'resendVerificationEmail'])->name('verification.resend')->middleware('throttle:5,1');
 
     // Games
     Route::get('/games/guest', [GameController::class, 'guestGameIndex']);
