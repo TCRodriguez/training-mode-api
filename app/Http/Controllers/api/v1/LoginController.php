@@ -42,4 +42,10 @@ class LoginController extends Controller
         
         return $loggedInUser;
     }
+
+    public function destroy(Request $request)
+    {
+        $request->user()->tokens()->delete();
+        return response()->json(['message' => 'Logged out.'], 200);
+    }
 }
