@@ -13,6 +13,7 @@ use Illuminate\Routing\Exceptions\InvalidSignatureException;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redis;
+use Laravel\Sanctum\PersonalAccessToken;
 
 class UserController extends Controller
 {
@@ -54,9 +55,13 @@ class UserController extends Controller
 
       public function registerUser(Request $request)
       {
-         $userExistenceCheck = User::where('username', $request->username)->doesntExist();
-         if(!$userExistenceCheck) {
+         $userNameExistenceCheck = User::where('username', $request->username)->doesntExist();
+         if(!$userNameExistenceCheck) {
             return response()->json(['message' => 'Username is already taken.'], 409);
+         }
+         $userEmailExistenceCheck = User::where('email', $request->email)->doesntExist();
+         if(!$userEmailExistenceCheck) {
+            return response()->json(['message' => 'Email is already taken.'], 409);
          }
 
          $request->validate([
@@ -121,7 +126,6 @@ class UserController extends Controller
          
             return redirect($returnURL . '?' . $queryParams);
 
-
          } catch (InvalidSignatureException $e) {
             return response()->json(['message' => 'Verification link is invalid or has expired.'], 401);
          }
@@ -140,9 +144,31 @@ class UserController extends Controller
          return response()->json(['message' => 'Verification email resent.']);
       }
 
-      public function show($id)
+      public function validateToken(Request $request)
       {
-         return 'GET User endpoint HIT';
+         $bearerToken = $request->bearerToken();
+         if (!$bearerToken) {
+            return response()->json(['message' => 'No token provided'], 401);
+         }
+
+         [$tokenId, ] = explode('|', $bearerToken, 2);
+         $token = PersonalAccessToken::find($tokenId);
+
+         if (!$token || !$token->tokenable) {
+            return response()->json(['message' => 'Invalid token'], 401);
+         }
+   
+         if ($token->expires_at && now()->greaterThan($token->expires_at)) {
+            return response()->json(['message' => 'Token expired'], 401);
+         }
+   
+         // Token is valid
+         return response()->json(['message' => 'Token is valid']);
+      }
+
+      public function show(Request $request)
+      {
+         return $request->user();
       }
 
       public function update(Request $request, $id)

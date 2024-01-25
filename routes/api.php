@@ -13,11 +13,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\api\v1\LoginController;
 use App\Http\Controllers\api\v1\NoteController;
 use App\Http\Controllers\api\v1\TagController;
+use App\Http\Controllers\Auth\PasswordResetController;
+use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\DeviceController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,30 +35,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('v1')->group(function () {
-    Route::post('/login', [LoginController::class, 'store']);
-
     Route::post('/admin/login', [AdminLoginController::class, 'store']);
 
-    // Route::get('/email/verify', function () {
-    //     return 'verification email sent';
-    // })->middleware('auth')->name('verification.notice');
-
-    // Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-    //     $request->fulfill();
-     
-    //     return 'email verified';
-    // })->middleware(['auth', 'signed'])->name('verification.verify');
-    
     // Users
     Route::get('/users', [UserController::class, 'index']);
-    Route::get('/users/{user}', [UserController::class, 'show']);
     Route::post('/users', [UserController::class, 'store']);
     Route::put('/users/{user}', [UserController::class, 'update']);
     Route::delete('/users/{user}', [UserController::class, 'delete']);
 
-    Route::post('/users/register', [UserController::class, 'registerUser']);
-    Route::get('/email/verify/{id}/{hash}', [UserController::class, 'verifyEmail'])->name('verification.verify');
-    Route::post('/email/resend-verification-email', [UserController::class, 'resendVerificationEmail'])->name('verification.resend')->middleware('throttle:5,1');
+    Route::middleware('throttle:5,1')->group(function (){
+        Route::post('/login', [LoginController::class, 'store']);
+
+        Route::post('/password/email-reset-link', [PasswordResetController::class, 'sendPasswordResetLink']);
+        Route::post('password/reset', [PasswordResetController::class, 'resetPassword']);
+
+        Route::post('/users/register', [UserController::class, 'registerUser']);
+        Route::get('/email/verify/{id}/{hash}', [UserController::class, 'verifyEmail'])->name('verification.verify');
+        Route::post('/email/resend-verification-email', [UserController::class, 'resendVerificationEmail'])->name('verification.resend');
+    });
 
     // Games
     Route::get('/games/guest', [GameController::class, 'guestGameIndex']);
@@ -84,9 +81,14 @@ Route::prefix('v1')->group(function () {
     
 });
 
-Route::middleware('auth:sanctum')->group(function (){
+Route::get('/validate-token', [UserController::class, 'validateToken'])->prefix('v1');
+
+Route::middleware(['auth:sanctum', 'check.token.expiry'])->group(function (){
     Route::prefix('v1')->group(function () {
-        
+
+        Route::get('/user', [UserController::class, 'show']);
+        Route::post('/logout', [LoginController::class, 'destroy']);        
+
         // Games
         Route::get('/games', [GameController::class, 'index']);
         
@@ -116,10 +118,6 @@ Route::middleware('auth:sanctum')->group(function (){
         Route::post('/games/{game}/characters/{character}/combos/{combo}/tags', [CharacterComboController::class, 'addCharacterComboTag']);
         Route::delete('/games/{game}/characters/{character}/combos/{combo}/tags/{tag}', [CharacterComboController::class, 'removeCharacterComboTag']);
 
-
-
-
-
         // Note tags
         Route::post('/games/{game}/notes/{note}/tags', [NoteController::class, 'addNoteTag']);
         Route::delete('/games/{game}/notes/{note}/tags/{tag}', [NoteController::class, 'removeNoteTag']);
@@ -127,9 +125,6 @@ Route::middleware('auth:sanctum')->group(function (){
         // Route::post('/games/{game}/characters/{character}/moves/{move}/notes/{note}/tags', [NoteController::class, 'addNoteTag']);
         // Route::post('/games/{game}/characters/{character}/combos/{combo}/notes/{note}/tags', [NoteController::class, 'addNoteTag']);
         // Route::delete('/games/{game}/characters/{character}/combos/{combo}/notes/{note}/tags/{tag}', [NoteController::class, 'removeCharacterComboTag']);
-
-
-
 
         // Game Notes
         Route::get('/games/{game}/notes', [NoteController::class, 'gameNoteIndex']);

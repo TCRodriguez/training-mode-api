@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use Laravel\Sanctum\PersonalAccessToken;
 
 class LoginController extends Controller
 {
@@ -14,14 +15,13 @@ class LoginController extends Controller
 
     public function store (Request $request)
     {
-        // return $request;
-
         $request->validate([
-            'email' => 'required|email',
+            // 'email' => 'required|email',
+            'username' => 'required',
             'password' => 'required',
         ]);
     
-        $user = User::where('email', $request->email)->with('roles')->first();
+        $user = User::where('username', $request->username)->with('roles')->first();
         
         if (! $user || ! Hash::check($request->password, $user->password)) {
             throw ValidationException::withMessages([
@@ -32,11 +32,27 @@ class LoginController extends Controller
         if (!$user->hasVerifiedEmail()) {
             return response()->json(['message' => 'Email not yet verified.'], 403);
         }
+
+
+
         
-        $token = $user->createToken('mobile app')->plainTextToken;
+        // $token = $user->createToken('Personal Access Token')->plainTextToken->update([
+        //     'expires_at' => now()->addHours(24)
+        // ]);
+
+
+        $newAccessToken = $user->createToken('Personal Access Token');
+        $plainTextToken = $newAccessToken->plainTextToken;
+        [$tokenId, ] = explode('|', $plainTextToken, 2);
+        $token = PersonalAccessToken::find($tokenId);
+        $token->expires_at = now()->addHours(24);
+        $token->save();
+
+
+
 
         $loggedInUser = [
-            'token' => $token,
+            'token' => $plainTextToken,
             'user' => $user
         ];
         
