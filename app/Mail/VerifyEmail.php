@@ -33,7 +33,7 @@ class VerifyEmail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Verify Email',
+            subject: 'Verify Email for TrainingMode Account',
         );
     }
 
@@ -46,6 +46,7 @@ class VerifyEmail extends Mailable
     {
         return new Content(
             view: 'emails.verify_email',
+            text: 'emails.verify_email_text',
             with: [
                 'user' => $this->user,
                 'verificationUrl' => $this->user->generateVerificationUrl()
