@@ -87,4 +87,9 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
     {
         $this->notify(new CustomResetPasswordNotification($token));
     }
+
+    public function socialAccounts()
+    {
+        return $this->hasMany(UserSocialAccount::class);
+    }
 }
