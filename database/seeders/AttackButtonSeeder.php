@@ -28,11 +28,13 @@ class AttackButtonSeeder extends Seeder
             $attackButtons = json_decode($json);
 
             foreach($attackButtons as $attackButton) {
-
+                // dd($attackButton);
+                var_dump($attackButton->game);
                 $gameModel = Game::where('title', $attackButton->game)->firstOrFail();
                 $gameId = $gameModel->id;
                 AttackButton::create([
                     "name" => $attackButton->name,
+                    "game_shorthand" => $attackButton->game_shorthand,
                     "button_count" => $attackButton->button_count,
                     // ? How can we dynamically grab the relevant game_id here?
                     "game_id" => $gameId,

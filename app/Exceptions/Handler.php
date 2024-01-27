@@ -46,5 +46,15 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+        $this->renderable(function (Throwable $e, $request) {
+            if ($request->wantsJson()) {
+                // Handle API requests with a JSON response
+                return response()->json(['message' => $e->getMessage()], 500);
+            } else {
+                // Redirect non-API requests to the Vue app with an error message
+                $errorMessage = urlencode($e->getMessage());
+                return redirect()->away('http://127.0.0.1:5173/?error=' . $errorMessage);
+            }
+        });
     }
 }

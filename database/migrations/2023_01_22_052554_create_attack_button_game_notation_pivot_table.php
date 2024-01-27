@@ -18,7 +18,11 @@ class CreateAttackButtonGameNotationPivotTable extends Migration
             $table->foreign('attack_button_id')->references('id')->on('attack_buttons')->onDelete('cascade');
             $table->unsignedBigInteger('game_notation_id')->index();
             $table->foreign('game_notation_id')->references('id')->on('game_notations')->onDelete('cascade');
+            $table->unsignedBigInteger(('game_id'))->index();
+            $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
             $table->timestamps();
+            
+            $table->unique(['attack_button_id', 'game_notation_id', 'game_id'], 'attack_button_game_notation_game_unique');
         });
     }
 

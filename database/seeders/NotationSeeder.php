@@ -31,11 +31,11 @@ class NotationSeeder extends Seeder
                 $gameModel = Game::where('title', $notation->game)->firstOrFail();
                 $gameId = $gameModel->id;
                 $gameNotationModel = GameNotation::create([
-                  "notation" => $notation->text,
-                  "description" => $notation->description,
-                  "game_id" => $gameId,
-                  "notations_group" => $notation->group,
-                  "icon_file_name" => $notation->icon,
+                    "notation" => $notation->text,
+                    "description" => $notation->description,
+                    "game_id" => $gameId,
+                    "notations_group" => $notation->group,
+                    "icon_file_name" => $notation->icon,
                 ]);
 
                 foreach($notation->directional_inputs as $directionalInput) {
@@ -49,12 +49,12 @@ class NotationSeeder extends Seeder
                 }
 
                 foreach($notation->attack_buttons as $attackButton) {
-                    $attackButtonModel = AttackButton::where('name', $attackButton)->first();
+                    $attackButtonModel = AttackButton::where('name', $attackButton)->where('game_id', $gameId)->first();
                     $attackButtonId = $attackButtonModel !== null ? $attackButtonModel->id : null;
 
                     if($attackButtonId !== null) {
                         $now = now();
-                        DB::insert('insert into attack_button_game_notation (attack_button_id, game_notation_id, created_at, updated_at) values (?, ?, ?, ?)', [$attackButtonId, $gameNotationModel->id, $now, $now]);
+                        DB::insert('insert into attack_button_game_notation (attack_button_id, game_notation_id, game_id, created_at, updated_at) values (?, ?, ?, ?, ?)', [$attackButtonId, $gameNotationModel->id, $gameId, $now, $now]);
                     }
                 }
             }
