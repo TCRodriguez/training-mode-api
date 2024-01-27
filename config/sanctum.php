@@ -17,7 +17,7 @@ return [
 
     'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', sprintf(
         '%s%s',
-        'localhost,localhost:3000,127.0.0.1,127.0.0.1:8000,127.0.0.1:5173,::1,visionary-chebakia-f33407.netlify.app,start.trainingmode.app',
+        'localhost,localhost:3000,127.0.0.1,127.0.0.1:8000,127.0.0.1:5173,::1,visionary-chebakia-f33407.netlify.app,start.trainingmode.app,app.trainingmode.gg',
         Sanctum::currentApplicationUrlWithPort()
     ))),
 

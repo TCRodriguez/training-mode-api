@@ -53,7 +53,7 @@ class Handler extends ExceptionHandler
             } else {
                 // Redirect non-API requests to the Vue app with an error message
                 $errorMessage = urlencode($e->getMessage());
-                return redirect()->away('http://127.0.0.1:5173/?error=' . $errorMessage);
+                return redirect()->away('https://app.trainingmode.gg/?error=' . $errorMessage);
             }
         });
     }
