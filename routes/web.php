@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\SocialAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::prefix('v1')->group(function () {
+    Route::get('oauth/login/discord', [SocialAuthController::class, 'redirectToDiscord']);
+    Route::get('oauth/discord/callback', [SocialAuthController::class, 'handleDiscordCallback']);
+});
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
 });
