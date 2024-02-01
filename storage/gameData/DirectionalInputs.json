@@ -132,18 +132,6 @@
             }
         ]
     },
-    {"direction": "Neutral (hold)", "numpad_notation": "5", "game_shorthand": "nh",
-        "icon": [
-            {
-                "game": "Tekken 7",
-                "icon_file_name": "t7-n.svg"
-            },
-            {
-                "game": "Street Fighter 6",
-                "icon_file_name": "sf6-n.svg"
-            }
-        ]
-    },
     {"direction": "Forward", "numpad_notation": "6", "game_shorthand": "f",
         "device_mappings": [
             { "device_name": "DualShock 4", "button_mapping": ["Button 15"] }
