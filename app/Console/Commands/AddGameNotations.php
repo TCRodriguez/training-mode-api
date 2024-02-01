@@ -18,7 +18,7 @@ class AddGameNotations extends Command
      * @var string
      */
     protected $signature = 'add:game-notations
-                            {game : The game you want to add the notations for.}';
+                            {game : The game you want to add the notations for. (use the abbreviation like "SF6" for "Street Fighter 6") }';
 
     /**
      * The console command description.
@@ -39,7 +39,7 @@ class AddGameNotations extends Command
         $input = $this->argument('game');
         $this->info("This is what you passed in: {$input}");
 
-        $gameNotationsFile = glob("storage/gameData/*/{$this->argument('game')}/*Notations.json");
+        $gameNotationsFile = glob("storage/gameData/*/*/{$this->argument('game')}*Notations.json");
         var_dump($gameNotationsFile);
 
         if(count($gameNotationsFile) === 0) {
@@ -79,7 +79,7 @@ class AddGameNotations extends Command
                         }
     
                         foreach($notation->attack_buttons as $attackButton) {
-                            $attackButtonModel = AttackButton::where('name', $attackButton)->first();
+                            $attackButtonModel = AttackButton::where('name', $attackButton)->where('game_id', $gameId)->first();
                             $attackButtonId = $attackButtonModel !== null ? $attackButtonModel->id : null;
     
                             if($attackButtonId !== null) {
