@@ -15,6 +15,9 @@ use Laravel\Socialite\Facades\Socialite;
 
 class SocialAuthController extends Controller
 {
+    // TODO: Make more general: '`redirectToProvider`' and '`handleProviderCallback`'
+
+    
     public function redirectToDiscord(Request $request)
     {
         // $state = $request->state;
