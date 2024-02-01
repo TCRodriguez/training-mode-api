@@ -61,6 +61,7 @@ class Tagger {
             // echo $tag;
             $characterMoveTag = Tag::where('name', $tag)
                 ->where('user_id', Auth::id())
+                ->where('game_id', $gameId)
                 ->firstOrFail();
             // var_dump($characterMoveTag);
 
@@ -104,6 +105,7 @@ class Tagger {
             // echo $tag;
             $characterComboTag = Tag::where('name', $tag)
                 ->where('user_id', Auth::id())
+                ->where('game_id', $gameId)
                 ->firstOrFail();
             // var_dump($characterMoveTag);
 
@@ -141,6 +143,7 @@ class Tagger {
             // echo $tag;
             $noteTag = Tag::where('name', $tag)
                 ->where('user_id', Auth::id())
+                ->where('game_id', $gameId)
                 ->firstOrFail();
 
             $note->tags()->detach($noteTag->id);
