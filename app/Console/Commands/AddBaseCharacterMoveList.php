@@ -177,9 +177,10 @@ class AddBaseCharacterMoveList extends Command
                             };
                             
                             if($input->group === 'notations') {
+                                var_dump($input->input);
                                 $gameNotationModel = GameNotation::where('game_id', $gameId)
-                                    ->where('input', $input->input)
-                                    ->where('description', $input->notation)
+                                    ->where('notation', $input->notation)
+                                    ->where('description', $input->input)
                                     ->pluck('id');
                                     
                                 $gameNotationId = Arr::get($gameNotationModel, 0);
