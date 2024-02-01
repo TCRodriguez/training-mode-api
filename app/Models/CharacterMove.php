@@ -47,6 +47,11 @@ class CharacterMove extends Model
         return $this->belongsToMany(CharacterMoveCondition::class, 'character_move_character_move_condition', 'character_move_id', 'character_move_condition');
     }
 
+    public function properties()
+    {
+        // return $this->belongsToMany(CharacterMoveProperty::class, 'character_move_character_move_property', 'character_move_id', 'character_move_property_id');
+    }
+
     public function followsUp()
     {
         return $this->belongsToMany(CharacterMove::class, 'character_move_follow_ups', 'follow_up_move_id', 'character_move_id');

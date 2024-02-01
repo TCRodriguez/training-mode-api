@@ -22,8 +22,8 @@ class AddNewCharacter extends Command
      * @var string
      */
     // ? Should it be the entire `filePath` or just `fileName`?
-    protected $signature = 'character:create
-                            {character : The character whose data you want to add to the DB.}';
+    protected $signature = 'game:add-character
+                            {character : The character whose data you want to add to the DB. Use character name like "Reina" }';
 
     /**
      * The console command description.
@@ -41,8 +41,6 @@ class AddNewCharacter extends Command
     {
         $input = $this->argument('character');
         $this->info("This is what you passed in: {$input}");
-
-        var_dump(glob("storage/gameData/*/*/characters/*"));
 
         $characterDataFiles = glob("storage/gameData/*/*/characters/*{$this->argument('character')}.json");
 
@@ -94,7 +92,7 @@ class AddNewCharacter extends Command
                     );
                 }
 
-                $characterModel = Character::where('name', $characterJSON->name)->firstOrFail();
+                $characterModel = Character::where('name', $characterJSON->name)->where('game_id', $gameId)->firstOrFail();
                 foreach($characterJSON->moves as $move) {
                     if($move->name !== '') {
                         // * Add game_id to this table
@@ -130,6 +128,7 @@ class AddNewCharacter extends Command
 
                         $characterMoveModel = CharacterMove::where('name', $move->name)
                                                             ->where('character_id', $characterModel->id)
+                                                            ->where('game_id', $gameId)
                                                             ->firstOrFail();
                         $characterMoveId = $characterMoveModel->id;
 
@@ -151,7 +150,7 @@ class AddNewCharacter extends Command
                             };
 
                             if($input->group === 'attacks') {
-                                $attackButtonModel = AttackButton::where('name', $input->input)->pluck('id');
+                                $attackButtonModel = AttackButton::where('name', $input->input)->where('game_id', $gameId)->pluck('id');
                                 $attackButtonId = Arr::get($attackButtonModel, 0);
                                 var_dump($input->input);
                                 DB::insert(
@@ -234,8 +233,8 @@ class AddNewCharacter extends Command
                         foreach($move->follow_up_to as $parentName) {
 
                             if($parentName !== '') {
-                                $parentCharacterMove = CharacterMove::where('name', $parentName)->firstOrFail();
-                                $childCharacterMove = CharacterMove::where('name', $move->name)->firstOrFail();
+                                $parentCharacterMove = CharacterMove::where('name', $parentName)->where('game_id', $gameId)->firstOrFail();
+                                $childCharacterMove = CharacterMove::where('name', $move->name)->where('game_id', $gameId)->firstOrFail();
 
                                 $parentCharacterMove->followUps()->attach($childCharacterMove->id);
                                 $parentCharacterMove->save();

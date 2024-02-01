@@ -76,7 +76,7 @@ class CharacterComboController extends Controller
             }
             // attack_button_character_combo
             if($input['category'] === 'attack-buttons') {
-                $attackButtonModel = AttackButton::where('name', $input['name'])->pluck('id');
+                $attackButtonModel = AttackButton::where('name', $input['name'])->where('game_id', $gameId)->pluck('id');
                 $attackButtonId = Arr::get($attackButtonModel, 0);
                 DB::insert(
                     'insert into attack_button_character_combo (attack_button_id, character_combo_id, order_in_combo, created_at, updated_at) values (?, ?, ?, ?, ?)',
@@ -146,7 +146,7 @@ class CharacterComboController extends Controller
 
             // attack_button_character_combo
             if($input['category'] === 'attack-buttons') {
-                $attackButtonModel = AttackButton::where('name', $input['name'])->pluck('id');
+                $attackButtonModel = AttackButton::where('name', $input['name'])->where('game_id', $gameId)->pluck('id');
                 $attackButtonId = Arr::get($attackButtonModel, 0);
                 DB::insert(
                     'insert into attack_button_character_combo (attack_button_id, character_combo_id, order_in_combo, created_at, updated_at) values (?, ?, ?, ?, ?)',

@@ -15,8 +15,8 @@ class AddGameAttackButtons extends Command
      *
      * @var string
      */
-    protected $signature = 'add:attack-buttons
-                            {game : The game for which you want to add the attack buttons for.}';
+    protected $signature = 'game:add-attack-buttons
+                            {game : The game for which you want to add the attack buttons for. (use the abbreviation like "SF6" for "Street Fighter 6") }';
 
     /**
      * The console command description.
@@ -37,7 +37,7 @@ class AddGameAttackButtons extends Command
         $input = $this->argument('game');
         $this->info("This is what you passed in: {$input}");
 
-        $attackButtonFile = glob("storage/gameData/*/{$this->argument('game')}/*AttackButtons.json");
+        $attackButtonFile = glob("storage/gameData/*/*/{$this->argument('game')}*AttackButtons.json");
 
         if(count($attackButtonFile) === 0) {
             $this->error('No files found.');
@@ -45,12 +45,13 @@ class AddGameAttackButtons extends Command
         }
 
         if($this->confirm("You're about to add all attack button data for <fg=yellow>{$this->argument('game')}</> to the DB. Continue?")) {
+            $game = Game::where('abbreviation', strtolower($this->argument('game')))->firstOrFail();
 
             $json = File::get($attackButtonFile[0]);
             $attackButtons = json_decode($json);
 
             foreach($attackButtons as $attackButton) {
-                $attackButtonExistenceCheck = AttackButton::where('name', $attackButton->name)->doesntExist();
+                $attackButtonExistenceCheck = AttackButton::where('name', $attackButton->name)->where('game_id', $game->id)->doesntExist();
 
                 if($attackButtonExistenceCheck) {
                     $gameModel = Game::where('title', $attackButton->game)->firstOrFail();
@@ -62,6 +63,7 @@ class AddGameAttackButtons extends Command
                         "game_id" => $gameId,
                         "icon_file_name" => $attackButton->icon,
                     ]);
+                    var_dump($attackButtonModel);
                 } else {
                     $this->error("Attack buttons for {$attackButton->game} not added to the database because they already exist.");
                     return Command::FAILURE;

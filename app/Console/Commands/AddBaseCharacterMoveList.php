@@ -1,48 +1,94 @@
 <?php
 
-namespace Database\Seeders;
+namespace App\Console\Commands;
 
 use App\Models\AttackButton;
 use App\Models\Character;
 use App\Models\CharacterMove;
-use App\Models\CharacterMoveCondition;
 use App\Models\DirectionalInput;
 use App\Models\Game;
 use App\Models\GameNotation;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 
-class CharacterSeeder extends Seeder
+class AddBaseCharacterMoveList extends Command
 {
     /**
-     * Run the database seeds.
+     * The name and signature of the console command.
      *
-     * @return void
+     * @var string
      */
-    public function run()
+    protected $signature = 'character:add-base-character-move-list
+                            { game : The game the character belongs to. Use the abbrevation like "SF6" for "Street Fighter 6". }
+                            { character : The character you wish to add a move list for. }';
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Adds the base move list for a character. This will include only the move name and inputs with notations, no properties, conditions, hit zones, etc.';
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
     {
-        DB::table('characters')->delete();
-        $characterDataFiles = glob('storage/gameData/*/*/characters/*');
+
+        try {
+            //code...
+            $gameArgument = strtolower($this->argument('game'));
+            // dd($gameArgument);
+            var_dump($gameArgument);
+            $game = Game::where('abbreviation', $gameArgument)->firstOrFail();
+            var_dump($game->title);
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->error("Game not found.");
+            return Command::FAILURE;
+        }
+
+        $characterDataFiles = glob("storage/gameData/*/*/characters/*{$this->argument('character')}.json");
+
+        if(count($characterDataFiles) === 0) {
+            $this->error('No files found.');
+            return Command::FAILURE;
+        }
+
         foreach($characterDataFiles as $file) {
-            $json = File::get($file);
 
-            $characters = json_decode($json);
-            $now = now();
-            
-            foreach($characters as $character) {
+            if($this->confirm("You're about to add '{$file}' to the DB. Continue?")) {
+                // TODO Add the inserts here
 
-                $gameModel = Game::where('title', $character->game)->firstOrFail();
-                $gameId = $gameModel->id;
-                $characterModel = Character::create([
-                    "name" => $character->name,
-                    "archetype" => $character->archetype,
-                    "game_id" => $gameId
-                ]);
+                $json = File::get($file);
+                $characterJSONArray = json_decode($json);
+                $characterJSON = reset($characterJSONArray);
+                $now = now();
+
+                try {
+                    $gameModel = Game::where('title', $characterJSON->game)->firstOrFail();
+                    // dd($characterModel->name);
+                } catch (\Throwable $th) {
+                    // throw $th;
+                    $this->error("The game {$characterJSON->game} does not yet exist. Please create it first before adding this character.");
+                    return Command::FAILURE;
+                }
                 
-                $characterNotations = $character->notations;
+                try {
+                    //code...
+                    $characterModel = Character::where('name', $characterJSON->name)->firstOrFail();
+                } catch (\Throwable $th) {
+                    //throw $th;
+                    $this->error("{$characterJSON->name} does not yet exist in the DB. Please add them first before adding this move list");
+                    return Command::FAILURE;
+                }
+
+                $gameId = $gameModel->id;
+
+                $characterNotations = $characterJSON->notations;
                 foreach($characterNotations as $notation => $description) {
                     DB::insert(
                         'insert into game_notations (notation, description, game_id, character_id, notations_group, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?)', 
@@ -51,19 +97,17 @@ class CharacterSeeder extends Seeder
                             $description, 
                             $gameId, 
                             $characterModel->id, 
-                            $character->notations_group, 
+                            $characterJSON->notations_group, 
                             $now, 
                             $now
                         ]
                     );
                 }
-
-                $characterModel = Character::where('name', $character->name)->where('game_id', $gameId)->firstOrFail();
-                foreach($character->moves as $move) {
+            
+                foreach($characterJSON->moves as $move) {
                     if($move->name !== '') {
-                        // * Add game_id to this table
                         DB::insert(
-                            'insert into character_moves (name, character_id, game_id, resource_gain, resource_cost, meter_cost, meter_gain, hit_count, ex_hit_count, damage, category, type, startup_frames, active_frames, recovery_frames, frames_on_hit, frames_on_block, frames_on_counter_hit, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                            'insert into character_moves (name, character_id, game_id, resource_gain, resource_cost, meter_cost, meter_gain, hit_count, ex_hit_count, damage, category, type, startup_frames, active_frames, recovery_frames, frames_on_hit, frames_on_block, frames_on_counter_hit, move_list_number, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                             [
                                 $move->name,
                                 $characterModel->id,
@@ -83,6 +127,7 @@ class CharacterSeeder extends Seeder
                                 $move->frames_on_hit,
                                 $move->frames_on_block,
                                 $move->frames_on_counter_hit,
+                                $move->move_list_number,
                                 $now,
                                 $now
                             ]
@@ -118,6 +163,7 @@ class CharacterSeeder extends Seeder
                             if($input->group === 'attacks') {
                                 $attackButtonModel = AttackButton::where('name', $input->input)->where('game_id', $gameId)->pluck('id');
                                 $attackButtonId = Arr::get($attackButtonModel, 0);
+                                var_dump($input->input);
                                 DB::insert(
                                     'insert into attack_button_character_move (attack_button_id, character_move_id, order_in_move, created_at, updated_at) values (?, ?, ?, ?, ?)',
                                     [
@@ -132,9 +178,12 @@ class CharacterSeeder extends Seeder
                             
                             if($input->group === 'notations') {
                                 $gameNotationModel = GameNotation::where('game_id', $gameId)
-                                    ->where('description', $input->input)
+                                    ->where('input', $input->input)
+                                    ->where('description', $input->notation)
                                     ->pluck('id');
+                                    
                                 $gameNotationId = Arr::get($gameNotationModel, 0);
+
                                 DB::insert(
                                     'insert into character_move_game_notation (character_move_id, game_notation_id, order_in_move, created_at, updated_at) values (?, ?, ?, ?, ?)',
                                     [
@@ -147,67 +196,11 @@ class CharacterSeeder extends Seeder
                                 );
                             }
                         }
-                        foreach($move->zones as $index => $zone) {
-                            $zoneData = DB::table('hit_zones')
-                                    ->where('zone', $zone)
-                                    ->get()
-                                    ->pluck('id');
-
-                            $zoneId = Arr::get($zoneData, 0);
-                            $orderInZoneList = $index + 1;
-                            if($zone !== '') {
-                                DB::insert(
-                                    'insert into character_move_hit_zone (character_move_id, hit_zone_id, order_in_zone_list, created_at, updated_at) values (?, ?, ?, ?, ?)',
-                                    [
-                                        $characterMoveId,
-                                        $zoneId === null ? 4 : $zoneId,
-                                        $orderInZoneList,
-                                        $now,
-                                        $now
-                                    ]
-                                );
-                            }
-                        }
-                        
-                        if(isset($move->conditions)) {
-                            foreach($move->conditions as $condition) {
-                                if($condition !== '') {
-                                    $characterMoveCondition = CharacterMoveCondition::firstOrCreate([
-                                        'condition' => $condition,
-                                        'game_id' => $gameId
-                                    ]);
-
-                                    DB::insert(
-                                        'insert into character_move_character_move_condition (character_move_id, character_move_condition_id, created_at, updated_at) values (?, ?, ?, ?)', 
-                                        [
-                                            $characterMoveId,
-                                            $characterMoveCondition->id,
-                                            $now,
-                                            $now
-                                        ]
-                                    );
-                                }
-                            }
-                        }
                     }   
                 }
-
-                // Doing this as it's own loop since follow ups depend on all moves existing before creating the associations
-                foreach($character->moves as $move) {
-                    if(isset($move->follow_up_to)) {
-                        foreach($move->follow_up_to as $parentName) {
-
-                            if($parentName !== '') {
-                                $parentCharacterMove = CharacterMove::where('name', $parentName)->where('game_id', $gameId)->firstOrFail();
-                                $childCharacterMove = CharacterMove::where('name', $move->name)->where('game_id', $gameId)->firstOrFail();
-
-                                $parentCharacterMove->followUps()->attach($childCharacterMove->id);
-                                $parentCharacterMove->save();
-                            }
-                        }
-                    }
-                }
-            }
+            };
         }
+
+        return Command::SUCCESS;
     }
 }

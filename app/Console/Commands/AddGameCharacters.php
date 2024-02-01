@@ -16,7 +16,7 @@ class AddGameCharacters extends Command
      * @var string
      */
     protected $signature = 'add:characters
-                            {game : The game for which you want to add the characters of.}';
+                            {game : The game for which you want to add the characters of. Use full name like "Street Fighter 6" }';
 
     /**
      * The console command description.
@@ -67,7 +67,7 @@ class AddGameCharacters extends Command
                 $gameId = $gameModel->id;
 
                 // var_dump($gameModel->title);
-                $characterExistenceCheck = Character::where('name', $characterJSON->name)->doesntExist();
+                $characterExistenceCheck = Character::where('name', $characterJSON->name)->where('game_id', $gameId)->doesntExist();
                 if($characterExistenceCheck) {
                     $characterModel = Character::make([
                         "name" => $characterJSON->name,
@@ -80,24 +80,6 @@ class AddGameCharacters extends Command
                     $this->error("Character {$characterJSON->name} not added to the database because they already exist.");
                     return Command::FAILURE;
                 }
-                
-                // $characterNotations = $characterJSON->notations;
-                // if(count($characterNotations) > 0) {
-                //     foreach($characterNotations as $notation => $description) {
-                //         DB::insert(
-                //             'insert into game_notations (notation, description, game_id, character_id, notations_group, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?)', 
-                //             [
-                //                 $notation, 
-                //                 $description, 
-                //                 $gameId, 
-                //                 $characterModel->id, 
-                //                 $characterJSON->notations_group, 
-                //                 $now, 
-                //                 $now
-                //             ]
-                //         );
-                //     }
-                // }
             }
         }
 
