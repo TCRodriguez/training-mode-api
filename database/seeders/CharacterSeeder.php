@@ -58,7 +58,7 @@ class CharacterSeeder extends Seeder
                     );
                 }
 
-                $characterModel = Character::where('name', $character->name)->firstOrFail();
+                $characterModel = Character::where('name', $character->name)->where('game_id', $gameId)->firstOrFail();
                 foreach($character->moves as $move) {
                     if($move->name !== '') {
                         // * Add game_id to this table
@@ -94,6 +94,7 @@ class CharacterSeeder extends Seeder
 
                         $characterMoveModel = CharacterMove::where('name', $move->name)
                                                             ->where('character_id', $characterModel->id)
+                                                            ->where('game_id', $gameId)
                                                             ->firstOrFail();
                         $characterMoveId = $characterMoveModel->id;
 
@@ -115,7 +116,7 @@ class CharacterSeeder extends Seeder
                             };
 
                             if($input->group === 'attacks') {
-                                $attackButtonModel = AttackButton::where('name', $input->input)->pluck('id');
+                                $attackButtonModel = AttackButton::where('name', $input->input)->where('game_id', $gameId)->pluck('id');
                                 $attackButtonId = Arr::get($attackButtonModel, 0);
                                 DB::insert(
                                     'insert into attack_button_character_move (attack_button_id, character_move_id, order_in_move, created_at, updated_at) values (?, ?, ?, ?, ?)',
@@ -197,8 +198,8 @@ class CharacterSeeder extends Seeder
                         foreach($move->follow_up_to as $parentName) {
 
                             if($parentName !== '') {
-                                $parentCharacterMove = CharacterMove::where('name', $parentName)->firstOrFail();
-                                $childCharacterMove = CharacterMove::where('name', $move->name)->firstOrFail();
+                                $parentCharacterMove = CharacterMove::where('name', $parentName)->where('game_id', $gameId)->firstOrFail();
+                                $childCharacterMove = CharacterMove::where('name', $move->name)->where('game_id', $gameId)->firstOrFail();
 
                                 $parentCharacterMove->followUps()->attach($childCharacterMove->id);
                                 $parentCharacterMove->save();
