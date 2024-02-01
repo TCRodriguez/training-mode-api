@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Facades\Log;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -47,13 +49,21 @@ class Handler extends ExceptionHandler
             //
         });
         $this->renderable(function (Throwable $e, $request) {
+            Log::error($e->getMessage());
+
+            if ($e instanceof QueryException) {
+                if (str_contains($e->getMessage(), 'Duplicate entry') && str_contains($e->getMessage(), 'users.users_email_unique')){
+                    $genericErrorMessage = "Email is already in use.";
+                } else {
+                    $genericErrorMessage = "A database error occurred.";
+                }
+            }
+
             if ($request->wantsJson()) {
-                // Handle API requests with a JSON response
-                return response()->json(['message' => $e->getMessage()], 500);
+                return response()->json(['message' => $genericErrorMessage], 500);
             } else {
-                // Redirect non-API requests to the Vue app with an error message
-                $errorMessage = urlencode($e->getMessage());
-                return redirect()->away('https://app.trainingmode.gg/?error=' . $errorMessage);
+                $errorMessage = urlencode($genericErrorMessage);
+                return redirect()->away(env('FRONT_END_URL') . '?error=' . $errorMessage);
             }
         });
     }

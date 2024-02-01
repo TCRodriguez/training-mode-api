@@ -293,7 +293,7 @@
                 "frames_on_counter_hit": null
             },
             {
-                "name": "Cannon Strike",
+                "name": "Cannon Strike (follow up)",
                 "inputs": [
                     {
                         "group": "attacks",

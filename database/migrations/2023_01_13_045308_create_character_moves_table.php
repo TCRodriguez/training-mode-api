@@ -19,9 +19,6 @@ return new class extends Migration
             $table->unsignedBigInteger('character_id')->index();
             $table->unsignedBigInteger('game_id')->index();
 
-
-
-
             // $table->string('zone')->nullable();
             // $table->string('follow_up_to');
             // $table->unsignedBigInteger('follow_up_id')->nullable();
@@ -29,14 +26,10 @@ return new class extends Migration
             $table->integer('resource_gain')->nullable();
             $table->integer('resource_cost')->nullable();
             
-
             $table->integer('meter_cost')->nullable();
             $table->integer('meter_gain')->nullable();
             $table->integer('hit_count')->nullable();
             $table->integer('ex_hit_count')->nullable();
-
-
-            
 
             $table->integer('damage')->nullable();
             $table->string('category')->nullable();

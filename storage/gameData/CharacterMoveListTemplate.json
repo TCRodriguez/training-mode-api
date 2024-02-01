@@ -7,6 +7,7 @@
         "notations_group": "character",
         "moves": [
             {
+                "move_list_number": null,
                 "name": "",
                 "inputs": [
                     {
@@ -22,6 +23,20 @@
                 "resource_cost": null,
                 "follow_up_to": [""],
                 "augmented_by_move": [""],
+                "augmented_by_inputs": [
+                    { 
+                        "group": "", 
+                        "input": "", 
+                        "notation": "",
+                        "placement_index_in_sequence_array": null,
+                        "notes": [
+                            {
+                                "text": "", 
+                                "placement_index_in_sequence_array": null
+                            }
+                        ]
+                    }
+                ],
                 "meter_cost": null,
                 "meter_gain": null,
                 "hit_count": null,
