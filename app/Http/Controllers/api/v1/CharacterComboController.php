@@ -42,6 +42,7 @@ class CharacterComboController extends Controller
     public function store(Request $request, $gameId, $characterId)
     {
         $characterCombo = CharacterCombo::create([
+            'name' => $request->input('name'),
             'game_id' => $gameId,
             'user_id' => Auth::id(),
             'character_id' => $request->input('character_id'),
@@ -59,6 +60,7 @@ class CharacterComboController extends Controller
             // dd($input['input']);
             $orderInCombo = $index + 1;
             // var_dump($orderInCombo);
+
             if($input['category'] === 'directional-inputs') {
                 $directionalInputModel = DirectionalInput::where('direction', $input['direction'])->pluck('id');
                 $directionalInputId = Arr::get($directionalInputModel, 0);
@@ -179,6 +181,9 @@ class CharacterComboController extends Controller
                 );
             }
         }
+
+        $characterCombo->name = $request->input('name');
+        $characterCombo->save();
 
         return $characterCombo;
     }

@@ -14,4 +14,12 @@ class AttackButtonController extends Controller
 
         return $attackButtons;
     }
+
+    public function indexWithDeviceMappings(Request $request, $gameId, $deviceId)
+    {
+        // TODO: Specify device to return basedon $deviceId
+        $attackButtons = AttackButton::where('game_id', $gameId)->with('notations')->with('deviceButtons')->get();
+
+        return $attackButtons;
+    }
 }
