@@ -66,6 +66,7 @@ Route::prefix('v1')->group(function () {
     Route::get('/directional-inputs/mappings/{device}', [DirectionalInputController::class, 'indexWithMappings']);
     Route::get('/games/{game}/attack-buttons', [AttackButtonController::class, 'index']);
     Route::get('games/{game}/device-input-mappings/{device}', [DeviceController::class, 'getGameDeviceInputMappings']);
+    Route::get('games/{game}/attack-buttons/device-mappings/{device}', [AttackButtonController::class, 'indexWithDeviceMappings']);
 
     // Characters
     Route::get('/games/{game}/characters/guest', [CharacterController::class, 'characterIndexGuest']);
