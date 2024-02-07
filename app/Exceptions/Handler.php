@@ -51,6 +51,8 @@ class Handler extends ExceptionHandler
         $this->renderable(function (Throwable $e, $request) {
             Log::error($e->getMessage());
 
+            $genericErrorMessage = "An unexpected error occurred.";
+
             if ($e instanceof QueryException) {
                 if (str_contains($e->getMessage(), 'Duplicate entry') && str_contains($e->getMessage(), 'users.users_email_unique')){
                     $genericErrorMessage = "Email is already in use.";
