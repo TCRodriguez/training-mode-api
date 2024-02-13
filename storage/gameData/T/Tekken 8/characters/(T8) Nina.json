@@ -3,7 +3,17 @@
         "name": "Nina",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "OBT": "Over the Back Toss",
+            "STB": "Shoulder Through Buster",
+            "BHS": "Backhand Slap",
+            "ARB": "Arm Break",
+            "STL": "Stomach Lock",
+            "CRH": "Crab Hold",
+            "HLH": "Heel Hold",
+            "BTR": "Betrayer",
+            "TNM": "Twisted Nightmare"
+        },
         "notations_group": "character",
         "moves": [
             {

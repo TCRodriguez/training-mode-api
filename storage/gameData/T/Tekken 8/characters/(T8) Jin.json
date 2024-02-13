@@ -3,7 +3,9 @@
         "name": "Jin",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "ZSH": "Zanshin"
+        },
         "notations_group": "character",
         "moves": [
             {

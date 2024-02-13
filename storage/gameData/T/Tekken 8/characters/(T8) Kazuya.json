@@ -3,7 +3,9 @@
         "name": "Kazuya",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "DFM": "Devil Form"
+        },
         "notations_group": "character",
         "moves": [
             {

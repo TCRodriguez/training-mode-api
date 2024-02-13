@@ -3,7 +3,11 @@
         "name": "Xiaoyu",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "RDS": "Rain Dance",
+            "AOP": "Art of Phoenix",
+            "HYP": "Hypnotist"
+        },
         "notations_group": "character",
         "moves": [
             {

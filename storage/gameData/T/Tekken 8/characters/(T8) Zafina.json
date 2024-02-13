@@ -3,7 +3,11 @@
         "name": "Zafina",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "TRT": "Tarantula Stance",
+            "MNT": "Mantis Stance",
+            "SCR": "Scarecrow Stance"
+        },
         "notations_group": "character",
         "moves": [
             {

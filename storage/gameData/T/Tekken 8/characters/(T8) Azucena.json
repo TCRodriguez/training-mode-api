@@ -3,7 +3,9 @@
         "name": "Azucena",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "LIB": "Libertador"
+        },
         "notations_group": "character",
         "moves": [
             {

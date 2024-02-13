@@ -3,7 +3,9 @@
         "name": "Claudio",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "STB": "Starburst"
+        },
         "notations_group": "character",
         "moves": [
             {

@@ -3,7 +3,11 @@
         "name": "Panda",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "HBS": "Hunting Bear Stance",
+            "ROLL": "Bear Roll",
+            "BRS": "Bear Sit"
+        },
         "notations_group": "character",
         "moves": [
             {

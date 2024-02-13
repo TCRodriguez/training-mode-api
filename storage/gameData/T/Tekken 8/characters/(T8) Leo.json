@@ -3,7 +3,12 @@
         "name": "Leo",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "KNK": "Jin Ji Du Li",
+            "BOK": "Fo Bu",
+            "BZ": "Bao Zhou",
+            "SZXZK": "Shi Zi Xiao Zhang Kou"
+        },
         "notations_group": "character",
         "moves": [
             {

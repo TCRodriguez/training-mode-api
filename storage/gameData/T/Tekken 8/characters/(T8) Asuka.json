@@ -3,7 +3,12 @@
         "name": "Asuka",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "HPF": "Whiplash Combo",
+            "LCT": "Leg Cutter",
+            "NWG": "Naniwa Gusto",
+            "DSZ": "Destabilizer"
+        },
         "notations_group": "character",
         "moves": [
             {
