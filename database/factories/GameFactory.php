@@ -17,7 +17,9 @@ class GameFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->word,
+            'abbreviation' => $this->faker->word,
+            'buttons' => $this->faker->numberBetween(3, 6),
         ];
     }
 }
