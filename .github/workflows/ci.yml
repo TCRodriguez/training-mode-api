@@ -1,10 +1,8 @@
 name: TrainingMode CI
 
 on:
-    push:
-        branches: [ develop, task/tcr/add-game-notations-add-command ]
     pull_request:
-        branches: [ develop, task/tcr/add-game-notations-add-command ]
+        branches: [ main, develop ]
 
 jobs:
   test:
