@@ -17,7 +17,7 @@ class AddGameNotations extends Command
      *
      * @var string
      */
-    protected $signature = 'add:game-notations
+    protected $signature = 'game:add-game-notations
                             {game : The game you want to add the notations for. (use the abbreviation like "SF6" for "Street Fighter 6") }';
 
     /**
@@ -39,6 +39,18 @@ class AddGameNotations extends Command
         $input = $this->argument('game');
         $this->info("This is what you passed in: {$input}");
 
+        try {
+            //code...
+            $gameArgument = strtolower($this->argument('game'));
+            // dd($gameArgument);
+            var_dump($gameArgument);
+            $game = Game::where('abbreviation', $gameArgument)->firstOrFail();
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->error("Game not found.");
+            return Command::FAILURE;
+        }
+
         $gameNotationsFile = glob("storage/gameData/*/*/{$this->argument('game')}*Notations.json");
         var_dump($gameNotationsFile);
 
@@ -55,7 +67,8 @@ class AddGameNotations extends Command
                 $gameNotations = json_decode($json);
 
                 foreach($gameNotations as $notation) {
-                    $notationExistenceCheck = GameNotation::where('notation', $notation->text)->doesntExist();
+                    $notationExistenceCheck = GameNotation::where('notation', $notation->text)->where('game_id', $game->id)->doesntExist();
+                    var_dump($notationExistenceCheck);
                     if($notationExistenceCheck) {
                         $gameModel = Game::where('title', $notation->game)->firstOrFail();
                         $gameId = $gameModel->id;
@@ -66,7 +79,8 @@ class AddGameNotations extends Command
                             "notations_group" => $notation->group,
                             "icon_file_name" => $notation->icon,
                         ]);
-                        var_dump("{$gameNotationModel->notation}: {$gameNotationModel->description}");
+                        // var_dump("{$gameNotationModel->notation}: {$gameNotationModel->description}");
+                        $this->info("Notation <fg=yellow>{$gameNotationModel->notation}: {$gameNotationModel->description}</> added to the database.");
     
                         foreach($notation->directional_inputs as $directionalInput) {
                             $directionalInputModel = DirectionalInput::where('direction', $directionalInput)->first();
@@ -89,26 +103,10 @@ class AddGameNotations extends Command
                         }
                     } else {
                         $this->error("Notation {$notation->text} not added to the database because it already exists.");
-                        return Command::FAILURE;
                     }
                 }
             }
         }
         return Command::SUCCESS;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 }
