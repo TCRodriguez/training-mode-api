@@ -3,7 +3,12 @@
         "name": "Hwoarang",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "LFF": "Left Foot Forward",
+            "RFF": "Right Foot Forward",
+            "LFS": "Left Flamingo Stance",
+            "RFS": "Right Flamingo Stance"
+        },
         "notations_group": "character",
         "moves": [
             {

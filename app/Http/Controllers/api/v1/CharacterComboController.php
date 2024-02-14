@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class CharacterComboController extends Controller
 {
@@ -131,6 +132,7 @@ class CharacterComboController extends Controller
         $now = now();
         foreach($request->inputs as $index => $input) {
             $orderInCombo = $index + 1;
+            // Log::info('Logging object:', ['object' => json_encode($input, JSON_PRETTY_PRINT)]);
             if($input['category'] === 'directional-inputs') {
                 $directionalInputModel = DirectionalInput::where('direction', $input['direction'])->pluck('id');
                 $directionalInputId = Arr::get($directionalInputModel, 0);
@@ -162,12 +164,9 @@ class CharacterComboController extends Controller
                 );
             }
 
-
-
-
             // character_combo_game_notation
             if($input['category'] === 'notations' || $input['category'] === 'character-notations') {
-                $gameNotationModel = GameNotation::where('notation', $input['notation'])->pluck('id');
+                $gameNotationModel = GameNotation::where('notation', $input['notation'])->where('game_id', $gameId)->pluck('id');
                 $gameNotationId = Arr::get($gameNotationModel, 0);
                 DB::insert(
                     'insert into character_combo_game_notation (character_combo_id, game_notation_id, order_in_combo, created_at, updated_at) values (?, ?, ?, ?, ?)',

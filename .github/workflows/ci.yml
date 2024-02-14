@@ -1,0 +1,56 @@
+name: TrainingMode CI
+
+on:
+    push:
+        branches: [ develop, task/tcr/add-game-notations-add-command ]
+    pull_request:
+        branches: [ develop, task/tcr/add-game-notations-add-command ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: secret
+          MYSQL_DATABASE: training_mode_test
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping -h localhost -u root --password=secret" --health-interval=10s --health-timeout=5s --health-retries=5
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: mbstring, xml, ctype, iconv, mysql
+        coverage: none
+
+    - name: Install Dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Copy .env.example to .env
+      run: cp .env.example .env
+
+    - name: Generate Key
+      run: php artisan key:generate
+
+    - name: Prepare Laravel Application
+      run: |
+        php artisan config:cache
+        php artisan migrate
+
+    - name: Run Tests
+      run: php artisan test
+
+    env:
+      DB_CONNECTION: mysql
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_DATABASE: training_mode_test
+      DB_USERNAME: root
+      DB_PASSWORD: secret

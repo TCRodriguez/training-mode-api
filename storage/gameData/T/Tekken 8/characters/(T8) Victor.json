@@ -3,7 +3,10 @@
         "name": "Victor",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "IAI": "Iai stance",
+            "PFM": "Perfumer"
+        },
         "notations_group": "character",
         "moves": [
             {

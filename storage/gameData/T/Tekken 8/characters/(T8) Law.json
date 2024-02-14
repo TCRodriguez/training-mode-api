@@ -3,7 +3,9 @@
         "name": "Law",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "DSS": "Dragon Sign Stance"
+        },
         "notations_group": "character",
         "moves": [
             {

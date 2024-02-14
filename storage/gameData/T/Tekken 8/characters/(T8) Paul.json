@@ -3,7 +3,11 @@
         "name": "Paul",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "SWAY": "Sway",
+            "DD": "Deep Dive",
+            "CS": "Cormorant Step"
+        },
         "notations_group": "character",
         "moves": [
             {

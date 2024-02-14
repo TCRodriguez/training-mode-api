@@ -3,7 +3,12 @@
         "name": "Leroy",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "HRM": "Hermit",
+            "NFS": "Nimble Shift",
+            "TDG": "Twin Dragon Gate",
+            "STDG": "Superior Twin Dragon Gate"
+        },
         "notations_group": "character",
         "moves": [
             {

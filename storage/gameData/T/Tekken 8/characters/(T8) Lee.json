@@ -3,7 +3,10 @@
         "name": "Lee",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "HMS": "Hitman Stance",
+            "MSI": "Mist Illusion"
+        },
         "notations_group": "character",
         "moves": [
             {

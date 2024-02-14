@@ -3,7 +3,9 @@
         "name": "Shaheen",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "STP": "Stealth Step"
+        },
         "notations_group": "character",
         "moves": [
             {
