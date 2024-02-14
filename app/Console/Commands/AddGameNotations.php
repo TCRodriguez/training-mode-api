@@ -104,6 +104,7 @@ class AddGameNotations extends Command
                     } else {
                         $this->error("Notation {$notation->text} not added to the database because it already exists.");
                     }
+                    
                 }
             }
         }
