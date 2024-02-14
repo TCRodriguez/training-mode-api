@@ -109,4 +109,5 @@ class AddGameNotations extends Command
         }
         return Command::SUCCESS;
     }
+    
 }
