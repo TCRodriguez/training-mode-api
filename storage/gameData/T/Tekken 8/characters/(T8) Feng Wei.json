@@ -3,7 +3,10 @@
         "name": "Feng Wei",
         "archetype": "",
         "game": "Tekken 8",
-        "notations": {},
+        "notations": {
+            "STC": "Shifting Clouds",
+            "KNP": "Kenpo Step (Deceptive Step)"
+        },
         "notations_group": "character",
         "moves": [
             {
