@@ -398,8 +398,8 @@
           },
           {
             "group": "directions",
-            "input": "d",
-            "notation": "Down"
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -804,8 +804,8 @@
           },
           {
             "group": "directions",
-            "input": "d",
-            "notation": "Down"
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -936,8 +936,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -1012,8 +1012,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -1088,8 +1088,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -1154,8 +1154,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -1240,8 +1240,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -1306,8 +1306,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -1377,8 +1377,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -1443,8 +1443,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -1509,8 +1509,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -1575,8 +1575,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -1641,8 +1641,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "df",
-            "notation": "Down Forward"
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -1717,8 +1717,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "df",
-            "notation": "Down Forward"
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -1793,8 +1793,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "df",
-            "notation": "Down Forward"
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -1859,8 +1859,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "df",
-            "notation": "Down Forward"
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -1925,8 +1925,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "df",
-            "notation": "Down Forward"
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -1991,8 +1991,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "d",
-            "notation": "Down"
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -2057,8 +2057,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "d",
-            "notation": "Down"
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -2123,8 +2123,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "d",
-            "notation": "Down"
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -2189,8 +2189,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "db",
-            "notation": "Down Back"
+            "notation": "db",
+            "input": "Down Back"
           },
           {
             "group": "notations",
@@ -2255,8 +2255,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "db",
-            "notation": "Down Back"
+            "notation": "db",
+            "input": "Down Back"
           },
           {
             "group": "notations",
@@ -2331,8 +2331,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "db",
-            "notation": "Down Back"
+            "notation": "db",
+            "input": "Down Back"
           },
           {
             "group": "notations",
@@ -2407,8 +2407,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "db",
-            "notation": "Down Back"
+            "notation": "db",
+            "input": "Down Back"
           },
           {
             "group": "notations",
@@ -2473,8 +2473,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "db",
-            "notation": "Down Back"
+            "notation": "db",
+            "input": "Down Back"
           },
           {
             "group": "notations",
@@ -2539,8 +2539,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "db",
-            "notation": "Down Back"
+            "notation": "db",
+            "input": "Down Back"
           },
           {
             "group": "notations",
@@ -2757,8 +2757,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "db",
-            "notation": "Down Back"
+            "notation": "db",
+            "input": "Down Back"
           },
           {
             "group": "notations",
@@ -2823,8 +2823,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -2889,8 +2889,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -2960,8 +2960,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -3036,8 +3036,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -3112,8 +3112,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -3198,8 +3198,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -3264,8 +3264,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -3360,8 +3360,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -3436,8 +3436,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -3542,8 +3542,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -3618,8 +3618,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -3694,8 +3694,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -3760,8 +3760,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "u",
-            "notation": "Up"
+            "notation": "u",
+            "input": "Up"
           },
           {
             "group": "notations",
@@ -3826,8 +3826,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "uf",
-            "notation": "Up Forward"
+            "notation": "uf",
+            "input": "Up Forward"
           },
           {
             "group": "notations",
@@ -3892,8 +3892,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "uf",
-            "notation": "Up Forward"
+            "notation": "uf",
+            "input": "Up Forward"
           },
           {
             "group": "notations",
@@ -3958,8 +3958,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "uf",
-            "notation": "Up Forward"
+            "notation": "uf",
+            "input": "Up Forward"
           },
           {
             "group": "notations",
@@ -4024,8 +4024,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -4034,8 +4034,8 @@
           },
           {
             "group": "directions",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -4100,8 +4100,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -4110,8 +4110,8 @@
           },
           {
             "group": "directions",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -4186,8 +4186,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -4196,8 +4196,8 @@
           },
           {
             "group": "directions",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -4272,8 +4272,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -4282,8 +4282,8 @@
           },
           {
             "group": "directions",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -4358,8 +4358,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -4368,8 +4368,8 @@
           },
           {
             "group": "directions",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -4434,8 +4434,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -4444,8 +4444,8 @@
           },
           {
             "group": "directions",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -4510,8 +4510,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -4520,8 +4520,8 @@
           },
           {
             "group": "directions",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -4586,8 +4586,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -4596,8 +4596,8 @@
           },
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -4606,8 +4606,8 @@
           },
           {
             "group": "directions",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -4672,8 +4672,8 @@
         "inputs": [
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -4682,8 +4682,8 @@
           },
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -4692,8 +4692,8 @@
           },
           {
             "group": "directions",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -4991,8 +4991,8 @@
           },
           {
             "group": "directions",
-            "input": "u",
-            "notation": "Up"
+            "notation": "u",
+            "input": "Up"
           },
           {
             "group": "notations",
@@ -5067,8 +5067,8 @@
           },
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -5077,8 +5077,8 @@
           },
           {
             "group": "directions",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -5153,8 +5153,8 @@
           },
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -5163,8 +5163,8 @@
           },
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -5173,8 +5173,8 @@
           },
           {
             "group": "directions",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -5640,8 +5640,8 @@
           },
           {
             "group": "directions",
-            "input": "df",
-            "notation": "Down Forward"
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -5711,8 +5711,8 @@
           },
           {
             "group": "directions",
-            "input": "df",
-            "notation": "Down Forward"
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -6602,8 +6602,8 @@
           },
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -6622,8 +6622,8 @@
           },
           {
             "group": "directions",
-            "input": "f",
-            "notation": "Forward"
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -6825,8 +6825,8 @@
           },
           {
             "group": "directions",
-            "input": "df",
-            "notation": "Down Forward"
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -6896,8 +6896,8 @@
           },
           {
             "group": "directions",
-            "input": "uf",
-            "notation": "Up Forward"
+            "notation": "uf",
+            "input": "Up Forward"
           },
           {
             "group": "notations",
@@ -6967,8 +6967,8 @@
           },
           {
             "group": "directions",
-            "input": "db",
-            "notation": "Down Back"
+            "notation": "db",
+            "input": "Down Back"
           },
           {
             "group": "notations",
@@ -7038,8 +7038,8 @@
           },
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -7058,8 +7058,8 @@
           },
           {
             "group": "directions",
-            "input": "b",
-            "notation": "Back"
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
