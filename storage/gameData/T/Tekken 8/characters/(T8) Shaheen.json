@@ -1343,72 +1343,6 @@
         "frames_on_counter_hit": null
       },
       {
-        "move_list_number": 35,
-        "name": "Stealth Step",
-        "inputs": [
-          {
-            "group": "directions",
-            "notation": "df",
-            "input": "Down Forward"
-          },
-          {
-            "group": "notations",
-            "input": "Press Simultaneously",
-            "notation": "+"
-          },
-          {
-            "group": "attacks",
-            "notation": "3 + 4",
-            "input": "Left Kick + Right Kick"
-          }
-        ],
-        "conditions": [
-          ""
-        ],
-        "properties": [
-          ""
-        ],
-        "minimum_required_resource": null,
-        "resource_gain": null,
-        "resource_cost": null,
-        "follow_up_to": [
-          ""
-        ],
-        "augmented_by_move": [
-          ""
-        ],
-        "augmented_by_inputs": [
-          {
-            "group": "",
-            "input": "",
-            "notation": "",
-            "placement_index_in_sequence_array": null,
-            "notes": [
-              {
-                "text": "",
-                "placement_index_in_sequence_array": null
-              }
-            ]
-          }
-        ],
-        "meter_cost": null,
-        "meter_gain": null,
-        "hit_count": null,
-        "ex_hit_count": null,
-        "zones": [
-          ""
-        ],
-        "damage": null,
-        "category": "",
-        "type": "",
-        "startup_frames": null,
-        "active_frames": null,
-        "recovery_frames": null,
-        "frames_on_hit": null,
-        "frames_on_block": null,
-        "frames_on_counter_hit": null
-      },
-      {
         "move_list_number": 36,
         "name": "Gut Impact",
         "inputs": [
@@ -3940,7 +3874,7 @@
       },
       {
         "move_list_number": 72,
-        "name": "Hunting Falcon Dive",
+        "name": "Hunting Falcon Dive (follow up to Stealth Step)",
         "inputs": [
           {
             "group": "notations",

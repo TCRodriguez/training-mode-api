@@ -4443,7 +4443,7 @@
       },
       {
         "move_list_number": 74,
-        "name": "Left Plasma Blade",
+        "name": "Left Plasma Blade (from back turned)",
         "inputs": [
           {
             "group": "notations",
@@ -5786,7 +5786,7 @@
       },
       {
         "move_list_number": 92,
-        "name": "Plasma Blade",
+        "name": "Plasma Blade (from Right Foot Forward)",
         "inputs": [
           {
             "group": "notations",
@@ -6024,7 +6024,7 @@
       },
       {
         "move_list_number": 95,
-        "name": "Double Claymore",
+        "name": "Double Claymore (from Right Foot Forward)",
         "inputs": [
           {
             "group": "notations",
@@ -6348,7 +6348,7 @@
       },
       {
         "move_list_number": 99,
-        "name": "Nose Bleeder",
+        "name": "Nose Bleeder (from Right Foot Forward)",
         "inputs": [
           {
             "group": "notations",
@@ -7782,7 +7782,7 @@
       },
       {
         "move_list_number": 118,
-        "name": "Stealth Needle",
+        "name": "Stealth Needle (from Left Flamingo Stance)",
         "inputs": [
           {
             "group": "notations",
@@ -9665,7 +9665,7 @@
       },
       {
         "move_list_number": 141,
-        "name": "Flying Eagle",
+        "name": "Flying Eagle (from Right Flamingo Stance)",
         "inputs": [
           {
             "group": "notations",

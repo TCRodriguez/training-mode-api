@@ -959,72 +959,6 @@
         "frames_on_counter_hit": null
       },
       {
-        "move_list_number": 30,
-        "name": "Bear Sit",
-        "inputs": [
-          {
-            "group": "directions",
-            "notation": "d",
-            "input": "Down"
-          },
-          {
-            "group": "notations",
-            "input": "Press Simultaneously",
-            "notation": "+"
-          },
-          {
-            "group": "attacks",
-            "notation": "3 + 4",
-            "input": "Left Kick + Right Kick"
-          }
-        ],
-        "conditions": [
-          ""
-        ],
-        "properties": [
-          ""
-        ],
-        "minimum_required_resource": null,
-        "resource_gain": null,
-        "resource_cost": null,
-        "follow_up_to": [
-          ""
-        ],
-        "augmented_by_move": [
-          ""
-        ],
-        "augmented_by_inputs": [
-          {
-            "group": "",
-            "input": "",
-            "notation": "",
-            "placement_index_in_sequence_array": null,
-            "notes": [
-              {
-                "text": "",
-                "placement_index_in_sequence_array": null
-              }
-            ]
-          }
-        ],
-        "meter_cost": null,
-        "meter_gain": null,
-        "hit_count": null,
-        "ex_hit_count": null,
-        "zones": [
-          ""
-        ],
-        "damage": null,
-        "category": "",
-        "type": "",
-        "startup_frames": null,
-        "active_frames": null,
-        "recovery_frames": null,
-        "frames_on_hit": null,
-        "frames_on_block": null,
-        "frames_on_counter_hit": null
-      },
-      {
         "move_list_number": 31,
         "name": "Double Wild Slap",
         "inputs": [
@@ -4203,7 +4137,7 @@
       },
       {
         "move_list_number": 75,
-        "name": "Honeycomb Spike",
+        "name": "Honeycomb Spike (from Hunting Bear Stance)",
         "inputs": [
           {
             "group": "notations",
@@ -4279,7 +4213,7 @@
       },
       {
         "move_list_number": 76,
-        "name": "Honeycomb Spike",
+        "name": "Honeycomb Spike (from Hunting Bear Stance; hold)",
         "inputs": [
           {
             "group": "notations",
@@ -6094,7 +6028,7 @@
           {
             "group": "notations",
             "input": "Grounded opponent ('on the ground')",
-            "notation": "FU/FA"
+            "notation": "OTG"
           },
           {
             "group": "attacks",
@@ -7021,7 +6955,7 @@
         "inputs": [
           {
             "group": "notations",
-            "input": "Face Up / Feet Away from Opponent",
+            "input": "Grounded opponent ('on the ground')",
             "notation": "OTG"
           },
           {
