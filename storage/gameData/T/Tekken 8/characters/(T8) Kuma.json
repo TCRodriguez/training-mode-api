@@ -6028,7 +6028,7 @@
           {
             "group": "notations",
             "input": "Grounded opponent ('on the ground')",
-            "notation": "FU/FA"
+            "notation": "OTG"
           },
           {
             "group": "attacks",
@@ -6955,7 +6955,7 @@
         "inputs": [
           {
             "group": "notations",
-            "input": "Face Up / Feet Away from Opponent",
+            "input": "Grounded opponent ('on the ground')",
             "notation": "OTG"
           },
           {

@@ -6315,7 +6315,7 @@
       },
       {
         "move_list_number": 101,
-        "name": "Tornado Claw",
+        "name": "Tornado Claw (follow up to Dragon Sign Stance)",
         "inputs": [
           {
             "group": "notations",
@@ -6457,7 +6457,7 @@
       },
       {
         "move_list_number": 103,
-        "name": "Poison Arrow",
+        "name": "Poison Arrow (follow up to Dragon Sign Stance)",
         "inputs": [
           {
             "group": "notations",

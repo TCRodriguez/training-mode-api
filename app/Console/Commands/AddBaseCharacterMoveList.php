@@ -51,7 +51,7 @@ class AddBaseCharacterMoveList extends Command
             return Command::FAILURE;
         }
 
-        $characterDataFiles = glob("storage/gameData/*/*/characters/*{$this->argument('character')}.json");
+        $characterDataFiles = glob("storage/gameData/*/*/characters/({$this->argument('game')}) {$this->argument('character')}.json");
 
         if(count($characterDataFiles) === 0) {
             $this->error('No files found.');
@@ -79,7 +79,7 @@ class AddBaseCharacterMoveList extends Command
                 
                 try {
                     //code...
-                    $characterModel = Character::where('name', $characterJSON->name)->firstOrFail();
+                    $characterModel = Character::where('name', $characterJSON->name)->where('game_id', $game->id)->firstOrFail();
                 } catch (\Throwable $th) {
                     //throw $th;
                     $this->error("{$characterJSON->name} does not yet exist in the DB. Please add them first before adding this move list");
@@ -132,7 +132,6 @@ class AddBaseCharacterMoveList extends Command
                                 $now
                             ]
                         );
-                        var_dump('Inserted move: ' . $move->name);
 
                         /**
                          * * Get DirectionalInput model to access data
@@ -198,6 +197,9 @@ class AddBaseCharacterMoveList extends Command
                                 );
                             }
                         }
+
+                        var_dump('Inserted move: ' . $move->name);
+                        var_dump('==========================================================');
                     }   
                 }
             };

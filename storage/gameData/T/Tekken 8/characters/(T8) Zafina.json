@@ -6321,7 +6321,7 @@
       },
       {
         "move_list_number": 103,
-        "name": "Vicious Claw",
+        "name": "Vicious Claw (follow up to Mantis Stance)",
         "inputs": [
           {
             "group": "notations",
@@ -6397,13 +6397,8 @@
       },
       {
         "move_list_number": 104,
-        "name": "Vicious Claw",
+        "name": "Vicious Claw (heat move)",
         "inputs": [
-          {
-            "group": "notations",
-            "input": "During",
-            "notation": "During"
-          },
           {
             "group": "notations",
             "input": "While in Heat",
