@@ -15,8 +15,8 @@
         "inputs": [
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -25,8 +25,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -35,8 +35,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -91,8 +91,8 @@
         "inputs": [
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -101,8 +101,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -157,8 +157,8 @@
         "inputs": [
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -167,8 +167,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -177,8 +177,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -233,8 +233,8 @@
         "inputs": [
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -243,8 +243,8 @@
           },
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           }
         ],
         "conditions": [
@@ -299,8 +299,8 @@
         "inputs": [
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -309,8 +309,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -365,8 +365,8 @@
         "inputs": [
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -375,8 +375,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -400,8 +400,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -456,8 +456,8 @@
         "inputs": [
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           },
           {
             "group": "notations",
@@ -466,8 +466,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -522,8 +522,8 @@
         "inputs": [
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           },
           {
             "group": "notations",
@@ -532,8 +532,8 @@
           },
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           },
           {
             "group": "notations",
@@ -542,8 +542,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -598,8 +598,8 @@
         "inputs": [
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -653,9 +653,9 @@
         "name": "Gorlagon",
         "inputs": [
           {
-            "group": "direction",
-            "input": "f",
-            "notation": "Forward"
+            "group": "directions",
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -664,8 +664,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -674,8 +674,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -684,8 +684,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -694,8 +694,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -749,9 +749,9 @@
         "name": "Radiant Cut",
         "inputs": [
           {
-            "group": "direction",
-            "input": "f",
-            "notation": "Forward"
+            "group": "directions",
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -760,8 +760,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -770,8 +770,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -780,8 +780,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -835,9 +835,9 @@
         "name": "Carving Cameo",
         "inputs": [
           {
-            "group": "direction",
-            "input": "f",
-            "notation": "Forward"
+            "group": "directions",
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -846,8 +846,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           },
           {
             "group": "notations",
@@ -856,8 +856,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -911,9 +911,9 @@
         "name": "Carving Intaglio",
         "inputs": [
           {
-            "group": "direction",
-            "input": "f",
-            "notation": "Forward"
+            "group": "directions",
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -922,8 +922,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           },
           {
             "group": "notations",
@@ -932,8 +932,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -987,9 +987,9 @@
         "name": "Durandal",
         "inputs": [
           {
-            "group": "direction",
-            "input": "f",
-            "notation": "Forward"
+            "group": "directions",
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -998,8 +998,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -1053,9 +1053,9 @@
         "name": "Trilliant Cut",
         "inputs": [
           {
-            "group": "direction",
-            "input": "df",
-            "notation": "Down Forward"
+            "group": "directions",
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -1064,8 +1064,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -1074,8 +1074,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -1129,9 +1129,9 @@
         "name": "Arcadia",
         "inputs": [
           {
-            "group": "direction",
-            "input": "df",
-            "notation": "Down Forward"
+            "group": "directions",
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -1140,8 +1140,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -1195,9 +1195,9 @@
         "name": "Iridescence of Loyalty",
         "inputs": [
           {
-            "group": "direction",
-            "input": "df",
-            "notation": "Down Forward"
+            "group": "directions",
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -1206,8 +1206,8 @@
           },
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           },
           {
             "group": "notations",
@@ -1216,8 +1216,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           },
           {
             "group": "notations",
@@ -1226,8 +1226,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -1281,9 +1281,9 @@
         "name": "Selfish Miranda",
         "inputs": [
           {
-            "group": "direction",
-            "input": "df",
-            "notation": "Down Forward"
+            "group": "directions",
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -1292,8 +1292,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           },
           {
             "group": "notations",
@@ -1317,8 +1317,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -1372,9 +1372,9 @@
         "name": "Llamrei",
         "inputs": [
           {
-            "group": "direction",
-            "input": "df",
-            "notation": "Down Forward"
+            "group": "directions",
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -1383,8 +1383,8 @@
           },
           {
             "group": "attacks",
-            "input": "3 + 4",
-            "notation": "Left Kick + Right Kick"
+            "notation": "3 + 4",
+            "input": "Left Kick + Right Kick"
           }
         ],
         "conditions": [
@@ -1438,9 +1438,9 @@
         "name": "Concave Cut",
         "inputs": [
           {
-            "group": "direction",
-            "input": "d",
-            "notation": "Down"
+            "group": "directions",
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -1449,8 +1449,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -1459,8 +1459,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -1514,9 +1514,9 @@
         "name": "Llawfrodedd",
         "inputs": [
           {
-            "group": "direction",
-            "input": "d",
-            "notation": "Down"
+            "group": "directions",
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -1525,8 +1525,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -1580,9 +1580,9 @@
         "name": "Good Manners",
         "inputs": [
           {
-            "group": "direction",
-            "input": "d",
-            "notation": "Down"
+            "group": "directions",
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -1591,8 +1591,8 @@
           },
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           }
         ],
         "conditions": [
@@ -1646,9 +1646,9 @@
         "name": "Fine Salute",
         "inputs": [
           {
-            "group": "direction",
-            "input": "d",
-            "notation": "Down"
+            "group": "directions",
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -1657,8 +1657,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           }
         ],
         "conditions": [
@@ -1712,9 +1712,9 @@
         "name": "Guilty Mariko",
         "inputs": [
           {
-            "group": "direction",
-            "input": "d",
-            "notation": "Down"
+            "group": "directions",
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -1723,8 +1723,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           },
           {
             "group": "notations",
@@ -1783,9 +1783,9 @@
         "name": "Iridescence of Prowess",
         "inputs": [
           {
-            "group": "direction",
-            "input": "d",
-            "notation": "Down"
+            "group": "directions",
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -1794,8 +1794,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -1849,9 +1849,9 @@
         "name": "Emerald Cut",
         "inputs": [
           {
-            "group": "direction",
-            "input": "db",
-            "notation": "Down Back"
+            "group": "directions",
+            "notation": "db",
+            "input": "Down Back"
           },
           {
             "group": "notations",
@@ -1860,8 +1860,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -1870,8 +1870,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -1925,9 +1925,9 @@
         "name": "Polite Greetings",
         "inputs": [
           {
-            "group": "direction",
-            "input": "db",
-            "notation": "Down Back"
+            "group": "directions",
+            "notation": "db",
+            "input": "Down Back"
           },
           {
             "group": "notations",
@@ -1936,8 +1936,8 @@
           },
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           }
         ],
         "conditions": [
@@ -1991,9 +1991,9 @@
         "name": "Welcome Sweep",
         "inputs": [
           {
-            "group": "direction",
-            "input": "db",
-            "notation": "Down Back"
+            "group": "directions",
+            "notation": "db",
+            "input": "Down Back"
           },
           {
             "group": "notations",
@@ -2002,8 +2002,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           }
         ],
         "conditions": [
@@ -2057,9 +2057,9 @@
         "name": "Musk-Scented Natasha",
         "inputs": [
           {
-            "group": "direction",
-            "input": "db",
-            "notation": "Down Back"
+            "group": "directions",
+            "notation": "db",
+            "input": "Down Back"
           },
           {
             "group": "notations",
@@ -2068,8 +2068,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           },
           {
             "group": "notations",
@@ -2128,9 +2128,9 @@
         "name": "Vanity Love",
         "inputs": [
           {
-            "group": "direction",
-            "input": "b",
-            "notation": "Back"
+            "group": "directions",
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -2139,8 +2139,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -2149,8 +2149,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -2204,9 +2204,9 @@
         "name": "Strobing Memories",
         "inputs": [
           {
-            "group": "direction",
-            "input": "b",
-            "notation": "Back"
+            "group": "directions",
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -2215,8 +2215,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -2270,9 +2270,9 @@
         "name": "Caval",
         "inputs": [
           {
-            "group": "direction",
-            "input": "b",
-            "notation": "Back"
+            "group": "directions",
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -2281,8 +2281,8 @@
           },
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           },
           {
             "group": "notations",
@@ -2291,8 +2291,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -2346,9 +2346,9 @@
         "name": "Cordial Circuit",
         "inputs": [
           {
-            "group": "direction",
-            "input": "b",
-            "notation": "Back"
+            "group": "directions",
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -2357,8 +2357,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           }
         ],
         "conditions": [
@@ -2412,9 +2412,9 @@
         "name": "Failnaught",
         "inputs": [
           {
-            "group": "direction",
-            "input": "b",
-            "notation": "Back"
+            "group": "directions",
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -2423,8 +2423,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -2478,9 +2478,9 @@
         "name": "Dun Stallion",
         "inputs": [
           {
-            "group": "direction",
-            "input": "b",
-            "notation": "Back"
+            "group": "directions",
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -2489,8 +2489,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 4",
-            "notation": "Left Punch + Right Kick"
+            "notation": "1 + 4",
+            "input": "Left Punch + Right Kick"
           }
         ],
         "conditions": [
@@ -2544,9 +2544,9 @@
         "name": "Caliburnus",
         "inputs": [
           {
-            "group": "direction",
-            "input": "u",
-            "notation": "Up"
+            "group": "directions",
+            "notation": "u",
+            "input": "Up"
           },
           {
             "group": "notations",
@@ -2555,8 +2555,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -2620,9 +2620,9 @@
             "notation": "Heat"
           },
           {
-            "group": "direction",
-            "input": "u",
-            "notation": "Up"
+            "group": "directions",
+            "notation": "u",
+            "input": "Up"
           },
           {
             "group": "notations",
@@ -2631,8 +2631,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -2686,9 +2686,9 @@
         "name": "Gringolet",
         "inputs": [
           {
-            "group": "direction",
-            "input": "uf",
-            "notation": "Up Forward"
+            "group": "directions",
+            "notation": "uf",
+            "input": "Up Forward"
           },
           {
             "group": "notations",
@@ -2697,8 +2697,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -2707,8 +2707,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -2762,9 +2762,9 @@
         "name": "Marquise Cut",
         "inputs": [
           {
-            "group": "direction",
-            "input": "uf",
-            "notation": "Up Forward"
+            "group": "directions",
+            "notation": "uf",
+            "input": "Up Forward"
           },
           {
             "group": "notations",
@@ -2773,8 +2773,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -2828,9 +2828,9 @@
         "name": "Peaceful Shoes",
         "inputs": [
           {
-            "group": "direction",
-            "input": "uf",
-            "notation": "Up Forward"
+            "group": "directions",
+            "notation": "uf",
+            "input": "Up Forward"
           },
           {
             "group": "notations",
@@ -2839,8 +2839,8 @@
           },
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           }
         ],
         "conditions": [
@@ -2894,9 +2894,9 @@
         "name": "Chatoyant Courage",
         "inputs": [
           {
-            "group": "direction",
-            "input": "uf",
-            "notation": "Up Forward"
+            "group": "directions",
+            "notation": "uf",
+            "input": "Up Forward"
           },
           {
             "group": "notations",
@@ -2905,8 +2905,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           }
         ],
         "conditions": [
@@ -2960,9 +2960,9 @@
         "name": "Carnewennan",
         "inputs": [
           {
-            "group": "direction",
-            "input": "f",
-            "notation": "Forward"
+            "group": "directions",
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -2970,9 +2970,9 @@
             "notation": ","
           },
           {
-            "group": "direction",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "group": "directions",
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -2981,8 +2981,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -3036,9 +3036,9 @@
         "name": "Asterism of Virtue",
         "inputs": [
           {
-            "group": "direction",
-            "input": "f",
-            "notation": "Forward"
+            "group": "directions",
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -3046,9 +3046,9 @@
             "notation": ","
           },
           {
-            "group": "direction",
-            "input": "f",
-            "notation": "Forward"
+            "group": "directions",
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -3056,9 +3056,9 @@
             "notation": ","
           },
           {
-            "group": "direction",
-            "input": "F",
-            "notation": "Forward (hold)"
+            "group": "directions",
+            "notation": "F",
+            "input": "Forward (hold)"
           },
           {
             "group": "notations",
@@ -3067,8 +3067,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -3122,9 +3122,9 @@
         "name": "Amour Shaft",
         "inputs": [
           {
-            "group": "direction",
-            "input": "d",
-            "notation": "Down"
+            "group": "directions",
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -3132,9 +3132,9 @@
             "notation": ","
           },
           {
-            "group": "direction",
-            "input": "df",
-            "notation": "Down Forward"
+            "group": "directions",
+            "notation": "df",
+            "input": "Down Forward"
           },
           {
             "group": "notations",
@@ -3142,9 +3142,9 @@
             "notation": ","
           },
           {
-            "group": "direction",
-            "input": "f",
-            "notation": "Forward"
+            "group": "directions",
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -3153,8 +3153,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -3208,9 +3208,9 @@
         "name": "Montjoie Takemikazuchi",
         "inputs": [
           {
-            "group": "direction",
-            "input": "b",
-            "notation": "Back"
+            "group": "directions",
+            "notation": "b",
+            "input": "Back"
           },
           {
             "group": "notations",
@@ -3218,9 +3218,9 @@
             "notation": ","
           },
           {
-            "group": "direction",
-            "input": "B",
-            "notation": "Back (hold)"
+            "group": "directions",
+            "notation": "B",
+            "input": "Back (hold)"
           },
           {
             "group": "notations",
@@ -3229,8 +3229,8 @@
           },
           {
             "group": "attacks",
-            "input": "2 + 3",
-            "notation": "Right Punch + Left Kick"
+            "notation": "2 + 3",
+            "input": "Right Punch + Left Kick"
           }
         ],
         "conditions": [
@@ -3285,8 +3285,8 @@
         "inputs": [
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -3295,8 +3295,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -3305,8 +3305,8 @@
           },
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           },
           {
             "group": "notations",
@@ -3315,8 +3315,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -3325,8 +3325,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -3335,8 +3335,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           },
           {
             "group": "notations",
@@ -3345,8 +3345,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -3355,8 +3355,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -3365,8 +3365,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -3375,8 +3375,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -3431,8 +3431,8 @@
         "inputs": [
           {
             "group": "attacks",
-            "input": "2 + 3 + 4",
-            "notation": "Right Punch + Left Kick + Right Kick"
+            "notation": "2 + 3 + 4",
+            "input": "Right Punch + Left Kick + Right Kick"
           }
         ],
         "conditions": [
@@ -3486,9 +3486,9 @@
         "name": "Le Blanc",
         "inputs": [
           {
-            "group": "direction",
-            "input": "ub",
-            "notation": "Up Back"
+            "group": "directions",
+            "notation": "ub",
+            "input": "Up Back"
           },
           {
             "group": "notations",
@@ -3496,9 +3496,9 @@
             "notation": ","
           },
           {
-            "group": "direction",
-            "input": "b",
-            "notation": "Back"
+            "group": "directions",
+            "notation": "b",
+            "input": "Back"
           }
         ],
         "conditions": [
@@ -3558,8 +3558,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -3619,8 +3619,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -3680,8 +3680,8 @@
           },
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           },
           {
             "group": "notations",
@@ -3690,8 +3690,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -3751,8 +3751,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           }
         ],
         "conditions": [
@@ -3812,8 +3812,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -3873,8 +3873,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -3934,8 +3934,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -3990,8 +3990,8 @@
         "inputs": [
           {
             "group": "attacks",
-            "input": "3 + 4",
-            "notation": "Left Kick + Right Kick"
+            "notation": "3 + 4",
+            "input": "Left Kick + Right Kick"
           },
           {
             "group": "notations",
@@ -4066,8 +4066,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -4076,8 +4076,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -4142,8 +4142,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -4152,8 +4152,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -4162,8 +4162,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -4228,8 +4228,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           },
           {
             "group": "notations",
@@ -4238,8 +4238,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -4304,8 +4304,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -4370,8 +4370,8 @@
           },
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           }
         ],
         "conditions": [
@@ -4436,8 +4436,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           },
           {
             "group": "notations",
@@ -4446,8 +4446,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -4512,8 +4512,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -4577,9 +4577,9 @@
             "notation": "IAI"
           },
           {
-            "group": "direction",
-            "input": "d",
-            "notation": "Down"
+            "group": "directions",
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -4588,8 +4588,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -4668,9 +4668,9 @@
             "notation": "IAI"
           },
           {
-            "group": "direction",
-            "input": "d",
-            "notation": "Down"
+            "group": "directions",
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -4679,8 +4679,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           }
         ],
         "conditions": [
@@ -4744,9 +4744,9 @@
             "notation": "IAI"
           },
           {
-            "group": "direction",
-            "input": "d",
-            "notation": "Down"
+            "group": "directions",
+            "notation": "d",
+            "input": "Down"
           },
           {
             "group": "notations",
@@ -4755,8 +4755,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -4820,9 +4820,9 @@
             "notation": "IAI"
           },
           {
-            "group": "direction",
-            "input": "d",
-            "notation": "Down"
+            "group": "directions",
+            "notation": "d",
+            "input": "Down"
           }
         ],
         "conditions": [
@@ -4886,9 +4886,9 @@
             "notation": "IAI"
           },
           {
-            "group": "direction",
-            "input": "f",
-            "notation": "Forward"
+            "group": "directions",
+            "notation": "f",
+            "input": "Forward"
           }
         ],
         "conditions": [
@@ -4952,9 +4952,9 @@
             "notation": "IAI"
           },
           {
-            "group": "direction",
-            "input": "b",
-            "notation": "Back"
+            "group": "directions",
+            "notation": "b",
+            "input": "Back"
           }
         ],
         "conditions": [
@@ -5008,9 +5008,9 @@
         "name": "Perfumer",
         "inputs": [
           {
-            "group": "direction",
-            "input": "f",
-            "notation": "Forward"
+            "group": "directions",
+            "notation": "f",
+            "input": "Forward"
           },
           {
             "group": "notations",
@@ -5019,8 +5019,8 @@
           },
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           },
           {
             "group": "notations",
@@ -5095,8 +5095,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -5161,8 +5161,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -5171,8 +5171,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -5181,8 +5181,8 @@
           },
           {
             "group": "attacks",
-            "input": "1",
-            "notation": "Left Punch"
+            "notation": "1",
+            "input": "Left Punch"
           }
         ],
         "conditions": [
@@ -5247,8 +5247,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -5257,8 +5257,8 @@
           },
           {
             "group": "attacks",
-            "input": "2",
-            "notation": "Right Punch"
+            "notation": "2",
+            "input": "Right Punch"
           },
           {
             "group": "notations",
@@ -5267,8 +5267,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -5333,8 +5333,8 @@
           },
           {
             "group": "attacks",
-            "input": "3",
-            "notation": "Left Kick"
+            "notation": "3",
+            "input": "Left Kick"
           }
         ],
         "conditions": [
@@ -5399,8 +5399,8 @@
           },
           {
             "group": "attacks",
-            "input": "4",
-            "notation": "Right Kick"
+            "notation": "4",
+            "input": "Right Kick"
           }
         ],
         "conditions": [
@@ -5465,8 +5465,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -5530,9 +5530,9 @@
             "notation": "PFM"
           },
           {
-            "group": "direction",
-            "input": "df",
-            "notation": "Down Forward"
+            "group": "directions",
+            "notation": "df",
+            "input": "Down Forward"
           }
         ],
         "conditions": [
@@ -5592,8 +5592,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 3",
-            "notation": "Left Punch + Left Kick"
+            "notation": "1 + 3",
+            "input": "Left Punch + Left Kick"
           }
         ],
         "conditions": [
@@ -5653,8 +5653,8 @@
           },
           {
             "group": "attacks",
-            "input": "2 + 4",
-            "notation": "Right Punch + Right Kick"
+            "notation": "2 + 4",
+            "input": "Right Punch + Right Kick"
           }
         ],
         "conditions": [
@@ -5714,8 +5714,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 3",
-            "notation": "Left Punch + Left Kick"
+            "notation": "1 + 3",
+            "input": "Left Punch + Left Kick"
           },
           {
             "group": "notations",
@@ -5724,8 +5724,8 @@
           },
           {
             "group": "attacks",
-            "input": "2 + 4",
-            "notation": "Right Punch + Right Kick"
+            "notation": "2 + 4",
+            "input": "Right Punch + Right Kick"
           }
         ],
         "conditions": [
@@ -5785,8 +5785,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 3",
-            "notation": "Left Punch + Left Kick"
+            "notation": "1 + 3",
+            "input": "Left Punch + Left Kick"
           },
           {
             "group": "notations",
@@ -5795,8 +5795,8 @@
           },
           {
             "group": "attacks",
-            "input": "2 + 4",
-            "notation": "Right Punch + Right Kick"
+            "notation": "2 + 4",
+            "input": "Right Punch + Right Kick"
           }
         ],
         "conditions": [
@@ -5856,8 +5856,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 3",
-            "notation": "Left Punch + Left Kick"
+            "notation": "1 + 3",
+            "input": "Left Punch + Left Kick"
           },
           {
             "group": "notations",
@@ -5866,8 +5866,8 @@
           },
           {
             "group": "attacks",
-            "input": "2 + 4",
-            "notation": "Right Punch + Right Kick"
+            "notation": "2 + 4",
+            "input": "Right Punch + Right Kick"
           }
         ],
         "conditions": [
@@ -5926,9 +5926,9 @@
             "notation": "Fr.F"
           },
           {
-            "group": "direction",
-            "input": "uf",
-            "notation": "Up Forward"
+            "group": "directions",
+            "notation": "uf",
+            "input": "Up Forward"
           },
           {
             "group": "notations",
@@ -5937,8 +5937,8 @@
           },
           {
             "group": "attacks",
-            "input": "1 + 2",
-            "notation": "Left Punch + Right Punch"
+            "notation": "1 + 2",
+            "input": "Left Punch + Right Punch"
           }
         ],
         "conditions": [
@@ -6007,9 +6007,9 @@
             "notation": "IAI"
           },
           {
-            "group": "direction",
-            "input": "f",
-            "notation": "Forward"
+            "group": "directions",
+            "notation": "f",
+            "input": "Forward"
           }
         ],
         "conditions": [

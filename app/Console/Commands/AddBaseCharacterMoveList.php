@@ -132,6 +132,7 @@ class AddBaseCharacterMoveList extends Command
                                 $now
                             ]
                         );
+                        var_dump('Inserted move: ' . $move->name);
 
                         /**
                          * * Get DirectionalInput model to access data
