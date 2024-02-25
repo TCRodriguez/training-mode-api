@@ -4541,7 +4541,7 @@
       },
       {
         "move_list_number": 71,
-        "name": "Tsunami Kick",
+        "name": "Tsunami Kick (while standing up)",
         "inputs": [
           {
             "group": "notations",
@@ -5170,7 +5170,7 @@
       },
       {
         "move_list_number": 80,
-        "name": "Inferno",
+        "name": "Inferno (while in Devil Form)",
         "inputs": [
           {
             "group": "notations",
@@ -6303,7 +6303,7 @@
         "inputs": [
           {
             "group": "notations",
-            "input": "Face Up / Feet Away from Opponent",
+            "input": "Grounded opponent ('on the ground')",
             "notation": "OTG"
           },
           {
@@ -6374,7 +6374,7 @@
         "inputs": [
           {
             "group": "notations",
-            "input": "Face Up / Feet Away from Opponent",
+            "input": "Grounded opponent ('on the ground')",
             "notation": "OTG"
           },
           {

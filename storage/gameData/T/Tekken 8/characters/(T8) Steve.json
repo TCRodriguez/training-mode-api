@@ -5276,7 +5276,7 @@
       },
       {
         "move_list_number": 96,
-        "name": "Spin > Peekaboo",
+        "name": "Spin > Peekaboo (alternate input)",
         "inputs": [
           {
             "group": "notations",
@@ -8826,7 +8826,7 @@
         "inputs": [
           {
             "group": "notations",
-            "input": "Face Up / Feet Away from Opponent",
+            "input": "Grounded opponent ('on the ground')",
             "notation": "OTG"
           },
           {

@@ -1232,72 +1232,6 @@
         "frames_on_counter_hit": null
       },
       {
-        "move_list_number": 35,
-        "name": "Shifting Clouds",
-        "inputs": [
-          {
-            "group": "directions",
-            "notation": "f",
-            "input": "Forward"
-          },
-          {
-            "group": "notations",
-            "input": "Press Simultaneously",
-            "notation": "+"
-          },
-          {
-            "group": "attacks",
-            "notation": "3 + 4",
-            "input": "Left Kick + Right Kick"
-          }
-        ],
-        "conditions": [
-          ""
-        ],
-        "properties": [
-          ""
-        ],
-        "minimum_required_resource": null,
-        "resource_gain": null,
-        "resource_cost": null,
-        "follow_up_to": [
-          ""
-        ],
-        "augmented_by_move": [
-          ""
-        ],
-        "augmented_by_inputs": [
-          {
-            "group": "",
-            "input": "",
-            "notation": "",
-            "placement_index_in_sequence_array": null,
-            "notes": [
-              {
-                "text": "",
-                "placement_index_in_sequence_array": null
-              }
-            ]
-          }
-        ],
-        "meter_cost": null,
-        "meter_gain": null,
-        "hit_count": null,
-        "ex_hit_count": null,
-        "zones": [
-          ""
-        ],
-        "damage": null,
-        "category": "",
-        "type": "",
-        "startup_frames": null,
-        "active_frames": null,
-        "recovery_frames": null,
-        "frames_on_hit": null,
-        "frames_on_block": null,
-        "frames_on_counter_hit": null
-      },
-      {
         "move_list_number": 36,
         "name": "Stunning Palm",
         "inputs": [
@@ -2876,72 +2810,6 @@
             "group": "attacks",
             "notation": "1 + 2",
             "input": "Left Punch + Right Punch"
-          }
-        ],
-        "conditions": [
-          ""
-        ],
-        "properties": [
-          ""
-        ],
-        "minimum_required_resource": null,
-        "resource_gain": null,
-        "resource_cost": null,
-        "follow_up_to": [
-          ""
-        ],
-        "augmented_by_move": [
-          ""
-        ],
-        "augmented_by_inputs": [
-          {
-            "group": "",
-            "input": "",
-            "notation": "",
-            "placement_index_in_sequence_array": null,
-            "notes": [
-              {
-                "text": "",
-                "placement_index_in_sequence_array": null
-              }
-            ]
-          }
-        ],
-        "meter_cost": null,
-        "meter_gain": null,
-        "hit_count": null,
-        "ex_hit_count": null,
-        "zones": [
-          ""
-        ],
-        "damage": null,
-        "category": "",
-        "type": "",
-        "startup_frames": null,
-        "active_frames": null,
-        "recovery_frames": null,
-        "frames_on_hit": null,
-        "frames_on_block": null,
-        "frames_on_counter_hit": null
-      },
-      {
-        "move_list_number": 58,
-        "name": "Deceptive Step",
-        "inputs": [
-          {
-            "group": "directions",
-            "notation": "b",
-            "input": "Back"
-          },
-          {
-            "group": "notations",
-            "input": "Press Simultaneously",
-            "notation": "+"
-          },
-          {
-            "group": "attacks",
-            "notation": "3 + 4",
-            "input": "Left Kick + Right Kick"
           }
         ],
         "conditions": [
@@ -7352,7 +7220,7 @@
         "inputs": [
           {
             "group": "notations",
-            "input": "Face Up / Feet Away from Opponent",
+            "input": "Grounded opponent ('on the ground')",
             "notation": "OTG"
           },
           {

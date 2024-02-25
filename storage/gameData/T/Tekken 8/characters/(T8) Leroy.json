@@ -5543,7 +5543,7 @@
       },
       {
         "move_list_number": 91,
-        "name": "Devastating Chain Punch",
+        "name": "Devastating Chain Punch (side grab)",
         "inputs": [
           {
             "group": "notations",
@@ -5614,7 +5614,7 @@
       },
       {
         "move_list_number": 92,
-        "name": "Corkscrew Strike",
+        "name": "Corkscrew Strike (side grab)",
         "inputs": [
           {
             "group": "notations",
@@ -6126,7 +6126,7 @@
           {
             "group": "notations",
             "input": "Grounded opponent ('on the ground')",
-            "notation": "FU/FA"
+            "notation": "OTG"
           },
           {
             "group": "directions",

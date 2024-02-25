@@ -7046,7 +7046,7 @@
       },
       {
         "move_list_number": 110,
-        "name": "Diving Body Press",
+        "name": "Diving Body Press (follow up to Jaguar Sprint)",
         "inputs": [
           {
             "group": "notations",
@@ -11515,7 +11515,7 @@
       },
       {
         "move_list_number": 165,
-        "name": "Backdrop",
+        "name": "Backdrop (follow up to Reverse Arm Slam)",
         "inputs": [
           {
             "group": "notations",
@@ -11946,7 +11946,7 @@
       },
       {
         "move_list_number": 171,
-        "name": "Reverse Special Stretch Bomb",
+        "name": "Reverse Special Stretch Bomb (from side step)",
         "inputs": [
           {
             "group": "notations",
@@ -13550,7 +13550,7 @@
       },
       {
         "move_list_number": 190,
-        "name": "Cobra Twist",
+        "name": "Cobra Twist (follow up to Cobra Clutch)",
         "inputs": [
           {
             "group": "notations",
@@ -13742,7 +13742,7 @@
       },
       {
         "move_list_number": 192,
-        "name": "Reverse Special Stretch Bomb",
+        "name": "Reverse Special Stretch Bomb (follow up to Reverse DDT)",
         "inputs": [
           {
             "group": "notations",
@@ -13954,7 +13954,7 @@
       },
       {
         "move_list_number": 194,
-        "name": "Backdrop",
+        "name": "Backdrop (follow up to Reverse Special Stretch Bomb)",
         "inputs": [
           {
             "group": "notations",

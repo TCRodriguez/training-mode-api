@@ -1302,7 +1302,7 @@
       },
       {
         "move_list_number": 31,
-        "name": "Spinning Heel Drop",
+        "name": "Spinning Heel Drop (hold)",
         "inputs": [
           {
             "group": "directions",
