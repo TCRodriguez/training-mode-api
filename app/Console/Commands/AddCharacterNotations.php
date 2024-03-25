@@ -51,42 +51,49 @@ class AddCharacterNotations extends Command
 
 
         $characterNotationsFile = glob("storage/gameData/*/*/characters/({$this->argument('game')})*.json");
-        if(count($characterNotationsFile) === 0) {
+        if (count($characterNotationsFile) === 0) {
             $this->error('No files found.');
             return Command::FAILURE;
         }
-        
-        if($this->confirm("You're about to add the character-specific notations for <fg=yellow>{$game->title}</> to the DB. Continue?")) {
-            foreach($characterNotationsFile as $file) {
+
+        if ($this->confirm("You're about to add the character-specific notations for <fg=yellow>{$game->title}</> to the DB. Continue?")) {
+            foreach ($characterNotationsFile as $file) {
                 $json = File::get($file);
                 $characters = json_decode($json);
 
-                foreach($characters as $character) {
+                foreach ($characters as $character) {
                     try {
                         $characterModel = Character::where('name', $character->name)->where('game_id', $game->id)->firstOrFail();
                     } catch (\Throwable $th) {
                         $this->error("Character {$character->name} not found.");
                         return Command::FAILURE;
                     }
-
                     $characterNotations = $character->notations;
-                    foreach($characterNotations as $notation => $description) {
-                        $notationExistenceCheck = GameNotation::where('notation', $notation)->where('game_id', $game->id)->where('character_id', $characterModel->id)->doesntExist();
-                        if($notationExistenceCheck) {
+                    foreach ($characterNotations as $notation => $description) {
+
+                        $gameNotationModelTest = GameNotation::where('notation', $notation)
+                            ->where('game_id', $game->id)
+                            ->first();
+
+                        $notationExistenceCheck = GameNotation::where('notation', $notation)
+                            ->where('game_id', $game->id)
+                            ->where('character_id', $characterModel->id)
+                            ->exists();
+                        if (!$notationExistenceCheck) {
                             DB::insert(
-                                'insert into game_notations (notation, description, game_id, character_id, notations_group, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?)', 
+                                'insert into game_notations (notation, description, game_id, character_id, notations_group, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?)',
                                 [
-                                    $notation, 
-                                    $description, 
-                                    $game->id, 
-                                    $characterModel->id, 
-                                    $character->notations_group, 
-                                    now(), 
+                                    $notation,
+                                    $description,
+                                    $game->id,
+                                    $characterModel->id,
+                                    $character->notations_group,
+                                    now(),
                                     now()
                                 ]
                             );
 
-                            $this->info("<fg=yellow>{$characterModel->name}'s</> notation <fg=yellow>{$notation}: {$description}</> added to the database."); 
+                            $this->info("<fg=yellow>{$characterModel->name}'s</> notation <fg=yellow>{$notation}: {$description}</> added to the database.");
                         } else {
                             $this->error("Notation <fg=yellow>{$notation}</> already exists in the database.");
                         }
