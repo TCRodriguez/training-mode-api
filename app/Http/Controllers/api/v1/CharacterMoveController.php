@@ -40,6 +40,7 @@ class CharacterMoveController extends Controller
             'notations',
             'followUps',
             'followsUp',
+            'zones'
         ])
             ->where('character_id', $characterId)
             ->get();

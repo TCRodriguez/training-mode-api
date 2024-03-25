@@ -18,7 +18,7 @@ class Character extends Model
 
     public function moves()
     {
-        return $this->hasMany(Move::class);
+        return $this->hasMany(CharacterMove::class);
     }
 
     public function notations()

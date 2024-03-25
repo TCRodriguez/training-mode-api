@@ -79,6 +79,11 @@ Route::prefix('v1')->group(function () {
     Route::get('/devices', [DeviceController::class, 'index']);
     Route::get('/devices/{device}', [DeviceController::class, 'show']);
     Route::get('/devices/{device}/mappings/{game}/attack-buttons', [DeviceController::class, 'showWithAttackButtonMappings']);
+
+    // Move data routes
+    
+    Route::put('/games/{game}/characters/{character}', [CharacterController::class, 'updateMoveData']);
+    Route::put('/games/{game}/characters/{character}/moves/{move}', [CharacterMoveController::class, 'update']);
     
 });
 
