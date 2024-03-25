@@ -35,14 +35,14 @@ class AddNewGame extends Command
         $json = File::get("storage/gameData/Games.json");
         $games = json_decode($json);
 
-        $newGameObjectArray = array_filter($games, function($game) use ($gameToAdd) {
+        $newGameObjectArray = array_filter($games, function ($game) use ($gameToAdd) {
             return $game->title == $gameToAdd;
         });
-    
+
         $gameExistenceCheck = Game::where('title', $gameToAdd)->doesntExist();
-        if($gameExistenceCheck) {
+        if ($gameExistenceCheck) {
             $newGameObject = reset($newGameObjectArray);
-            if($this->confirm("You're about to add {$gameToAdd} to the database. Continue?")) {
+            if ($this->confirm("You're about to add {$gameToAdd} to the database. Continue?")) {
                 Game::create([
                     "title" => $newGameObject->title,
                     "abbreviation" => $newGameObject->abbreviation,
@@ -51,12 +51,9 @@ class AddNewGame extends Command
                 $this->info("{$gameToAdd} successfully added to the database.");
                 return Command::SUCCESS;
             }
-        $this->error("{$gameToAdd} not added.");
-        return Command::FAILURE;
-
+        } else {
+            $this->error("{$gameToAdd} not added because it already exists in the DB.");
+            return Command::FAILURE;
         }
-
-        $this->error("{$gameToAdd} not added to the database because it already exists.");
-        return Command::FAILURE;
     }
 }
